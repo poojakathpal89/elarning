@@ -26,18 +26,33 @@ export default class FooterComponent extends Component {
                             props.navigation.navigate("DashboardPageStack", {
                                 screen: "DashboardPage",
                             });
-                        }} style={GlobalStyle.bottomNavItem}>
+                        }} style={GlobalStyle.bottomNavLeftItem}>
                         {/* <Image source={require("../Image/Vector.png")} style={GlobalStyle.bottomNavIcon} /> */}
                             { active == 'home' ?
                                <>
-                                <Text style={GlobalStyle.bottomNavTextActive}>{GlobalService.Home ? GlobalService.Home.RAPP_HOME : 'Home'}</Text>
+                                <Text style={GlobalStyle.bottomNavTextActive}>subjects</Text>
                                 <View style={GlobalStyle.bottomNavActiveVector}></View>
                                </>
                                 :
-                                <Text style={GlobalStyle.bottomNavText}>{GlobalService.Home ? GlobalService.Home.RAPP_HOME : 'Home'}</Text>
+                                <Text style={GlobalStyle.bottomNavText}>subjects</Text>
                             }
                     </TouchableOpacity>
-                
+
+                    <TouchableOpacity
+                        onPress={() => {
+                            props.navigation.navigate("DashboardPageStack", {
+                                screen: "DashboardPage",
+                            });
+                        }} style={GlobalStyle.bottomNavItem}>
+                            { active == 'home' ?
+                               <>
+                                <Text style={GlobalStyle.bottomNavTextActive}>groups</Text>
+                                <View style={GlobalStyle.bottomNavActiveVector}></View>
+                               </>
+                                :
+                                <Text style={GlobalStyle.bottomNavText}>groups</Text>
+                            }
+                    </TouchableOpacity>
 
 
                     <TouchableOpacity
@@ -45,16 +60,19 @@ export default class FooterComponent extends Component {
                             props.navigation.navigate("MyVoucherScreenStack", {
                                 screen: "MyVoucherScreen",
                             });
-                        }} style={GlobalStyle.bottomNavItem}>
-                        {/* <Image source={require("../Image/tickets.png")} style={GlobalStyle.bottomNavIcon} /> */}
+
+                        }} style={GlobalStyle.bottomNavRightItem}>
+                            <Image source={require("../Image/pic12.png")} style={{width: 90, height:10, resizeMode: 'contain',borderRadius:5}} />
+
                         
                         { active == 'myVouchers' ?
                                <>
-                                <Text style={GlobalStyle.bottomNavTextActive}>{GlobalService.Home ? GlobalService.Home.RAPP_MY_VOUCHER : 'My Vouchers'}</Text>
+
+                                <Text style={GlobalStyle.bottomNavTextActive}>student Name</Text>
                                 <View style={GlobalStyle.bottomNavActiveVector}></View>
                                </>
                                 :
-                                <Text style={GlobalStyle.bottomNavText}>{GlobalService.Home ? GlobalService.Home.RAPP_MY_VOUCHER : 'My Vouchers'}</Text>
+                                <Text style={GlobalStyle.bottomNavText}>student Name</Text>
                             }
                     </TouchableOpacity>
                 </View> 

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const FrisGradeStyle = StyleSheet.create({
+const NewStudentthreeStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -152,4 +152,4 @@ const FrisGradeStyle = StyleSheet.create({
         }
 });
 
-export default FrisGradeStyle;
+export default NewStudentthreeStyle;

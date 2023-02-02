@@ -35,6 +35,8 @@ import ExerciseMultipleFour from './src/pages/exerciseList/ExerciseMultipleFour'
 import ExerciseMultipleFive from './src/pages/exerciseList/ExerciseMultipleFive';
 import ExerciseMultipleSix  from './src/pages/exerciseList/ExerciseMultipleSix';
 import ExerciseMultipleSeven from './src/pages/exerciseList/ExerciseMultipleSeven';
+import LearnExreciseScreen from './src/pages/learn/LearnExerciseScreen';
+import FirstGradeScreen from './src/pages/grades/FirstGradeScreen';
 
 
 const Stack = createStackNavigator();
@@ -371,6 +373,29 @@ const exerciseMultipleSeven= () => {
     </Stack.Navigator>
   );
 };
+const exerciseLearn= () => {
+  return (
+    <Stack.Navigator initialRouteName="LearnExreciseScreen">
+      <Stack.Screen
+        name="LearnExreciseScreen"
+        component={LearnExreciseScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const gradeFirst= () => {
+  return (
+    <Stack.Navigator initialRouteName="FirstGradeScreen">
+      <Stack.Screen
+        name="FirstGradeScreen"
+        component={FirstGradeScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const Register = () => {
  
@@ -575,7 +600,17 @@ export default class AppContainer extends React.Component {
                 component={exerciseMultipleSeven}
                 options={{headerShown: false}}
               />
-      
+              
+              <Stack.Screen
+                name="exerciseLearn"
+                component={exerciseLearn}
+                options={{headerShown: false}}
+              />
+           <Stack.Screen
+                name="gradeFirst"
+                component={gradeFirst}
+                options={{headerShown: false}}
+              />
             </Stack.Navigator>
           </NavigationContainer>
          

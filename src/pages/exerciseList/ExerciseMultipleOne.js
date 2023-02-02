@@ -43,7 +43,6 @@ export default class ExerciseMultipleOne extends React.Component {
       <Text style={{position: 'absolute', right: 20,marginTop:14}}>X</Text>
     <View style={ExerciseMultipleOneStyle.studentCodeContainer}>
                <View  style={ExerciseMultipleOneStyle.buttonStyle}>
-                  <Text style={ExerciseMultipleOneStyle.studentCodeTxt}></Text>
                   <Text>X</Text>
                  
                     </View>
@@ -66,8 +65,9 @@ export default class ExerciseMultipleOne extends React.Component {
                       <Image
                           source={require("../../Image/toptxt.png")}
                           style={{
-                              width: 150,
+                              width: 350,
                               height: 110,
+
                               resizeMode: "contain",
                               }}
                           />

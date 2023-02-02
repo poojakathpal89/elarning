@@ -1,12 +1,22 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const ExerciseMultipleOneStyle = StyleSheet.create({
+const LearnExerciseStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
         paddingHorizontal: 24,
         paddingVertical: 24,
       },
+      multipleCodeImage2Container: {
+        justifyContent: 'center',
+           marginLeft:90,
+           marginRight:90,
+           backgroundColor:"#FBFEFD",
+           alignItems:"center",   
+           marginTop:10,
+           height:60,
+           borderRadius:10,
+               },
       logoOnlyHeader:{
 		height:"10%",
 		alignItems: "center",
@@ -15,13 +25,12 @@ const ExerciseMultipleOneStyle = StyleSheet.create({
         exerciseOneImage:{
             height:"10%",
             alignItems: "center",
-            textAlign:'center',
             marginTop:0,
-            marginTop:10,
-            marginBottom:50
-           },
-    
-      starImage:{
+            textAlign:'center',
+            justifyContent:"center"
+         },
+
+starImage:{
     justifyContent: 'center',
     marginLeft:80,
     marginRight:80,
@@ -37,6 +46,7 @@ const ExerciseMultipleOneStyle = StyleSheet.create({
 },
         btnTextContainer:{
             // marginTop:30,
+            marginBottom:40
         },
     commonStudentBtnTxt:{
         fontSize:16,
@@ -47,15 +57,6 @@ const ExerciseMultipleOneStyle = StyleSheet.create({
         color: 'black',
       fontSize:14
     },
-    soundImage:{
-      flex: 1,
-      flexDirection:'row',
-    
-  },
-  toplayoutContainer:{
-    flex: 1,
-    flexDirection:'row',
-  },
       menuArea:{
 
           display: "flex",
@@ -166,17 +167,8 @@ const ExerciseMultipleOneStyle = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         flex:1,
-        marginTop:140,
         flexDirection:'row',
     },
-    ImageLineStyle:{
-      height:10,
-       color:"black",
-       alignItems:"center",
-       justifyContent:"center",
-       flex:1,
-       marginBottom:135,
-   },
     newStudentTxt:{
     color:"#000000",
     fontSize:30,
@@ -201,28 +193,16 @@ const ExerciseMultipleOneStyle = StyleSheet.create({
   
             studentCodeContainer: {
              justifyContent: 'center',
-                marginLeft:20,
-                marginRight:20,
-                backgroundColor:"#D9D9D9",
+                marginLeft:90,
+                marginRight:90,
+                backgroundColor:"#FBFEFD",
                 alignItems:"center",
-                paddingLeft:130,
-                paddingRight:130,    
+                paddingLeft:50,
+                paddingRight:50,    
                 marginTop:20,
-                height:10,
+                height:80,
                 borderRadius:10,
                     },
-                    exerciseTwoImage: {
-                        justifyContent: 'center',
-                           marginLeft:10,
-                           marginRight:10,
-                           backgroundColor:"#FFFFFF",
-                           alignItems:"center",
-                           paddingLeft:40,
-                           paddingRight:40,    
-                           marginTop:50,
-                           height:450,
-                           borderRadius:10,
-                               },
 studentButtonStyle:{
  height:50,
     color:"black",
@@ -274,9 +254,9 @@ studentButtonStyle:{
     
    },
    image2Container:{
-    flex:1,
+    flex:2,
     flexDirection:'row',
    }
 });
 
-export default ExerciseMultipleOneStyle;
+export default LearnExerciseStyle;

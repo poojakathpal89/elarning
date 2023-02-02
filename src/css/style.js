@@ -70,8 +70,8 @@ bottomNav:{
 shadowOpacity: 0.58,
 shadowRadius: 16.00,
 elevation: 24,
-  borderTopLeftRadius:32,
-  borderTopRightRadius:32,
+  // borderTopLeftRadius:32,
+  // borderTopRightRadius:32,
   position:'absolute',
   bottom:0,
   alignSelf:'flex-end',
@@ -82,13 +82,31 @@ elevation: 24,
 bottomNavItem:{
   alignItems:'center',
   paddingVertical:22,
-  position:'relative'
+  position:'relative',
+
 },
+bottomNavRightItem:{
+  alignItems:'center',
+  paddingVertical:22,
+  position:'relative',
+  alignItems:'center',
+  borderLeftWidth:1,
+  borderColor:'#ccc'
+},
+bottomNavLeftItem:{
+  alignItems:'center',
+  paddingVertical:22,
+  position:'relative',
+  alignItems:'center',
+  borderColor:'#ccc',
+  borderRightWidth:1,
+},
+
 bottomNavActiveVector:{
   alignItems:'center',
   width:'100%',
   height:4,
-  backgroundColor:'#3EB881',
+  backgroundColor:'gery',
   position:'absolute',
   top:0,
   borderRadius:10,
@@ -103,11 +121,14 @@ bottomNavIcon:{
 bottomNavText:{
   fontSize:12,
   fontWeight:'700',
-  color:'#A7A9AC'
+  color:'gery'
 },
 bottomNavTextActive:{
   fontSize:13,
   fontWeight:'700',
-  color:'#3EB881',
+  color:'grey',
+  textAlign:'center',
+  marginRight:50,
+  justifyContent:'center',
 }
 });

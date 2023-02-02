@@ -48,7 +48,6 @@ export default class ExerciseMultipleThree extends React.Component {
           </View>
         </View>
         <View style={ExercisMultipleThreeStyle.multipleCodeImage2Container}>
-               {/* <View  style={ExercisMultipleThreeStyle.buttonStyle}> */}
                <View style={ExerciseMultipleOneStyle.exerciseOneImage}>
                       <Image
                           source={require("../../Image/toptxt.png")}
