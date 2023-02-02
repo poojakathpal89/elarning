@@ -3,6 +3,8 @@ import {Text,Image, View,TouchableOpacity,Button,ScrollView} from 'react-native'
 import ChooseAvtarStyle from './ChooseAvtarStyle';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
+import { AuthService } from "../../services/AllServices";
+
 const coloursArray = [
     "#3658C9",
    "#F1BEE0" ,
@@ -59,7 +61,7 @@ export default class ChooseAvatarScreen extends React.Component {
       super(props);
       state = {
      
-        avtarArray: [],
+        avtarArray: {},
       }
   
   };
@@ -78,7 +80,7 @@ getAvtar() {
     this.setState({ avtarArray: [] });
     AuthService.getAvtar()
         .then((response) => {
-            /// console.log(typeof response.avatars);
+             console.log(typeof response.avatar);
             /// console.log('response',response.avatars)
             if (response.status == 1) {
                 this.setState({ avtarArray: response.avatars, isLoading: false });

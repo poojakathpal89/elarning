@@ -15,8 +15,8 @@ import splashStyle from "./SplashStyle";
                       //  navigation.replace(value === null ? "Auth" : "DrawerNavigationRoutes");
                       navigation.replace("Register");
                     //   navigation.replace("newGroupThree");
-                    //    navigation.replace("exerciseMultipleSix");
-                    //   newGroupThree
+                       //navigation.replace("chooseAvtar");
+                   
                     } else {
                         navigation.replace("Register");
                         

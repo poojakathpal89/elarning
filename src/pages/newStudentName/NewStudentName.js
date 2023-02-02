@@ -35,8 +35,8 @@ export default class NewtudentName extends React.Component {
   }
 
   goToNextBtn(){
-     //this.props.navigation.navigate("chooseAvtar");
-        this.props.navigation.navigate("newStudentTwo");
+     this.props.navigation.navigate("chooseAvtar");
+       // this.props.navigation.navigate("newStudentTwo");
   }
  
   getCountriesArray() {
