@@ -1,0 +1,91 @@
+{
+  "_from": "react-native-stories-view@^1.0.9",
+  "_id": "react-native-stories-view@1.0.9",
+  "_inBundle": false,
+  "_integrity": "sha512-xvQTW3Ge1+44mB/yzJOdz/pP01Lv8bEGz+p7mDs0HVWz0tlJhhrZSL3+f0temeteJy2DYjKtFeaZ/SUaU81/vQ==",
+  "_location": "/react-native-stories-view",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "react-native-stories-view@^1.0.9",
+    "name": "react-native-stories-view",
+    "escapedName": "react-native-stories-view",
+    "rawSpec": "^1.0.9",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.9"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-stories-view/-/react-native-stories-view-1.0.9.tgz",
+  "_shasum": "87e3624b8be9267d548a50993f85f3a74d29fe9e",
+  "_spec": "react-native-stories-view@^1.0.9",
+  "_where": "C:\\Users\\kathp\\react-rebatus",
+  "author": {
+    "name": "Yuvraj Pandey"
+  },
+  "bugs": {
+    "url": "https://github.com/yuvraj24/react-native-stories-view/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A simple and fully customizable React Native component that implements a status/stories view like Whatsapp, Instagram",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "@react-native-community/eslint-config": "^1.0.0",
+    "@types/jest": "^25.2.1",
+    "@types/react": "^16.9.32",
+    "@types/react-native": "^0.62.1",
+    "@types/react-test-renderer": "^16.9.2",
+    "babel-jest": "^25.2.6",
+    "eslint": "^6.8.0",
+    "jest": "^25.2.7",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-test-renderer": "16.11.0",
+    "typescript": "^3.8.3"
+  },
+  "homepage": "https://github.com/yuvraj24/react-native-stories-view#readme",
+  "jest": {
+    "preset": "react-native"
+  },
+  "keywords": [
+    "react-native",
+    "react component",
+    "react native component",
+    "react",
+    "react native",
+    "mobile",
+    "ios",
+    "android",
+    "ui",
+    "story",
+    "stories",
+    "status",
+    "Whatsapp",
+    "Instagram",
+    "cross platform",
+    "cross-platform",
+    "typescript",
+    "hooks"
+  ],
+  "name": "react-native-stories-view",
+  "peerDependencies": {
+    "react": "16.11.0",
+    "react-native": "0.62.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuvraj24/react-native-stories-view.git"
+  },
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "lint": "eslint .",
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "version": "1.0.9"
+}
