@@ -13,12 +13,12 @@ import splashStyle from "./SplashStyle";
                 AsyncStorage.getItem("token").then((value) => {
                     if (value != null) {
                       //  navigation.replace(value === null ? "Auth" : "DrawerNavigationRoutes");
-                    //   navigation.replace("Register");
+                      navigation.replace("Register");
                     //   navigation.replace("newGroupThree");
-                       navigation.replace("exerciseMultipleSix");
+                    //    navigation.replace("exerciseMultipleSix");
                     //   newGroupThree
                     } else {
-                        navigation.replace("exerciseMultipleSix");
+                        navigation.replace("Register");
                         
                         
                     }
