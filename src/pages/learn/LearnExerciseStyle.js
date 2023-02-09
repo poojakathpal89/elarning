@@ -256,7 +256,40 @@ studentButtonStyle:{
    image2Container:{
     flex:2,
     flexDirection:'row',
-   }
+   },
+   bottomswiperHeadingBox: {
+
+    alignItems: "center",
+   
+},
+bottomswiperHeading: {
+  fontSize: 18,
+  color: "#0C222C",
+  fontWeight: "700",
+  marginBottom:10
+},
+bottomswiperSubheading: {
+  fontSize: 16,
+  fontWeight: "500",
+  color: "#0C222C",
+},
+shareWithFrndBg:{
+  flex:1,
+  flexDirection:'row',
+  fontSize: moderateScale(14), 
+  color: "#3EB881",
+  marginBottom:10,
+  justifyContent: "center",
+  alignContent:"center",
+  fontWeight: "500",
+  marginTop:10
+},
+shareTicketTextStyle:{
+  color: '#000',
+  fontSize: 20,
+  fontFamily:'CircularStd-Book',
+  fontWeight:'500'
+},
 });
 
 export default LearnExerciseStyle;

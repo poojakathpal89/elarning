@@ -3,6 +3,7 @@ import Loader from '../component/Loader';
 import StatusBarComponent from '../component/StatusBarComponent';
 import FooterComponent from '../component/FooterComponent';
 import HeaderWithBackComponent from '../component/HeaderWithBackComponent';
+import HeaderWithTextComponent from '../component/HeaderWithTextComponent';
 
 
 export { 
@@ -11,6 +12,7 @@ export {
    FooterComponent,
     HeaderWithBackComponent,
     StatusBarComponent,
+    HeaderWithTextComponent,
  
    
 }

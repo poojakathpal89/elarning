@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const FrisGradeStyle = StyleSheet.create({
+const SubjectScreenStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -14,7 +14,7 @@ const FrisGradeStyle = StyleSheet.create({
         },
 
         btnTextContainer:{
-            marginTop:100,
+            marginTop:50,
         },
     commonStudentBtnTxt:{
         fontSize:16,
@@ -116,9 +116,8 @@ const FrisGradeStyle = StyleSheet.create({
         marginTop:10,  
         justifyContent:"center",   
     },
-    buttonContainer: {
-       
-        justifyContent: 'center',
+    buttonContainerOne: {
+       justifyContent: 'center',
         marginLeft:50,
         marginRight:50,
         backgroundColor:"#FBFEFD",
@@ -127,11 +126,30 @@ const FrisGradeStyle = StyleSheet.create({
       paddingRight:40,
         marginTop:20,
         height:50,
+        padding:50,
         borderRadius:10,
-        
-    },
+            },
+            buttonContainerTwo: {
+                justifyContent: 'center',
+                 marginLeft:50,
+                 marginRight:50,
+                 backgroundColor:"#FBFEFD",
+                 alignItems:"center",
+               paddingLeft:40,
+               paddingRight:40,
+                 marginTop:50,
+                 height:50,
+                 padding:50,
+                 borderRadius:10,
+                     },
     buttonStyle:{
        
+        height:50,
+        color:"black",
+        alignItems:"center",
+        justifyContent:"center"
+    },
+    topTitle:{
         height:50,
         color:"black",
         alignItems:"center",
@@ -149,7 +167,20 @@ const FrisGradeStyle = StyleSheet.create({
         fontSize:20,
         fontWeight:'400',
         fontFamily:'CircularStd-Bold',
+        },
+        toptxtHeading:{
+            alignItems:"center",
+            justifyContent:"center",
+            textAlign:"center",
+            marginTop:60,
+        },
+        toptxtHeadingStyle:{
+        alignItems:"center",
+        color:"#000000",
+        fontSize:30,
+        fontWeight:'400',
+        fontFamily:'CircularStd-Bold',
         }
 });
 
-export default FrisGradeStyle;
+export default SubjectScreenStyle;

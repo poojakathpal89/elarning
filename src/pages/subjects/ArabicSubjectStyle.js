@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const FrisGradeStyle = StyleSheet.create({
+const ArabicSubjectStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -111,28 +111,26 @@ const FrisGradeStyle = StyleSheet.create({
 
         },
       btncontainer: {
-       flexDirection: 'row',
         alignItems: 'center',
         marginTop:10,  
-        justifyContent:"center",   
+        justifyContent:"center",  
     },
     buttonContainer: {
-       
-        justifyContent: 'center',
-        marginLeft:50,
-        marginRight:50,
+        width:'80%',
+       justifyContent: 'center',
         backgroundColor:"#FBFEFD",
         alignItems:"center",
-      paddingLeft:40,
-      paddingRight:40,
+      paddingLeft:70,
+      paddingRight:70,
         marginTop:20,
-        height:50,
+        height:60,
         borderRadius:10,
+        
         
     },
     buttonStyle:{
-       
         height:50,
+        width:'100%',
         color:"black",
         alignItems:"center",
         justifyContent:"center"
@@ -152,4 +150,4 @@ const FrisGradeStyle = StyleSheet.create({
         }
 });
 
-export default FrisGradeStyle;
+export default ArabicSubjectStyle;

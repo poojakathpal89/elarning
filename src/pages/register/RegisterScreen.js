@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text,Button, View ,TextInput,Image,TouchableOpacity} from 'react-native';
+import { Text,Button, View ,ScrollView,TextInput,Image,TouchableOpacity} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import RegisterStyle from './RegisterStyle';
 import CommonStyle from '../../css/common';
@@ -23,22 +23,30 @@ export default class RegisterScreen extends React.Component {
      
   }
   goToStudentCode() {
+    alert("Welcome to test")
     this.props.navigation.navigate("newStudentCodeName");
   
 }
 goToNewTeacher(){
   this.props.navigation.navigate("newTeacherName");
 }
-  goToTeacher() {
-   // this.props.navigation.navigate("TeacherScreen");
+  goToTeacherCode() {
+    this.props.navigation.navigate("TeacherScreen");
    
 }
 
 
+
+
+
   render() {
+    // const goToStudentCode = () => {
+    //   this.props.navigation.navigate("newStudentCodeName");
+    
+    // };
       return (
         <View style={CommonStyle.authArea}>
-
+ <ScrollView>
             <View style={CommonStyle.logoOnlyHeader}>
                             <Image
                                 source={require("../../Image/logo-icon.png")}
@@ -68,36 +76,23 @@ goToNewTeacher(){
             {/* {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null} */}
           </TouchableOpacity>
         </View>
-
         <View style={RegisterStyle.studentBtnArea }>
-          <TouchableOpacity
-            // disabled={this.state.loading}
-            style={[RegisterStyle.comnButtonStyle,RegisterStyle.loginbtn]}
-            activeOpacity={0.5}
-            onPress={() => {
-             this.goToStudentCode();
-            }}
-          >
-            <Text style={[RegisterStyle.loginbtnTxt,RegisterStyle.commonBtnTxt]}>
-            {/* {GlobalService.Login ? GlobalService.Login.RAPP_LOGIN : 'Log in'} */}
-            STUDENT CODE
-            </Text>
-            {/* {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null} */}
-          </TouchableOpacity>
-        </View>
-
-        {/* <TextInput style = {RegisterStyle.input}
+        <TextInput style = {RegisterStyle.input}
                underlineColorAndroid = "transparent"
                placeholder = "STUDENT CODE"
                placeholderTextColor = "black"
                textAlign='center'
                autoCapitalize = "none"
-               onChangeText = {this.handleEmail}/> */}
+               keyboardType="numeric"
+               onSubmitEditing={() =>{this.props.navigation.navigate("newTeacherName");}}/>
+              
+        </View>
+
+      
 
 
         <View style={RegisterStyle.teacherBtnArea }>
         <TouchableOpacity
-        // disabled={this.state.loading}
         style={[RegisterStyle.comnButtonStyle,RegisterStyle.loginbtn]}
         activeOpacity={0.5}
         onPress={() => {
@@ -110,21 +105,19 @@ goToNewTeacher(){
         </View>
 
         <View style={RegisterStyle.teacherBtnArea }>
-        <TouchableOpacity
-        // disabled={this.state.loading}
-        style={[RegisterStyle.comnButtonStyle,RegisterStyle.loginbtn]}
-        activeOpacity={0.5}
-        onPress={() => {
-         this.goToNewTeacher();
-        }}
-        >
-    
-        <Text style={[RegisterStyle.signupBtnTxt,RegisterStyle.commonBtnTxt]}>TEACHER CODE </Text>
-        </TouchableOpacity>
+        <TextInput style = {RegisterStyle.input}
+               underlineColorAndroid = "transparent"
+               placeholder = "TEACHER CODE"
+               placeholderTextColor = "black"
+               textAlign='center'
+               keyboardType="numeric"
+               autoCapitalize = "none"
+               onSubmitEditing={() =>{this.props.navigation.navigate("TeacherScreen");}}/>
         </View>
 
     
       </View>
+      </ScrollView>
       </View>
       );
   }
