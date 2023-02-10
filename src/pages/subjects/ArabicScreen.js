@@ -2,7 +2,6 @@ import React from 'react';
 import {Text,Image, View,Button,TouchableOpacity,ScrollView} from 'react-native';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
-// import SubjectScreenStyle from './SubjectScreenStyle';
 import ArabicScreenStyle from './ArabicScreenStyle';
 
 

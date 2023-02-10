@@ -1,0 +1,256 @@
+import {StyleSheet} from 'react-native';
+import { moderateScale } from 'react-native-size-matters';
+const SubscribeStyle = StyleSheet.create({
+    container: {
+        flex: 1, 
+        position: "relative",
+        paddingHorizontal: 24,
+        paddingVertical: 24,
+      },
+      logoOnlyHeader:{
+		height:"10%",
+		alignItems: "center",
+		marginTop:30,
+        },
+
+        btnTextContainer:{
+            marginTop:50,
+        },
+    commonStudentBtnTxt:{
+        fontSize:16,
+        fontFamily:'CircularStd-Bold',
+        alignItems:"center"
+      },
+    studentTxt:{
+        color: 'black',
+      fontSize:14
+    },
+      menuArea:{
+
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 20,
+          paddingTop:24
+
+      },
+      logoBox: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingTop:24
+    },
+    returnIcon: {
+      width: 40,
+      height: 40,        
+      backgroundColor:'#3EB881',
+      alignItems:'center',
+      justifyContent:'center',
+      borderRadius:20,
+     
+  },userImage: {
+    width: 40,
+    height: 40,
+    resizeMode: "contain",
+    borderRadius: 100,
+
+},
+      menuCardBox:{
+        borderRadius:24,
+        shadowColor:'#40B2E7',
+        shadowOpacity: 0.37,
+        shadowRadius: 7.49,
+        elevation: 8,
+        marginBottom:20,
+        backgroundColor:'#fff',
+        justifyContent:'space-between',
+        width:'100%',
+        padding: 20,
+        marginTop:40,
+      },
+      menuListBox:{
+        flexDirection:'row',
+        alignItems: 'center',
+        borderBottomColor:'#E5E7EB',
+        borderBottomWidth:1,
+        paddingBottom:15,
+        marginBottom: 15,
+        width:'100%'
+      },
+      comnMenuText:{
+        color:'#A7A9AC',
+        fontSize:16,
+        fontWeight:'600',
+        fontFamily:'CircularStd-Bold',
+        marginLeft:8
+      },
+      menuIcon:{
+        width:24,
+        height:24,
+        resizeMode:'contain'
+      },
+      languagesList:{
+        width:100,
+        flexDirection:'row',
+       textAlign:'center',
+        justifyContent:'space-between',
+        marginBottom:15,
+        paddingBottom:15,
+        },
+
+        newStudentText:{
+           alignItems:"center",
+            marginTop:100,
+            textAlign:"center",
+            fontSize:50,
+            fontWeight:'600',
+            fontStyle:"bold",
+            fontFamily:'CircularStd-Bold',
+
+        },
+      btncontainer: {
+       flexDirection: 'row',
+        alignItems: 'center',
+        marginTop:10,  
+        justifyContent:"center",   
+    },
+    buttonContainerOne: {
+       justifyContent: 'center',
+        marginLeft:50,
+        marginRight:50,
+        backgroundColor:"#FBFEFD",
+        alignItems:"center",
+      paddingLeft:40,
+      paddingRight:40,
+        marginTop:20,
+        height:50,
+        padding:50,
+        borderRadius:10,
+            },
+            buttonContainerTwo: {
+                justifyContent: 'center',
+                 marginLeft:50,
+                 marginRight:50,
+                 backgroundColor:"#FBFEFD",
+                 alignItems:"center",
+               paddingLeft:40,
+               paddingRight:40,
+                 marginTop:50,
+                 height:50,
+                 padding:50,
+                 borderRadius:10,
+                     },
+    buttonStyle:{
+        height:50,
+        alignItems:"center",
+        justifyContent:"center",
+      
+    },
+    buttonStyeOne:{
+        height:50,
+        alignItems:"center",
+        justifyContent:"center",
+        color:'#FBFEFD'
+    },
+    buttonText:{
+        color:'#FBFEFD'
+    },
+    buttonStyeTwo:{
+        height:50,
+        color:"red",
+        fontSize:16,
+        alignItems:"center",
+        justifyContent:"center",
+    },
+    topTitle:{
+        height:50,
+        color:"black",
+        alignItems:"center",
+        justifyContent:"center"
+    },
+    newStudentTxt:{
+    color:"#000000",
+    fontSize:30,
+    fontWeight:'400',
+    fontStyle:"normal"
+   
+    },
+    newStudentNextTxt:{
+        color:"#000000",
+        fontSize:20,
+        fontWeight:'400',
+        fontFamily:'CircularStd-Bold',
+        },
+        toptxtHeading:{
+            alignItems:"center",
+            justifyContent:"center",
+            textAlign:"center",
+            marginTop:50,
+        },
+        toptxtHeadingStyle:{
+        alignItems:"center",
+        color:"#000000",
+        fontSize:25,
+        fontWeight:'700',
+        fontFamily:'CircularStd-Bold',
+        },
+        monthsConatiner:{
+            flexDirection:'row',
+            marginTop:120,
+        },
+        monthsConatinerTwo:{
+            flexDirection:'row',
+           
+        },
+        monthtext:{
+            alignItems:"center",
+            color:"#000000",
+            fontSize:25,
+            fontWeight:'400',
+            marginStart:20,
+            marginEnd:20,
+            // marginTop:50,
+            fontFamily:'CircularStd-Bold',
+        },
+        dollterText:{
+            alignItems:"center",
+            color:"#000000",
+            fontSize:25,
+            fontWeight:'400',
+            marginStart:20,
+            marginEnd:20,
+            fontFamily:'CircularStd-Bold',
+        },
+        buttonPaypalOne:{
+            width:'50%',
+           justifyContent: 'center',
+            alignItems:"center",    
+            marginTop:20,
+            height:50,
+             fontSize:66,
+            backgroundColor:'#000000',
+
+            borderRadius:10,
+        },
+        buttonPaypalTwo:{
+            width:'50%',
+            justifyContent: 'center',
+            backgroundColor:"#FBFEFD",
+            alignItems:"center",    
+            marginTop:20,
+            marginLeft:10,
+            height:50,
+            borderRadius:10,
+        },
+        payPalBtnMainContainer:{
+            flexDirection:'row',
+            width:'100%',
+            marginTop:330
+          
+          
+        }
+});
+
+export default SubscribeStyle;

@@ -31,7 +31,7 @@ goToNewTeacher(){
   this.props.navigation.navigate("newTeacherName");
 }
   goToTeacherCode() {
-    this.props.navigation.navigate("TeacherScreen");
+    this.props.navigation.navigate("subscription");
    
 }
 
@@ -84,7 +84,7 @@ goToNewTeacher(){
                textAlign='center'
                autoCapitalize = "none"
                keyboardType="numeric"
-               onSubmitEditing={() =>{this.props.navigation.navigate("newTeacherName");}}/>
+               onSubmitEditing={() =>{this.props.navigation.navigate("subscription");}}/>
               
         </View>
 
@@ -112,7 +112,7 @@ goToNewTeacher(){
                textAlign='center'
                keyboardType="numeric"
                autoCapitalize = "none"
-               onSubmitEditing={() =>{this.props.navigation.navigate("TeacherScreen");}}/>
+               onSubmitEditing={() =>{this.props.navigation.navigate("subscription");}}/>
         </View>
 
     

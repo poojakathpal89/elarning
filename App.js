@@ -37,6 +37,11 @@ import ExerciseMultipleSix  from './src/pages/exerciseList/ExerciseMultipleSix';
 import ExerciseMultipleSeven from './src/pages/exerciseList/ExerciseMultipleSeven';
 import LearnExreciseScreen from './src/pages/learn/LearnExerciseScreen';
 import FirstGradeScreen from './src/pages/grades/FirstGradeScreen';
+ import SubjectsScreen from './src/pages/subjects/SubjectScreen';
+ import ArabicScreen from './src/pages/subjects/ArabicScreen';
+ import ArabicSubjectScreen from './src/pages/subjects/ArabicSubjectScreen';
+import AlphaBetCarScreen from './src/pages/subjects/AlphaBetCarScreen';
+import SubscriptionScreen from './src/pages/subscribe/SubscribeScreen';
 
 
 const Stack = createStackNavigator();
@@ -62,6 +67,18 @@ const Welcome = () => {
       <Stack.Screen
         name="WelcomeScreen"
         component={WelcomeScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
+const subscription = () => {
+ 
+  return (
+    <Stack.Navigator initialRouteName="SubscriptionScreen">
+      <Stack.Screen
+        name="SubscriptionScreen"
+        component={SubscriptionScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
@@ -396,7 +413,51 @@ const gradeFirst= () => {
     </Stack.Navigator>
   );
 };
+const subject= () => {
+  return (
+    <Stack.Navigator initialRouteName="SubjectsScreen">
+      <Stack.Screen
+        name="SubjectsScreen"
+        component={SubjectsScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
+const arabic= () => {
+  return (
+    <Stack.Navigator initialRouteName="ArabicScreen">
+      <Stack.Screen
+        name="ArabicScreen"
+        component={ArabicScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
 
+const arabicSubject= () => {
+  return (
+    <Stack.Navigator initialRouteName="ArabicSubjectScreen">
+      <Stack.Screen
+        name="ArabicSubjectScreen"
+        component={ArabicSubjectScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
+const alphaBetCar= () => {
+  return (
+    <Stack.Navigator initialRouteName="AlphaBetCarScreen">
+      <Stack.Screen
+        name="AlphaBetCarScreen"
+        component={AlphaBetCarScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
 const Register = () => {
  
   return (
@@ -611,6 +672,34 @@ export default class AppContainer extends React.Component {
                 component={gradeFirst}
                 options={{headerShown: false}}
               />
+                   <Stack.Screen
+                name="subject"
+                component={subject}
+                options={{headerShown: false}}
+              />
+                 <Stack.Screen
+                name="arabic"
+                component={arabic}
+                options={{headerShown: false}}
+              />
+              
+              <Stack.Screen
+                name="arabicSubject"
+                component={arabicSubject}
+                options={{headerShown: false}}
+              />
+                 <Stack.Screen
+                name="alphaBetCar"
+                component={alphaBetCar}
+                options={{headerShown: false}}
+              />
+                <Stack.Screen
+                name="subscription"
+                component={subscription}
+                options={{headerShown: false}}
+              />
+             
+             
             </Stack.Navigator>
           </NavigationContainer>
          
