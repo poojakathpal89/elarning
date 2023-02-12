@@ -11,8 +11,7 @@ const NewStudentStyle = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
-       
-      },
+        },
       menuCardBox:{
         borderRadius:10,
         shadowColor:'#40B2E7',
@@ -64,6 +63,14 @@ const NewStudentStyle = StyleSheet.create({
                 justifyContent: 'center',
                 alignItems: 'center',
                 height:50
+              },
+              userIcon:{
+                position:'absolute',
+                width: 20,
+                height: 20,
+                marginTop:15,
+                zIndex:999,
+                left:"4%",
               },
 
 });

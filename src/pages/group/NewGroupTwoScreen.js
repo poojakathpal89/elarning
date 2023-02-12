@@ -3,6 +3,8 @@ import {Text,Image,TouchableOpacity, View,Button,ScrollView} from 'react-native'
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import NewGroupTwoStyle from './NewGroupTwoStyle';
+import {  FooterComponentWithTeacher } from "../../component/AllComponent";
+
 
 
 export default class NewGroupTwoScreen extends React.Component {
@@ -27,12 +29,12 @@ export default class NewGroupTwoScreen extends React.Component {
       return (
       
     <View style={[NewGroupTwoStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
-       {/* <FooterComponent/> */}
+     
       <ScrollView>
       <View style={NewGroupTwoStyle.container}>
       <View style={[NewGroupTwoStyle.menuArea2]}>
       <View style={{justifyContent: 'space-between'}}>
-   <Text style={{alignSelf: 'flex-end',fontSize:20,marginTop:20}}>X</Text>
+   <Text style={{alignSelf: 'flex-end',fontSize:20,marginTop:10}}>X</Text>
 </View>
 
 
@@ -88,7 +90,7 @@ export default class NewGroupTwoScreen extends React.Component {
         </View>
        
  </ScrollView>
-   
+ <FooterComponentWithTeacher props={this.props} active={"home"} /> 
       </View>
 
       );

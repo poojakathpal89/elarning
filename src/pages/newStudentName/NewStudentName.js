@@ -1,11 +1,13 @@
 import React from 'react';
-import { Text,Image,Button,TextInput,ScrollView, View ,TouchableOpacity} from 'react-native';
+import { Text,Image,Button,TextInput,ScrollView, View ,TouchableOpacity,StyleSheet} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
  import NewStudentNameStyle from './NewStudentStyle';
  import GlobalStyle from "../../css/style";
  import CommonStyle from '../../css/common';
  import ButtonStyle from "../../css/button";
  import DropdownMenu from '../../react-native-dropdown-menu';
+ import SelectDropdown from 'react-native-select-dropdown';
+ import { default as FontAwesome, default as Icon } from "react-native-vector-icons/FontAwesome";
  import { AuthService, GlobalService, RequestHandler, ToastService } from "../../services/AllServices";
 
 
@@ -16,11 +18,11 @@ export default class NewtudentName extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-      countriesArray: [],
-      selectedStates: "",
-            selectedCountry: "",
-            displayState:false,
-            displayCountry:false,
+        countriesArray: [],
+        selectedStates: "",
+              selectedCountry: "",
+              displayState:false,
+              displayCountry:false,
       }
   }
   state = {
@@ -66,7 +68,26 @@ console.log("select country",parseInt(this.state.selectedCountry))
             ToastService.tostShort(error);
         });
 }
-
+getStates(_country_id) {
+       
+    this.setState({ isLoading: true, statesArray: [] });
+    AuthService.getStatesArray(_country_id)
+        .then((response) => {
+            const index = response.states.findIndex((e) => e.id == this.state.selectedStates);
+            if (index != -1) {
+                response.states[index]["checked"] = true;
+                this.setState({
+                    selectedStates: [this.state.selectedStates],
+                    stateIndex:index
+                });
+            }
+            this.setState({ isLoading: false, statesArray: response.states });
+            
+        })
+        .catch((error) => {
+            ToastService.tostShort(error);
+        });
+}
   render() {
       return (
         <View style={[GlobalStyle.MainBody,{backgroundColor:'#E7E2E2',}]}>
@@ -151,131 +172,154 @@ console.log("select country",parseInt(this.state.selectedCountry))
                                      />
                             </View>
                              </View>
-                             {/* <View style={MainDashBoardStyle.SectionStyle}>
-                            <View style={MainDashBoardStyle.studentTitleBox}>
-                            <View style={MainDashBoardStyle.studentTitle}>
+                          
+    <View style={NewStudentNameStyle.SectionStyle}>
+ <View style={[NewStudentNameStyle.SectionStyle, { width: "100%", position: "relative" }]}>
+                        
+     <View style={[NewStudentNameStyle.profileTitleBox]}>
+         <View style={[NewStudentNameStyle.profileTitle,{height:40}]}>
+            
+        <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', fontWeight: "700",marginTop:3 }}>
+            Country
+        </Text> 
+            <View style={[NewStudentNameStyle.profileError,{width:"100%",justifyContent:"flex-start",top:5}]}>
+                {this.state.countryError ? 
+            <Text style={[NewStudentNameStyle.errorclass]}>{this.state.countryError}</Text>
+            : null} 
+            </View>
+                                </View>
+                                </View>
+                       <View style={{width:"100%",'position':'relative'}} >
+                           
+             <SelectDropdown
+              dropdownIconPosition ="right"
+             data={this.state.countriesArray}
+                                        
+                    onSelect={(data) => {
 
-                           <Text style={{ fontSize: 16, color: "#000000",fontFamily:'CircularStd-Bold', alignSelf: 'flex-end',fontWeight: "700",marginTop:6,}}> 
-                            country
-                            </Text>  
-         
+                      
+                        this.getStates(data.id);
+                        this.setState({ selectedCountry: data.id });
+                    }}
+                   
+            // data={countriesWithFlags}
+             defaultValueByIndex={this.state.countryIndex}
+             defaultValue={this.state.countriesArray[this.state.countryIndex]}
+            // onSelect={(selectedItem, index) => {
+            //   console.log(selectedItem, index);
+            // }}
+            buttonStyle={styles.dropdown3BtnStyle}
+            renderCustomizedButtonChild={(selectedItem, index) => {
+              return (
+                <View style={styles.dropdown3BtnChildStyle}>
+                   {selectedItem ? (
+                    <View style={styles.dropdown3BtnChildStyle}>
+                     
+                        <Image source={{ uri: selectedItem.image }} style={[NewStudentNameStyle.userIcon,{borderRadius:12}]} />
+                   
+                   
+                         <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select country'}</Text>
+                         <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
+                     
+                  </View>
+                  ) : 
+                  (
+                    <View style={styles.dropdown3BtnChildStyle}>
+                      <Image source={require("../../Image/arrow_down.png")} style={NewStudentNameStyle.userIcon} />
+                    
+                        <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select country'}</Text>
+                        <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
+                    
+                    </View>
+                  )}
+                  </View>
+                
+              );
+            }}
+            dropdownStyle={styles.dropdown3DropdownStyle}
+            rowStyle={styles.dropdown3RowStyle}
+            selectedRowStyle={styles.dropdown1SelectedRowStyle}
+            renderCustomizedRowChild={(item, index) => {
+              return (
+                <View style={styles.dropdown3RowChildStyle}>
+                   <Image source={{ uri: item.image }} style={styles.dropdown3BtnImage} />
+                                                                           
+                  <Text style={styles.dropdown3BtnTxt}>{item.name}</Text>
+                </View>
+              );}} />
+           </View>
+        </View>
+     </View>
+
+
+            <View style={NewStudentNameStyle.SectionStyle}>
+                         <View style={[NewStudentNameStyle.SectionStyle, { width: "100%"}]}>
+                          <View style={[NewStudentNameStyle.profileTitleBox]}>
+                                <View style={[NewStudentNameStyle.profileTitle,{height:40}]}>
+            
+                                    <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', fontWeight: "700",marginTop:3 }}>
+                                         State
+                                    </Text> 
+                                    <View style={[NewStudentNameStyle.profileError,{width:"100%",justifyContent:"flex-start",top:5}]}>
+                             {this.state.stateError ? 
+                          <Text style={[NewStudentNameStyle.errorclass]}>{this.state.stateError}</Text>
+                            : null} 
+                          </View>
+                                </View>
+                                </View>
+                       <View style={{width:"100%"}} >
+                       <SelectDropdown
+            data={this.state.statesArray}
+            onSelect={(data) => {
+                this.setState({ selectedStates: data.id});
+            }}
+           
+            buttonStyle={styles.dropdown3BtnStyle}
+            renderCustomizedButtonChild={(selectedItem, index) => {
+              return (
+
+               
+                <View style={styles.dropdown3BtnChildStyle}>
+                 
+                 {selectedItem ? (
+                    <View style={styles.dropdown3BtnChildStyle}>
+                      <Image source={require("../../Image/arrow_down.png")} style={NewStudentNameStyle.userIcon} />
+                   
+                         <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select State'}</Text>
+                         <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
+                     
+                  </View>
+                  ) :  
+                  (
+                    <View style={styles.dropdown3BtnChildStyle}>
+                      <Image source={require("../../Image/arrow_down.png")} style={NewStudentNameStyle.userIcon} />
+                    
+                        <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select State'}</Text>
+                        <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
+                    
+                    </View>
+                  )}
+
+                </View>
+              );
+            }}
+            dropdownStyle={styles.dropdown3DropdownStyle}
+            rowStyle={styles.dropdown3RowStyle}
+            selectedRowStyle={styles.dropdown1SelectedRowStyle}
+            renderCustomizedRowChild={(item, index) => {
+              return (
+                <View style={styles.dropdown3RowChildStyle}>
+                      <Image source={require("../../Image/arrow_down.png")} style={NewStudentNameStyle.userIcon} />
+                   
+                  <Text style={styles.dropdown3RowTxt}>{item.name}</Text>
+                </View>
+              );}} /> 
+                            
+                          </View>
                          </View>
-                                <View style={MainDashBoardStyle.profileError}>
-                                    {this.state.nameError ?
-                                    <Text style={GlobalStyle.errorclass}>{this.state.nameError}</Text>
-                                    : null}
-                                </View>
-                            </View>
-                                <View style={{width:"100%",'position':'relative',marginTop:6}} >
 
-                                <TextInput
-                                    style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
-                                    onChangeText={(name) => {
-                                        this.setState({ name: name });
-                                    }}
-                                    placeholder=""
-                                    placeholderTextColor="#8b9cb5"
-                                    autoCapitalize="none"
-                                    returnKeyType="next"
-                                   underlineColorAndroid="#f000"
-                                    // selectionColor={"#fff"}
-                                    blurOnSubmit={false}
-                                     />
-                            </View>
-                             </View> */}
-                                <View style={NewStudentNameStyle.SectionStyle}>
-                <View style={[NewStudentNameStyle.SectionStyle, { width: "100%", position: "relative" ,marginTop:0}]}>
-                 <View style={[NewStudentNameStyle.studentTitleBox]}>
-                     <View style={[NewStudentNameStyle.studentTitle,{height:40}]}>
-            
-                                    <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',textAlign:'right', fontWeight: "700", }}>
-                                    Country
-                                    </Text> 
-                                    <View style={[NewStudentNameStyle.profileError,{width:"100%",justifyContent:"flex-start",top:5}]}>
-                                    {this.state.countryError ? 
-                                <Text style={[NewStudentNameStyle.errorclass]}>{this.state.countryError}</Text>
-                                : null} 
-                                </View>
-                                </View>
-                                </View>
-                      
-                                                <View style={[{
-                                            width:"100%",'position':'relative',
-                                            borderRadius:8,paddingLeft:1,paddingRight:1,
-                                           marginTop:20,
-                                           top:-40,
-                                            backgroundColor:"#F9FAFB",
-                                            height:48,
-                                            width:50,
-                                            zIndex:9999,
-                                            width:"95%",
-                           
-                            },this.state.countryError  ? GlobalStyle.inputGenderError :'']} >
-                                    <View style={[{flex: 1, backgroundColor:"#F9FAFB",flexDirection:'row',zIndex:9999, height:40,borderRadius:8 ,}]}>
-                                        {this.state.displayCountry ?
-                                        <DropdownMenu
-                                            style={{flex: 1,height:48}}
-                                            bgColor={'#F9FAFB'}
-                                            tintColor={'#0C222C'}
-                                            activityTintColor={'green'}
-                                            arrowImg = {require("../../Image/arrow_down.png")}
-                                             handler={(selection, row) => this.setState({selectedCountry: selection})}
-                                            data={this.state.countriesArray}
-                                             selectIndex={this.state.selectedCountry}
-                                            >
-                                        </DropdownMenu>
-                                        :null}
-                                        </View>
-                                    </View>                     
-                                     </View>
-                                  </View>
-                           
-                               <View style={NewStudentNameStyle.SectionStyle}>
-                <View style={[NewStudentNameStyle.SectionStyle, { width: "100%", position: "relative" ,marginTop:0}]}>
-                 <View style={[NewStudentNameStyle.studentTitleBox]}>
-                     <View style={[NewStudentNameStyle.studentTitle,{height:40}]}>
-            
-                                    <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',textAlign:'right', fontWeight: "700", }}>
-                                    State
-                                    </Text> 
-                                    <View style={[NewStudentNameStyle.profileError,{width:"100%",justifyContent:"flex-start",top:5}]}>
-                                    {this.state.countryError ? 
-                                <Text style={[NewStudentNameStyle.errorclass]}>{this.state.countryError}</Text>
-                                : null} 
-                                </View>
-                                </View>
-                                </View>
-                      
-                                 <View style={[{
-                                    width:"100%",'position':'relative',
-                                    borderRadius:8,paddingLeft:1,paddingRight:1,
-                                marginTop:20,
-                                top:-40,
-                                    backgroundColor:"#F9FAFB",
-                                    height:48,
-                                    width:50,
-                                    zIndex:9999,
-                                    width:"95%",
-                           
-                            },this.state.countryError  ? GlobalStyle.inputGenderError :'']} >
-                                    <View style={[{flex: 1, backgroundColor:"#F9FAFB",flexDirection:'row',zIndex:9999, height:40,borderRadius:8 ,}]}>
-                                        {this.state.displayCountry ?
-                                        <DropdownMenu
-                                            style={{flex: 1,height:48}}
-                                            bgColor={'#F9FAFB'}
-                                            tintColor={'#0C222C'}
-                                            activityTintColor={'green'}
-                                            arrowImg = {require("../../Image/arrow_down.png")}
-                                             handler={(selection, row) => this.setState({selectedCountry: selection})}
-                                            data={this.state.countriesArray}
-                                             selectIndex={this.state.selectedCountry}
-                                            >
-                                        </DropdownMenu>
-                                        :null}
-                                        </View>
-                                    </View>                     
-                                     </View>
-                                  </View>
+                         </View>                  
+                              
                              <View style={NewStudentNameStyle.SectionStyle}>
                             <View style={NewStudentNameStyle.studentTitleBox}>
                             <View style={NewStudentNameStyle.studentTitle}>
@@ -363,3 +407,71 @@ console.log("select country",parseInt(this.state.selectedCountry))
       );
   }
 }
+
+const styles = StyleSheet.create({
+    dashedSeparator:{
+        width:'96%',
+        height:2,
+        marginTop:7,
+        marginBottom:5,
+        resizeMode: "cover",
+    },
+    dropdown3DropdownStyle: {backgroundColor: '#fff',border:12},
+    dropdown3RowStyle: {
+      backgroundColor: '#fff',
+     
+      borderColor:"#F9FAFB",
+      borderWidth:1,
+      height: 50,
+    },
+    dropdown1SelectedRowStyle: 
+    {backgroundColor: '#fff'},
+    dropdown3BtnTxt: {
+        color:'#0C222C',
+        paddingHorizontal:15,
+       
+        paddingLeft:40,
+        fontFamily:"CircularStd-Book",
+        fontSize: 14,
+       
+        marginHorizontal: 12,
+      },
+      dropdown3BtnStyle: {
+        width: '100%',
+        height: 50,
+        backgroundColor: '#fff',
+        paddingHorizontal: 0,
+        borderWidth: 1,
+      
+        borderRadius: 8,
+        borderColor:"#F9FAFB",
+      },
+      dropdown3BtnImage: {width: 24, height:24, resizeMode: 'contain',borderColor:"#F9FAFB",borderWidth:1,borderRadius:10},
+      dropdown3BtnChildStyle: {
+        flex: 1,
+        flexDirection: 'row',
+        fontFamily:"CircularStd-Book",
+        alignItems: 'center',
+        borderColor:"#F9FAFB",
+        padding:0,
+        colorL:"#0C222C"
+       
+      },
+      dropdown3RowTxt: {
+        fontFamily:"CircularStd-Book",
+        fontSize: 14,
+        color:'#0C222C',
+        left:40
+        
+       
+      },
+      dropdown3RowChildStyle: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        color:'#2A3B69',
+         
+        paddingHorizontal: 18,
+      },
+  });

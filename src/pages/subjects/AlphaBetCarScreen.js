@@ -3,7 +3,7 @@ import {Text,Image, View,Button,TouchableOpacity,ScrollView} from 'react-native'
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import AlphabetCarStyle from './AlphaBetCarStyle';
-import { HeaderWithTextComponent } from "../../component/AllComponent";
+import { HeaderWithTextComponent,FooterComponentWithTeacher } from "../../component/AllComponent";
 
 
 
@@ -78,7 +78,8 @@ gradeThreeBtn() {
         </View>   
 
        </ScrollView>
-   
+       <FooterComponentWithTeacher props={this.props} active={"home"} /> 
+
       </View>
 
       );

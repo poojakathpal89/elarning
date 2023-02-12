@@ -3,6 +3,7 @@ import {Text,Image, View,TouchableOpacity,Button,ScrollView} from 'react-native'
 import NewStudentStyleTwo from './NewStudentStyleTwo';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
+import {FooterComponentWithTeacher} from "../../component/AllComponent";
 
 
 export default class NewStudentScreenTwo extends React.Component {
@@ -100,7 +101,8 @@ nextPrint(){
                  
           
                 </ScrollView>
-          
+                <FooterComponentWithTeacher props={this.props} active={"home"} /> 
+
                 </View>
           
             );

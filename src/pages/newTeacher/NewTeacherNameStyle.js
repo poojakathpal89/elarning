@@ -65,6 +65,14 @@ const NewTeacherNameStyle = StyleSheet.create({
                 alignItems: 'center',
                 height:50
               },
+              userIcon:{
+                position:'absolute',
+                width: 20,
+                height: 20,
+                marginTop:15,
+                zIndex:999,
+                left:"4%",
+              },
 
 });
 

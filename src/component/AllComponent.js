@@ -4,6 +4,7 @@ import StatusBarComponent from '../component/StatusBarComponent';
 import FooterComponent from '../component/FooterComponent';
 import HeaderWithBackComponent from '../component/HeaderWithBackComponent';
 import HeaderWithTextComponent from '../component/HeaderWithTextComponent';
+import FooterComponentWithTeacher from './FooterComponentWithTeacher';
 
 
 export { 
@@ -13,6 +14,7 @@ export {
     HeaderWithBackComponent,
     StatusBarComponent,
     HeaderWithTextComponent,
+    FooterComponentWithTeacher,
  
    
 }

@@ -84,7 +84,7 @@ goToNewTeacher(){
                textAlign='center'
                autoCapitalize = "none"
                keyboardType="numeric"
-               onSubmitEditing={() =>{this.props.navigation.navigate("subscription");}}/>
+               onSubmitEditing={() =>{this.props.navigation.navigate("newStudentCodeName");}}/>
               
         </View>
 
