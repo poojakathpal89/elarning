@@ -184,7 +184,7 @@ getStates(_country_id) {
      <View style={[NewTeacherNameStyle.profileTitleBox]}>
          <View style={[NewTeacherNameStyle.profileTitle,{height:40}]}>
             
-        <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', fontWeight: "700",marginTop:3 }}>
+        <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', alignSelf: 'flex-end',fontWeight: "700",marginTop:3 }}>
             Country
         </Text> 
             <View style={[NewTeacherNameStyle.profileError,{width:"100%",justifyContent:"flex-start",top:5}]}>
@@ -261,7 +261,7 @@ getStates(_country_id) {
                           <View style={[NewTeacherNameStyle.profileTitleBox]}>
                                 <View style={[NewTeacherNameStyle.profileTitle,{height:40}]}>
             
-                                    <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', fontWeight: "700",marginTop:3 }}>
+                                    <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',alignSelf: 'flex-end', fontWeight: "700",marginTop:3 }}>
                                          State
                                     </Text> 
                                     <View style={[NewTeacherNameStyle.profileError,{width:"100%",justifyContent:"flex-start",top:5}]}>
@@ -424,7 +424,6 @@ const styles = StyleSheet.create({
     dropdown3DropdownStyle: {backgroundColor: '#fff',border:12},
     dropdown3RowStyle: {
       backgroundColor: '#fff',
-     
       borderColor:"#F9FAFB",
       borderWidth:1,
       height: 50,
@@ -434,12 +433,10 @@ const styles = StyleSheet.create({
     dropdown3BtnTxt: {
         color:'#0C222C',
         paddingHorizontal:15,
-       
         paddingLeft:40,
         fontFamily:"CircularStd-Book",
         fontSize: 14,
-       
-        marginHorizontal: 12,
+       marginHorizontal: 12,
       },
       dropdown3BtnStyle: {
         width: '100%',
@@ -455,6 +452,7 @@ const styles = StyleSheet.create({
       dropdown3BtnChildStyle: {
         flex: 1,
         flexDirection: 'row',
+        alignSelf:'flex-end',
         fontFamily:"CircularStd-Book",
         alignItems: 'center',
         borderColor:"#F9FAFB",

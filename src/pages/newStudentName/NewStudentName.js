@@ -179,7 +179,7 @@ getStates(_country_id) {
      <View style={[NewStudentNameStyle.profileTitleBox]}>
          <View style={[NewStudentNameStyle.profileTitle,{height:40}]}>
             
-        <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', fontWeight: "700",marginTop:3 }}>
+        <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',alignSelf: 'flex-end', fontWeight: "700",marginTop:3 }}>
             Country
         </Text> 
             <View style={[NewStudentNameStyle.profileError,{width:"100%",justifyContent:"flex-start",top:5}]}>
@@ -257,7 +257,7 @@ getStates(_country_id) {
                           <View style={[NewStudentNameStyle.profileTitleBox]}>
                                 <View style={[NewStudentNameStyle.profileTitle,{height:40}]}>
             
-                                    <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', fontWeight: "700",marginTop:3 }}>
+                                    <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',alignSelf: 'flex-end', fontWeight: "700",marginTop:3 }}>
                                          State
                                     </Text> 
                                     <View style={[NewStudentNameStyle.profileError,{width:"100%",justifyContent:"flex-start",top:5}]}>
@@ -267,7 +267,7 @@ getStates(_country_id) {
                           </View>
                                 </View>
                                 </View>
-                       <View style={{width:"100%"}} >
+                       <View style={{width:"100%",alignItems:'flex-end'}} >
                        <SelectDropdown
             data={this.state.statesArray}
             onSelect={(data) => {
@@ -429,7 +429,7 @@ const styles = StyleSheet.create({
     dropdown3BtnTxt: {
         color:'#0C222C',
         paddingHorizontal:15,
-       
+       alignItems:'flex-end',
         paddingLeft:40,
         fontFamily:"CircularStd-Book",
         fontSize: 14,
@@ -442,7 +442,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         paddingHorizontal: 0,
         borderWidth: 1,
-      
+      alignSelf:'flex-end',
         borderRadius: 8,
         borderColor:"#F9FAFB",
       },
