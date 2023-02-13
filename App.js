@@ -42,12 +42,15 @@ import FirstGradeScreen from './src/pages/grades/FirstGradeScreen';
  import ArabicSubjectScreen from './src/pages/subjects/ArabicSubjectScreen';
 import AlphaBetCarScreen from './src/pages/subjects/AlphaBetCarScreen';
 import SubscriptionScreen from './src/pages/subscribe/SubscribeScreen';
+import HomeMenuScreen from './src/pages/home/HomeMenu';
+import HomeMenuScreenTwo from './src/pages/home/HomeMenuScreenTwo';
+import ProfilePageScreen from './src/pages/profile/ProfilePageScreen';
+import UserEditScreen from './src/pages/profile/UserEditScreen';
 
 
 const Stack = createStackNavigator();
 
 const Auth = () => {
-  // Stack Navigator for Login  Screen
   return (
     <Stack.Navigator initialRouteName="LoginScreen">
       <Stack.Screen
@@ -72,6 +75,31 @@ const Welcome = () => {
     </Stack.Navigator>
   );
 };
+const userEditScreen = () => {
+ 
+  return (
+    <Stack.Navigator initialRouteName="UserEditScreen">
+      <Stack.Screen
+        name="UserEditScreen"
+        component={UserEditScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const homeMenuScreen = () => {
+ 
+  return (
+    <Stack.Navigator initialRouteName="HomeMenuScreen">
+      <Stack.Screen
+        name="HomeMenuScreen"
+        component={HomeMenuScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
 const subscription = () => {
  
   return (
@@ -84,7 +112,31 @@ const subscription = () => {
     </Stack.Navigator>
   );
 };
+const profilePage = () => {
+ 
+  return (
+    <Stack.Navigator initialRouteName="ProfilePageScreen">
+      <Stack.Screen
+        name="ProfilePageScreen"
+        component={ProfilePageScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
 
+const homeMenuTwo= () => {
+ 
+  return (
+    <Stack.Navigator initialRouteName="HomeMenuScreenTwo">
+      <Stack.Screen
+        name="HomeMenuScreenTwo"
+        component={HomeMenuScreenTwo}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
 const Test = () => {
   return (
     <Stack.Navigator initialRouteName="TestScreen">
@@ -699,7 +751,28 @@ export default class AppContainer extends React.Component {
                 options={{headerShown: false}}
               />
              
+             <Stack.Screen
+                name="homeMenuScreen"
+                component={homeMenuScreen}
+                options={{headerShown: false}}
+              />
              
+             <Stack.Screen
+                name="homeMenuTwo"
+                component={homeMenuTwo}
+                options={{headerShown: false}}
+              />
+              <Stack.Screen
+                name="profilePage"
+                component={profilePage}
+                options={{headerShown: false}}
+              />
+              
+              <Stack.Screen
+                name="userEditScreen"
+                component={userEditScreen}
+                options={{headerShown: false}}
+              />
             </Stack.Navigator>
           </NavigationContainer>
          

@@ -15,10 +15,9 @@ import splashStyle from "./SplashStyle";
                       //  navigation.replace(value === null ? "Auth" : "DrawerNavigationRoutes");
                     //  navigation.replace("exerciseLearn");
                     //   navigation.replace("newGroupThree");
-                       navigation.replace("Register");
-                   
+                       navigation.replace("userEditScreen");
                     } else {
-                        navigation.replace("Register");
+                        navigation.replace("userEditScreen");
                         
                         
                     }

@@ -5,6 +5,8 @@ import FooterComponent from '../component/FooterComponent';
 import HeaderWithBackComponent from '../component/HeaderWithBackComponent';
 import HeaderWithTextComponent from '../component/HeaderWithTextComponent';
 import FooterComponentWithTeacher from './FooterComponentWithTeacher';
+import ProfilePageHeaderComponent from './ProfilePageHeaderComponent';
+import SettingPageHeaderComponent from './SettingPageHeaderComponent';
 
 
 export { 
@@ -15,6 +17,8 @@ export {
     StatusBarComponent,
     HeaderWithTextComponent,
     FooterComponentWithTeacher,
+    ProfilePageHeaderComponent,
+    SettingPageHeaderComponent,
  
    
 }
