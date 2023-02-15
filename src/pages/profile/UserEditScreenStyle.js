@@ -9,6 +9,17 @@ const UserEditScreenStyle = StyleSheet.create({
         backgroundColor:'#FFFFFF',
         borderStyle:'solid'
       },
+      userIcon:{
+        position:'absolute',
+        width: 10,
+        height: 10,
+        marginTop:15,
+        alignSelf:'flex-end',
+        zIndex:999,
+        position:'absolute',
+        alignItems:'flex-end',
+        left:"4%",
+      },
       multipleCodeImage2Container: {
         justifyContent: 'center',
            marginLeft:90,
@@ -282,30 +293,43 @@ studentButtonStyle:{
     flexDirection:'row',
     
    },
-   image2Container:{
-    flex:2,
-    flexDirection:'row',
-   },
-   bottomswiperHeadingBox: {
-
-    alignItems: "center",
-   
-},
-bottomswiperHeading: {
-  fontSize: 18,
-  color: "#0C222C",
-  fontWeight: "700",
-  marginBottom:10
-},
-bottomswiperSubheading: {
-  fontSize: 16,
-  fontWeight: "500",
-  color: "#0C222C",
-},
-
-
-
-
+   studentBtnArea:{
+    width: "70%",
+      height: 54,
+      alignItems:"center",
+      justifyContent:"center",
+     marginTop:70,
+     backgroundColor:'#EAEDED',
+      },
+   UserEditScreenStyle:{
+      width: "70%",
+        height: 54,
+        alignItems:"center",
+        justifyContent:"center",
+     marginTop:30,
+        },
+        comnButtonStyle: {    
+          borderWidth: 0,
+          alignItems: 'center',
+          height:50,
+          width:"100%",
+          borderRadius:50,
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+           },
+           loginbtn:{
+            backgroundColor:"red",
+        borderColor:"#FFFFFF",
+        },
+        loginbtnTxt:{
+          color: 'black',
+       fontSize:30,
+        },
+        commonBtnTxt:{
+          fontSize:20,
+          fontFamily:'CircularStd-Bold',
+        }, 
 securityLoginContainer:{
   flexDirection:'row',
   alignItems: 'center',
@@ -346,7 +370,7 @@ securityLoginContainer:{
     justifyContent: 'center',
     paddingLeft:20,
     paddingRight:20,
-    marginTop:30
+    marginTop:80
 },
 });
 

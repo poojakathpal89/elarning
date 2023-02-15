@@ -4,7 +4,6 @@ import ProfilePageStyle from './ProfilePageStyle';
 import { SettingPageHeaderComponent } from "../../component/AllComponent";
 import {FooterComponent,} from "../../component/AllComponent";
 import RBSheet from 'react-native-raw-bottom-sheet';
-import BottomSheet from 'react-native-simple-bottom-sheet';
 import { scale, verticalScale, moderateScale } from "react-native-size-matters";
 
 
@@ -166,12 +165,7 @@ export default class ProfilePageScreen extends React.Component {
         <Image  source={require("../../Image/more-than-icon.png")} style={{width: 20, height:20, marginEnd:15,opacity:1}}  />
     </View>
     
-       
- </ScrollView>
-
-
-          
- {/* <FooterComponent props={this.props} active={"home"} />  */}
+       </ScrollView>
 
       </View>
 

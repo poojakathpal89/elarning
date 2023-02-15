@@ -91,6 +91,7 @@ getStates(_country_id) {
   render() {
       return (
         <View style={[GlobalStyle.MainBody,{backgroundColor:'#E7E2E2',}]}>
+        <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{}}>
 
 <View style={CommonStyle.logoOnlyHeader}>
             <Image
@@ -103,7 +104,6 @@ getStates(_country_id) {
                 />
         </View>
         
-        <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{}}>
             <View style={[NewStudentNameStyle.authArea,{  }]}>
                 <View style={[NewStudentNameStyle.menuCardBox]}>
 

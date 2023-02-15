@@ -88,8 +88,7 @@ const RegisterStyle = StyleSheet.create({
                 alignItems:"center",
                 justifyContent:"center",
              marginTop:30,
-               
-              },
+                },
               loginbtn:{
                 backgroundColor:"#FFFFFF",
             borderColor:"#FFFFFF",

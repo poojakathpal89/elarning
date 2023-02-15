@@ -28,7 +28,7 @@ export default class UserEditScreen extends React.Component {
       <ScrollView>
       <View style={UserEditScreenStyle.container}>
       <View style={[UserEditScreenStyle.profileImageCardBox]}>
-                                <View style={{ alignItems: "center",marginTop:50 }}>
+                                <View style={{ alignItems: "center",marginTop:10 }}>
                                     <TouchableOpacity activeOpacity={0.5} onPress={() => this.RBSheetPicker.open()}>
                                         
                                             <View
@@ -50,42 +50,26 @@ export default class UserEditScreen extends React.Component {
                                  Your Nickname:
                                 </Text>
 
-                                <View style={UserEditScreenStyle.SectionStyle}>
-                                    <View style={UserEditScreenStyle.profileTitleBox}>
-                                    <View style={UserEditScreenStyle.profileTitle}>
-
-                                    <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', fontWeight: "700",marginTop:3 }}>
-                                    </Text> 
+                            <View style={UserEditScreenStyle.studentBtnArea }>
+                                <View style={{alignSelf:'flex-end',marginEnd:40}}>
+                            <Image source={require('../../Image/close-icon.png')}  style={UserEditScreenStyle.userIcon} />
+                            </View>
+                        <TextInput style = {UserEditScreenStyle.input}
+                                underlineColorAndroid = "transparent"
+                                placeholder = "Pooja"
+                                placeholderTextColor = "black"
+                                textAlign='center'
+                                autoCapitalize = "none"
+                                keyboardType="numeric"
+                                onSubmitEditing={() =>{this.props.navigation.navigate("newStudentCodeName");}}/>
                                 
-                                        </View>
-                                        <View style={UserEditScreenStyle.profileError}>
-                                            {this.state.nameError ?
-                                            <Text style={GlobalStyle.errorclass}>{this.state.nameError}</Text>
-                                            : null}
-                                        </View>
-                                    </View>
-                                        <View style={{width:"100%",'position':'relative'}} >
-                                        <TextInput
-                                            style={[{fontFamily:'CircularStd-Book'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#fff'}]}
-                                            onChangeText={(name) => {
-                                                this.setState({ name: name });
-                                            }}
-                                            placeholder="Pooja"
-                                            placeholderTextColor="#8b9cb5"
-                                            autoCapitalize="none"
-                                            returnKeyType="next"
-                                            value={this.state.name}
-                                            underlineColorAndroid="#f000"
-                                            blurOnSubmit={false}
-                                             />
-                                    </View>
-                                     </View>
+                        </View>
 
-                                     <View style={UserEditScreenStyle.btnContainer}>
+                                     <View style={{ flex: 1,alignItems: 'center',justifyContent: 'center',paddingLeft:20,paddingRight:20,marginTop:80}}>
   
-                                    <Button style={{backgroundColor:'transparent'}}
+                                    <Button color={"#708090"}
 
-                                    title="Geeks"
+                                    title="Change"
                                     onPress={() => Alert.alert(
                                         'Its GeeksforGeeks !')}
                                 />

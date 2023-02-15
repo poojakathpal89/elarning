@@ -70,7 +70,6 @@ goToNewTeacher(){
             }}
           >
             <Text style={[RegisterStyle.loginbtnTxt,RegisterStyle.commonBtnTxt]}>
-            {/* {GlobalService.Login ? GlobalService.Login.RAPP_LOGIN : 'Log in'} */}
              new student
             </Text>
             {/* {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null} */}
