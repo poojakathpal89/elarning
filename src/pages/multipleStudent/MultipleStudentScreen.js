@@ -2,6 +2,7 @@ import React from 'react';
 import {Text,Image,TouchableOpacity, View,Button,ScrollView} from 'react-native';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
+import { HeaderWithBackComponent } from "../../component/AllComponent";
 import MultipleStudentStyle from './MultipleStudentStyle';
 import {FooterComponentWithTeacher} from "../../component/AllComponent";
 
@@ -24,11 +25,13 @@ export default class MultipleStudentScreen extends React.Component {
   createGroups(){
     this.props.navigation.navigate("newGroupOne");
   }
+  createADAM(){
+    this.props.navigation.navigate("newGroupOne");
+ }
   render() {
       return (
       
     <View style={[MultipleStudentStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
-       {/* <FooterComponent/> */}
       <ScrollView>
       <View style={MultipleStudentStyle.container}>
       <View style={[MultipleStudentStyle.menuArea2]}>
@@ -46,9 +49,23 @@ export default class MultipleStudentScreen extends React.Component {
                   <Text style={MultipleStudentStyle.newStudentNextTxt}>Nick Name</Text>
                   </View>
                  
-                 <View style={MultipleStudentStyle.studentCodeContainer}>
+                 {/* <View style={MultipleStudentStyle.studentCodeContainer}>
                <View  style={MultipleStudentStyle.buttonStyle}>
                   <Text style={MultipleStudentStyle.studentCodeTxt}>ADAM</Text>
+                  </View>
+              </View> */}
+               <View style={MultipleStudentStyle.createContainer}>
+               <View  style={MultipleStudentStyle.buttonStyle}>
+               <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.createADAM();
+              }} >
+                  <Text style={MultipleStudentStyle.studentCodeTxt}>ADAM</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
                   </View>
               </View>
               <View style={MultipleStudentStyle.createStuContainer}>

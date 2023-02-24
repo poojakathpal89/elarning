@@ -3,6 +3,8 @@ import {Text,Image, View,Button,TouchableOpacity,ScrollView} from 'react-native'
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import SubscribeStyle from './SubscribeStyle';
+import { HeaderWithBackComponent } from "../../component/AllComponent";
+
 
 
 export default class SubscribeScreen extends React.Component {
@@ -31,12 +33,12 @@ gradeThreeBtn() {
       return (
       
     <View style={[GlobalStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
-       {/* <FooterComponent/> */}
-      <ScrollView>
+              <HeaderWithBackComponent props={this.props} />
+ <ScrollView>
       <View style={SubscribeStyle.container}>
     
       <View style={{justifyContent: 'space-between'}}>
-   <Text style={{alignSelf: 'flex-end',fontSize:20,marginTop:20,fontWeight:'700',}}>X</Text>
+   <Text style={{alignSelf: 'flex-end',fontSize:20,fontWeight:'700',}}>X</Text>
 </View>
         <View style={SubscribeStyle.toptxtHeading}>
         <Text style={SubscribeStyle.toptxtHeadingStyle}>SUBSCRIBE NOW AND UNLOCK ALL THE FEATURES</Text>

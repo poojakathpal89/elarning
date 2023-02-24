@@ -30,15 +30,7 @@ export default class NewStudentNameCodeScreen extends React.Component {
                 <ScrollView>
                 <View style={NewStudentNameStyle.container}>
                 <View style={[NewStudentNameStyle.menuArea2]}>
-                {/* <View style={[NewStudentStyle.menuCardBox,{}]}> */}
-            {/* <View style={NewStudentStyle.languagesBox}>
-            <View style={NewStudentStyle.languagesList}>
-              <Text >Student Data</Text>
              
-                  </View>
-                  <Text >ABC 123</Text>
-              </View> */}
-              {/* </View> */}
               <View style={CommonStyle.logoOnlyHeader}>
                       <Image
                           source={require("../../Image/logo-icon.png")}
@@ -65,7 +57,7 @@ export default class NewStudentNameCodeScreen extends React.Component {
                                           
               activeOpacity={0.5}
               onPress={() => {
-                this.newBtn();
+                // this.newBtn();
               }} >
                  <Image source={require("../../Image/pic12.png")} style={{width: 180, height:70, resizeMode: 'contain',borderRadius:10}} />
 

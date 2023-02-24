@@ -219,7 +219,7 @@ const ExerciseMultipleOneStyle = StyleSheet.create({
                            alignItems:"center",
                            paddingLeft:40,
                            paddingRight:40,    
-                           marginTop:50,
+                           marginTop:20,
                            height:450,
                            borderRadius:10,
                                },

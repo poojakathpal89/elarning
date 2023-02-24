@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const ChooseAvtarStyle = StyleSheet.create({
+const ChooseAvatarTeacherStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -110,7 +110,7 @@ const ChooseAvtarStyle = StyleSheet.create({
             flexDirection: "row",
             flexWrap: "wrap",
             justifyContent: "space-between",
-            marginBottom: 10,
+            marginBottom: 20,
         },
         chooseAvatarImage: {
           width:43,
@@ -130,13 +130,13 @@ const ChooseAvtarStyle = StyleSheet.create({
     buttonContainer: {
         flex: 1,
         justifyContent: 'center',
-        marginLeft:40,
-        marginRight:40,
+        marginLeft:10,
+        marginRight:10,
         backgroundColor:"#FBFEFD",
-       
+        marginTop:50,
         height:60,
         borderRadius:10,
-        marginBottom:60
+        marginBottom:40
        
         // borderWidth:1,
         
@@ -175,14 +175,14 @@ const ChooseAvtarStyle = StyleSheet.create({
           // borderColor: "#D1D5DB",
           alignItems: "center",
        
-          paddingBottom: 5,
+          paddingBottom: 15,
       },
       bottomswiperHeading: {
         fontSize: 18,
         fontWeight: "700",
         color: "#0C222C",
         fontFamily:'CircularStd-bold',
-        marginTop:10
+        marginTop:30
        
     },
     btncontainer: {
@@ -208,30 +208,10 @@ const ChooseAvtarStyle = StyleSheet.create({
 dashedSeparator:{
   width:'96%',
   height:2,
-  marginTop:3,
+  marginTop:7,
   marginBottom:5,
   resizeMode: "cover",
 },
-starImage:{
-  justifyContent: 'center',
-  marginLeft:80,
-  marginRight:80,
-  backgroundColor:"#FBFEFD",
-  alignItems:"center",
-  paddingLeft:10,
-  paddingRight:10,    
-  marginTop:10,
-  height:90,
-  borderRadius:10,
-},
-buttonStyle:{
-  height:20,
-   color:"black",
-   alignItems:"center",
-   justifyContent:"center",
-   flex:1,
-   flexDirection:'row',
-},
 });
 
-export default ChooseAvtarStyle;
+export default ChooseAvatarTeacherStyle;

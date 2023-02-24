@@ -18,7 +18,34 @@ export default class GroupOne extends React.Component {
   componentDidMount() {
       // console.log(StringsOfLanguages.languageObj);
   }
-groups(){
+  groupsOne(){
+  this.props.navigation.navigate("studentCode");
+}
+groupsTwo(){
+  this.props.navigation.navigate("studentCode");
+}
+groupsThree(){
+  this.props.navigation.navigate("studentCode");
+}
+groupsFour(){
+  this.props.navigation.navigate("studentCode");
+}
+groupsFive(){
+  this.props.navigation.navigate("studentCode");
+}
+groupsSix(){
+  this.props.navigation.navigate("studentCode");
+}
+groupsSeven(){
+  this.props.navigation.navigate("studentCode");
+}
+groupsEight(){
+  this.props.navigation.navigate("studentCode");
+}
+groupsNine(){
+  this.props.navigation.navigate("studentCode");
+}
+groupsTen(){
   this.props.navigation.navigate("studentCode");
 }
 
@@ -43,35 +70,19 @@ groups(){
         </View>
       <View style={GroupOneStyle.btnTextContainer}>
 
-     
-        {/* <View style={GroupOneStyle.btncontainer}>
-        <View style={GroupOneStyle.buttonContainer}> */}
-        <View  style={GroupOneStyle.buttonStyle}>
-                  <Text style={GroupOneStyle.newStudentNextTxt}>Group 1</Text>
-                  </View>
+                 
                   <View  style={GroupOneStyle.buttonStyle}>
-                  <Text style={GroupOneStyle.newStudentNextTxt}>Group 2</Text>
-                  </View>
-                  <View  style={GroupOneStyle.buttonStyle}>
-                  <Text style={GroupOneStyle.newStudentNextTxt}>Group 3</Text>
-                  </View>
-                  <View  style={GroupOneStyle.buttonStyle}>
-                  <Text style={GroupOneStyle.newStudentNextTxt}>Group 4</Text>
-                  </View>
-                  <View  style={GroupOneStyle.buttonStyle}>
-                  <Text style={GroupOneStyle.newStudentNextTxt}>Group 5</Text>
-                  </View>
-                  <View  style={GroupOneStyle.buttonStyle}>
-                  <Text style={GroupOneStyle.newStudentNextTxt}>Group 6</Text>
-                  </View>
-                  <View  style={GroupOneStyle.buttonStyle}>
-                  <Text style={GroupOneStyle.newStudentNextTxt}>Group 7</Text>
-                  </View>
-                  <View  style={GroupOneStyle.buttonStyle}>
-                  <Text style={GroupOneStyle.newStudentNextTxt}>Group 8</Text>
-                  </View>
-                  <View  style={GroupOneStyle.buttonStyle}>
-                  <Text style={GroupOneStyle.newStudentNextTxt}>Group 9</Text>
+                  <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.groupsOne();
+              }} >
+        <Text style={GroupOneStyle.newStudentNextTxt}>Group 1</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
+                  
                   </View>
                   <View  style={GroupOneStyle.buttonStyle}>
                   <TouchableOpacity
@@ -79,18 +90,120 @@ groups(){
                                           
               activeOpacity={0.5}
               onPress={() => {
-                this.groups();
+                this.groupsTwo();
+              }} >
+        <Text style={GroupOneStyle.newStudentNextTxt}>Group 2</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
+                  
+                  </View>
+                  <View  style={GroupOneStyle.buttonStyle}>
+                  <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.groupsThree();
+              }} >
+        <Text style={GroupOneStyle.newStudentNextTxt}>Group 3</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
+                  
+                  </View>
+                  <View  style={GroupOneStyle.buttonStyle}>
+                  <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.groupsFour();
+              }} >
+        <Text style={GroupOneStyle.newStudentNextTxt}>Group 4</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
+                  
+                  </View>
+                  <View  style={GroupOneStyle.buttonStyle}>
+                  <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.groupsFive();
+              }} >
+        <Text style={GroupOneStyle.newStudentNextTxt}>Group 5</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
+                  
+                  </View>
+                  <View  style={GroupOneStyle.buttonStyle}>
+                  <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.groupsSix();
+              }} >
+        <Text style={GroupOneStyle.newStudentNextTxt}>Group 6</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
+                  
+                  </View>
+                  <View  style={GroupOneStyle.buttonStyle}>
+                  <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.groupsSeven();
+              }} >
+        <Text style={GroupOneStyle.newStudentNextTxt}>Group 7</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
+                  
+                  </View>
+                  <View  style={GroupOneStyle.buttonStyle}>
+                  <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.groupsEight();
+              }} >
+        <Text style={GroupOneStyle.newStudentNextTxt}>Group 8</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
+                  
+                  </View>
+                  <View  style={GroupOneStyle.buttonStyle}>
+                  <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.groupsNine();
+              }} >
+        <Text style={GroupOneStyle.newStudentNextTxt}>Group 9</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
+                  
+                  </View>
+                  <View  style={GroupOneStyle.buttonStyle}>
+                  <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.groupsTen();
               }} >
         <Text style={GroupOneStyle.newStudentNextTxt}>Group 10</Text>
                {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
                 </TouchableOpacity>
                   
                   </View>
-              {/* </View> */}
-             
-              {/* </View> */}
-          
-      </View>
+                
+                 
+             </View>
         </View>
        
  </ScrollView>

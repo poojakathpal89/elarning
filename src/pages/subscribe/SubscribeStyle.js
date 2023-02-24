@@ -10,7 +10,7 @@ const SubscribeStyle = StyleSheet.create({
       logoOnlyHeader:{
 		height:"10%",
 		alignItems: "center",
-		marginTop:30,
+		marginTop:10,
         },
 
         btnTextContainer:{
@@ -187,7 +187,7 @@ const SubscribeStyle = StyleSheet.create({
             alignItems:"center",
             justifyContent:"center",
             textAlign:"center",
-            marginTop:50,
+            marginTop:20,
         },
         toptxtHeadingStyle:{
         alignItems:"center",

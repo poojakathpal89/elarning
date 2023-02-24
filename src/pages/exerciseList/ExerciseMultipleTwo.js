@@ -3,6 +3,8 @@ import {Text,Image,TouchableOpacity, View,Button,ScrollView} from 'react-native'
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import ExerciseMultipleTwoStyle from './ExerciseMultipleTwoStyle';
+import { HeaderWithBackComponent } from "../../component/AllComponent";
+
 
 
 
@@ -27,16 +29,12 @@ export default class ExerciseMultipleTwo extends React.Component {
       return (
       
     <View style={[ExerciseMultipleTwoStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
-       {/* <FooterComponent/> */}
+       <HeaderWithBackComponent props={this.props} />
       
 
       <ScrollView>
       <View style={ExerciseMultipleTwoStyle.container}>
-      <View style={[ExerciseMultipleTwoStyle.menuArea2]}>
-   
-
-   
-        </View>
+      
       <View style={ExerciseMultipleTwoStyle.btnTextContainer}>
      
       <View style={ExerciseMultipleTwoStyle.multipleCodeImage2Container}>

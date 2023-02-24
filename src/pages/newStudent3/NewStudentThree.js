@@ -18,20 +18,29 @@ export default class NewStudentThree extends React.Component {
   componentDidMount() {
       // console.log(StringsOfLanguages.languageObj);
   }
+  gradeOneBtn(){
+    this.props.navigation.navigate("typeOfGrade");
+  
+  }
+  gradeTwoBtn(){
+    this.props.navigation.navigate("typeOfGrade");
+
+  }
+  gradeThreeBtn() {
+    this.props.navigation.navigate("typeOfGrade");
+   
+  }
   gradeFourBtn() {
-    this.props.navigation.navigate("teacherName");
+    this.props.navigation.navigate("typeOfGrade");
    
 }
-gradeThreeBtn() {
-  this.props.navigation.navigate("newStudentName");
- 
-}
+
+
 
   render() {
       return (
       
     <View style={[GlobalStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
-       {/* <FooterComponent/> */}
       <ScrollView>
       <View style={NewStudentthreeStyle.container}>
       <View style={[NewStudentthreeStyle.menuArea2]}>
@@ -53,18 +62,37 @@ gradeThreeBtn() {
       <View style={NewStudentthreeStyle.btnTextContainer}>
 
      
-        <View style={NewStudentthreeStyle.btncontainer}>
+      <View style={NewStudentthreeStyle.btncontainer}>
         <View style={NewStudentthreeStyle.buttonContainer}>
         <View  style={NewStudentthreeStyle.buttonStyle}>
-                  <Text style={NewStudentthreeStyle.newStudentNextTxt}>1st grade</Text>
+        <TouchableOpacity
+          disabled={this.state.loading}
+                                        
+            activeOpacity={0.5}
+            onPress={() => {
+              this.gradeOneBtn();
+            }} >
+            <Text style={NewStudentthreeStyle.newStudentNextTxt}>1th grade</Text>
+             {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+              </TouchableOpacity>
                   </View>
               </View>
              
               </View>
+          
               <View style={NewStudentthreeStyle.btncontainer}>
         <View style={NewStudentthreeStyle.buttonContainer}>
         <View  style={NewStudentthreeStyle.buttonStyle}>
-                  <Text style={NewStudentthreeStyle.newStudentNextTxt}>2nd grade</Text>
+        <TouchableOpacity
+          disabled={this.state.loading}
+                                        
+            activeOpacity={0.5}
+            onPress={() => {
+              this.gradeTwoBtn();
+            }} >
+            <Text style={NewStudentthreeStyle.newStudentNextTxt}>2th grade</Text>
+             {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+              </TouchableOpacity>
                   </View>
               </View>
              

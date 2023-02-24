@@ -12,6 +12,12 @@ const NewStudentStyle = StyleSheet.create({
         left: 0,
         right: 0,
         },
+        errorclass: { color: "red", 
+        fontSize:12, marginLeft: 0,
+         marginTop: 0, 
+         alignSelf:'flex-end',
+         marginBottom: 5 },
+
       menuCardBox:{
         borderRadius:10,
         shadowColor:'#40B2E7',
@@ -72,6 +78,13 @@ const NewStudentStyle = StyleSheet.create({
                 zIndex:999,
                 left:"4%",
               },
+              newStudentError: {
+                width:"50%",
+                height: 40,
+                alignSelf:'flex-end',
+                justifyContent:"flex-end",
+                right:0,
+                 },
 
 });
 

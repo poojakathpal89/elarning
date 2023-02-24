@@ -24,12 +24,16 @@ export default class NewTeacherName extends React.Component {
             selectedCountry: "",
             displayState:false,
             displayCountry:false,
-      }
-  }
-  state = {
+            errorPass:false,
+            name: "",
+            email: "",
+            school:"",
+            multiPlayer:"",
+            mobile: "",
       loading: false,
       secureTextEntry: true,
       errorPass:false
+      }
   };
 
   componentDidMount() {
@@ -37,9 +41,60 @@ export default class NewTeacherName extends React.Component {
       this.getCountriesArray();
   }
 
+  validateEmail(_email) {
+    let postDataValidate = {
+        value: _email,
+        type: "email",
+    };
+    console.log(postDataValidate)
+    this.setState({ emailError: "" });
+    AuthService.validateUser(postDataValidate)
+        .then((res) => {
+            console.log(res)
+           if (res.status == false) {
+                this.setState({ emailError: res.msg });
+            }
+        })
+        .catch((error) => {
+            console.log("error", error);
+        });
+}
   goToNextBtn(){
-     //this.props.navigation.navigate("chooseAvtar");
-        this.props.navigation.navigate("newStudentTwo");
+    this.setState({  nameError: "",emailError: "",schoolError:"", mobileError: "" ,countryError: "", stateError: "", mobileError: "" ,});
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+        let error = false;
+
+        if (this.state.name == "") {
+          this.setState({ nameError:GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_FULL_NAME +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "Nickname is required" });
+          error = true;
+      }
+    if (this.state.email == "") {
+      this.setState({ emailError: GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_EMAIL +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "Email is required" });
+      error = true;
+  }
+  if (this.state.school == "") {
+    this.setState({ schoolError:GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_FULL_NAME +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "School name is required" });
+    error = true;
+}
+if (this.state.mobile == "") {
+  this.setState({ mobileError: GlobalService.Register ? GlobalService.Register.RAPP_PHONE +' '+GlobalService.Register.RAPP_FORM_REQUIRED :"Mobile is required" });
+  error = true;
+}
+  if (reg.test(this.state.email) === false) {
+      error = true;
+      this.setState({ emailError: GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_EMAIL_ERROR : "Enter valid email" });
+  }
+  if (this.state.selectedCountry<1) {
+    this.setState({ countryError:GlobalService.Register ? GlobalService.Register.RAPP_PROFILE_COUNTRY +' '+GlobalService.Register.RAPP_FORM_REQUIRED :  "Country is required" });
+    error = true;
+}
+
+
+if (this.state.selectedStates <1) {
+    this.setState({ stateError:GlobalService.Register ? GlobalService.Register.RAPP_PROFILE_STATE +' '+GlobalService.Register.RAPP_FORM_REQUIRED :  "State is required" });
+    error = true;
+}
+        // this.props.navigation.navigate("chooseAvtar");
   }
  
   getCountriesArray() {
@@ -119,7 +174,7 @@ getStates(_country_id) {
                             </Text>  
          
                          </View>
-                                <View style={NewTeacherNameStyle.profileError}>
+                                <View style={NewTeacherNameStyle.newTeacherError}>
                                     {this.state.nameError ?
                                     <Text style={GlobalStyle.errorclass}>{this.state.nameError}</Text>
                                     : null}
@@ -129,17 +184,17 @@ getStates(_country_id) {
 
                                 {/* <Image source={require('../../../Image/usericon.png')}  style={profileStyles.userIcon} /> */}
                                 <TextInput
-                                    style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
-                                    onChangeText={(name) => {
-                                        this.setState({ name: name });
-                                    }}
-                                    placeholder=""
-                                    placeholderTextColor="#8b9cb5"
-                                    autoCapitalize="none"
-                                    returnKeyType="next"
-                                   underlineColorAndroid="#f000"
-                                    // selectionColor={"#fff"}
-                                    blurOnSubmit={false}
+                                   style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
+                                   onChangeText={(name) => {
+                                     this.setState({ name: name });
+                                 }}
+                                   placeholder=""
+                                   placeholderTextColor="#8b9cb5"
+                                   autoCapitalize="none"
+                                   returnKeyType="next"
+                                   value={this.state.name}
+                                  underlineColorAndroid="#f000"
+                                   blurOnSubmit={false}
                                      />
                             </View>
                              </View>
@@ -152,26 +207,27 @@ getStates(_country_id) {
                             </Text>  
          
                          </View>
-                                <View style={NewTeacherNameStyle.profileError}>
-                                    {this.state.nameError ?
-                                    <Text style={GlobalStyle.errorclass}>{this.state.nameError}</Text>
+                                <View style={NewTeacherNameStyle.newTeacherError}>
+                                    {this.state.emailError ?
+                                    <Text style={GlobalStyle.errorclass}>{this.state.emailError}</Text>
                                     : null}
                                 </View>
                             </View>
                                 <View style={{width:"100%",'position':'relative',marginTop:6}} >
 
                                 <TextInput
-                                    style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
-                                    onChangeText={(name) => {
-                                        this.setState({ name: name });
-                                    }}
-                                    placeholder=""
-                                    placeholderTextColor="#8b9cb5"
-                                    autoCapitalize="none"
-                                    returnKeyType="next"
-                                   underlineColorAndroid="#f000"
-                                    // selectionColor={"#fff"}
-                                    blurOnSubmit={false}
+                                   style={[{fontFamily:'CircularStd-Book',textAlign:'right',marginTop:1},this.state.emailError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'},]}
+                                   onChangeText={(email) => {
+                                       this.validateEmail(email);
+                                       this.setState({ email: email });
+                                   }}
+                                   placeholder={GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_ENTER_EMAIL : "Enter email"} 
+                                  placeholderTextColor="#0C222C"
+                                  autoCapitalize="none"
+                                  returnKeyType="next"
+                                  value={this.state.email}
+                                  underlineColorAndroid="#f000"
+                                  blurOnSubmit={false}
                                      />
                             </View>
                              </View>
@@ -187,7 +243,7 @@ getStates(_country_id) {
         <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', alignSelf: 'flex-end',fontWeight: "700",marginTop:3 }}>
             Country
         </Text> 
-            <View style={[NewTeacherNameStyle.profileError,{width:"100%",justifyContent:"flex-start",top:5}]}>
+            <View style={[NewTeacherNameStyle.newTeacherError,{width:"100%",justifyContent:"flex-start",top:5,alignSelf:'flex-end',}]}>
                 {this.state.countryError ? 
             <Text style={[NewTeacherNameStyle.errorclass]}>{this.state.countryError}</Text>
             : null} 
@@ -264,7 +320,7 @@ getStates(_country_id) {
                                     <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',alignSelf: 'flex-end', fontWeight: "700",marginTop:3 }}>
                                          State
                                     </Text> 
-                                    <View style={[NewTeacherNameStyle.profileError,{width:"100%",justifyContent:"flex-start",top:5}]}>
+                                    <View style={[NewTeacherNameStyle.newTeacherError,{width:"100%",justifyContent:"flex-start",top:5}]}>
                              {this.state.stateError ? 
                           <Text style={[NewTeacherNameStyle.errorclass]}>{this.state.stateError}</Text>
                             : null} 
@@ -334,9 +390,9 @@ getStates(_country_id) {
                             </Text>  
          
                          </View>
-                                <View style={NewTeacherNameStyle.profileError}>
-                                    {this.state.nameError ?
-                                    <Text style={GlobalStyle.errorclass}>{this.state.nameError}</Text>
+                                <View style={NewTeacherNameStyle.newTeacherError}>
+                                    {this.state.schoolError ?
+                                    <Text style={GlobalStyle.errorclass}>{this.state.schoolError}</Text>
                                     : null}
                                 </View>
                             </View>
@@ -344,8 +400,8 @@ getStates(_country_id) {
 
                                 <TextInput
                                     style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
-                                    onChangeText={(name) => {
-                                        this.setState({ name: name });
+                                    onChangeText={(school) => {
+                                        this.setState({ school: school });
                                     }}
                                     placeholder=""
                                     placeholderTextColor="#8b9cb5"
@@ -366,9 +422,9 @@ getStates(_country_id) {
                             </Text>  
          
                          </View>
-                                <View style={NewTeacherNameStyle.profileError}>
-                                    {this.state.nameError ?
-                                    <Text style={GlobalStyle.errorclass}>{this.state.nameError}</Text>
+                                <View style={NewTeacherNameStyle.newTeacherError}>
+                                    {this.state.mobileError ?
+                                    <Text style={GlobalStyle.errorclass}>{this.state.mobileError}</Text>
                                     : null}
                                 </View>
                             </View>
@@ -376,9 +432,9 @@ getStates(_country_id) {
 
                                 <TextInput
                                     style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
-                                    onChangeText={(name) => {
-                                        this.setState({ name: name });
-                                    }}
+                                    onChangeText={(mobile) => {
+                                      this.setState({ mobile: mobile });
+                                  }}
                                     placeholder="(406) 555-0120"
                                     placeholderTextColor="#8b9cb5"
                                     autoCapitalize="none"

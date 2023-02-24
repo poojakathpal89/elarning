@@ -37,10 +37,28 @@ export default class LearnExreciseScreen extends React.Component {
   StarThreeClick(){
     this.props.navigation.navigate("exerciseMultipleThree");
   }
+  starFourRowClick(){
+    this.props.navigation.navigate("exerciseMultipleFour");
+
+  }
+  starFiveRowClick(){
+    this.props.navigation.navigate("exerciseMultipleFive");
+
+  }
+  starSixRowClick(){
+    this.props.navigation.navigate("exerciseMultipleSix");
+
+  }
+  starSevenRowClick(){
+    this.props.navigation.navigate("exerciseMultipleSeven");
+
+  }
+
   StarSecondFirstClick(){
     this.props.navigation.navigate("exerciseMultipleThree");
 
   }
+  
 
   render() {
       return (
@@ -91,14 +109,14 @@ export default class LearnExreciseScreen extends React.Component {
         <TouchableOpacity
         activeOpacity={0.5}
         onPress={() => {
-         this.StarTwoClick();
+         this.StarOneClick();
         }} >
     <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
         </TouchableOpacity>
         <TouchableOpacity
         activeOpacity={0.5}
         onPress={() => {
-         this.StarThreeClick();
+         this.StarOneClick();
         }} >
     <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
         </TouchableOpacity>
@@ -110,55 +128,194 @@ export default class LearnExreciseScreen extends React.Component {
                <TouchableOpacity
         activeOpacity={0.5}
         onPress={() => {
-          this.RBSheetEarn .open();
+          this.StarTwoClick();
         }}
         >
     
     <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
         </TouchableOpacity>
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.StarTwoClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.StarTwoClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+                 
 
                     </View>
               </View>
               <View style={LearnExerciseStyle.starImage}>
                <View  style={LearnExerciseStyle.buttonStyle}>
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+               <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.StarThreeClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.StarThreeClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.StarThreeClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+                  
+                    </View>
+              </View>
+              <View style={LearnExerciseStyle.starImage}>
+               <View  style={LearnExerciseStyle.buttonStyle}>
+               <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starFourRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starFourRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starFourRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
 
                     </View>
               </View>
               <View style={LearnExerciseStyle.starImage}>
                <View  style={LearnExerciseStyle.buttonStyle}>
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-
+               <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starFiveRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starFiveRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starFiveRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+                 
                     </View>
               </View>
               <View style={LearnExerciseStyle.starImage}>
                <View  style={LearnExerciseStyle.buttonStyle}>
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+               <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starSixRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starSixRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starSixRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+                 
 
                     </View>
               </View>
-              <View style={LearnExerciseStyle.starImage}>
-               <View  style={LearnExerciseStyle.buttonStyle}>
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-
-                    </View>
-              </View>
 
               <View style={LearnExerciseStyle.starImage}>
                <View  style={LearnExerciseStyle.buttonStyle}>
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
-                  <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+               <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starSevenRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starSevenRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+        <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+          this.starSevenRowClick();
+        }}
+        >
+    
+    <Image source={require("../../Image/yellowStar.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+        </TouchableOpacity>
+                 
               </View>
               </View>
       </View>
@@ -206,20 +363,14 @@ export default class LearnExreciseScreen extends React.Component {
                                     <Text style={LearnExerciseStyle.shareTicketTextStyle}>{'Log out / change account'}</Text>
                                       </View>
 
-                            
-
-                            
-                              
                                 <View style={{ alignItems: "center" }}>
                                     <TouchableOpacity
                                         style={[LearnExerciseStyle.earnComnButtonStyle,LearnExerciseStyle.earnBtn]}
                                         activeOpacity={0.5}
                                         onPress={() => {
                                             // this.InvitePopup();
-                                        }}
-                                    >
-                                     
-                                    </TouchableOpacity>
+                                        }} >
+                                      </TouchableOpacity>
                                    
 
                                 </View>

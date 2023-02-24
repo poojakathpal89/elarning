@@ -3,6 +3,7 @@ import {Text,Image,TouchableOpacity, View,Button,ScrollView} from 'react-native'
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import ExerciseMultipleOneStyle from './ExerciseMultipleOneStyle';
+import { HeaderWithBackComponent } from "../../component/AllComponent";
 
 
 
@@ -27,7 +28,7 @@ export default class ExerciseMultipleOne extends React.Component {
       return (
       
     <View style={[ExerciseMultipleOneStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
-       {/* <FooterComponent/> */}
+       <HeaderWithBackComponent props={this.props} />
       
 
       <ScrollView>
@@ -53,8 +54,8 @@ export default class ExerciseMultipleOne extends React.Component {
               <Image
                           source={require("../../Image/sound.png")}
                           style={{
-                              width: 40,
-                              height: 100,
+                              width: 30,
+                              height: 40,
                               resizeMode: "contain",
                              
                               }}

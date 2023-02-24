@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text,Image, View,TouchableOpacity,Button,ScrollView} from 'react-native';
-import ChooseAvtarStyle from './ChooseAvtarStyle';
+import ChooseAvatarTeacherStyle from './ChooseAvatarTeacherStyle';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import { AuthService } from "../../services/AllServices";
@@ -56,91 +56,85 @@ const coloursArray = [
 ];
 
 
-export default class ChooseAvatarScreen extends React.Component {
+export default class ChooseAvatarTeacherScreen extends React.Component {
   constructor(props) {
       super(props);
       state = {
-     
-        avtarArray: [{"1":"../../Image/logo-icon.png"}],
+     avtarArray: [{"1":"../../Image/logo-icon.png"}],
       }
-  
-  };
+   };
 
-  
   componentDidMount() {
       // console.log(StringsOfLanguages.languageObj);
       this.getAvtar();
   }
   setAvtaarOne(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
   }
   setAvtaarTwo(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
 
   }
   setAvtaarThree(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarFour(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarFive(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarSix(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarSeven(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarEight(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarNine(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarTen(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarEleven(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarTwelve(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarThirteen(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarFourteen(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarFifteen(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarSixteen(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarSeventeen(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarEighteen(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarNinteen(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarTwenty(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
  setAvtaarTwentyOne(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("newTeacherPrint");
  }
 
-  nextBtn() {
-    this.props.navigation.navigate("newStudentThree");  
-}
-OnButtonClick() {
-    this.props.navigation.navigate("newStudentThree");  
+ OnButtonClick() {
+    this.props.navigation.navigate("newTeacherPrint");  
 }
 setAvtaar(_item) {
     /// console.log('ite=============',_item[1])
@@ -173,7 +167,7 @@ getAvtar() {
       return (
               <View style={[GlobalStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
                 <ScrollView>
-                <View style={ChooseAvtarStyle.container}>
+                <View style={ChooseAvatarTeacherStyle.container}>
                
               
               <View style={CommonStyle.logoOnlyHeader}>
@@ -187,20 +181,20 @@ getAvtar() {
                   </View>
  
                   <ScrollView>
-                                <View style={ChooseAvtarStyle.bottomActionSheetBox}>
-                                    <View style={ChooseAvtarStyle.bottomswiperHeadingBox}>
-                                        <Text style={ChooseAvtarStyle.bottomswiperHeading}>
+                                <View style={ChooseAvatarTeacherStyle.bottomActionSheetBox}>
+                                    <View style={ChooseAvatarTeacherStyle.bottomswiperHeadingBox}>
+                                    <Text style={ChooseAvatarTeacherStyle.bottomswiperHeading}>
                                         اختار صورة رمزية
                                         </Text>
-                                        <Text style={ChooseAvtarStyle.bottomswiperHeading}>
+                                        <Text style={ChooseAvatarTeacherStyle.bottomswiperHeading}>
                                         يمكنك تغييره في الإعدادات لاحقًا
                                         </Text>
                                         <Image
-                                        style={ChooseAvtarStyle.dashedSeparator}/>
+                                        style={ChooseAvatarTeacherStyle.dashedSeparator}/>
                                        
                                     </View>
-                                    <View style={ChooseAvtarStyle.chooseAvatarArea}>
-                                            <View style={ChooseAvtarStyle.chooseAvatarBox}>
+                                    <View style={ChooseAvatarTeacherStyle.chooseAvatarArea}>
+                                            <View style={ChooseAvatarTeacherStyle.chooseAvatarBox}>
                                                 <View style={{width:"100%",flexDirection:'row',alignItems:'center',justifyContent:'center',}}>
                                                     <View style={{width:"33%"}} >
                                                     <TouchableOpacity
@@ -210,7 +204,7 @@ getAvtar() {
                                                             this.setAvtaarOne();
                                                         }} >
                                                         
-                                                       <Image  source={require("../../Image/pic1.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic1.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -221,7 +215,7 @@ getAvtar() {
                                                         onPress={() => {
                                                             this.setAvtaarTwo();
                                                         }}>
-                                                         <Image  source={require("../../Image/pic2.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                         <Image  source={require("../../Image/pic2.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -232,7 +226,7 @@ getAvtar() {
                                                         onPress={() => {
                                                             this.setAvtaarThree();
                                                         }} >
-                                                        <Image  source={require("../../Image/pic3.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                        <Image  source={require("../../Image/pic3.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -245,7 +239,7 @@ getAvtar() {
                                                         onPress={() => {
                                                             this.setAvtaarFour();
                                                         }}>
-                                                        <Image  source={require("../../Image/pic4.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                        <Image  source={require("../../Image/pic4.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -257,7 +251,7 @@ getAvtar() {
                                                             this.setAvtaarFive();
                                                         }} >
                                                         
-                                                       <Image  source={require("../../Image/pic5.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic5.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -269,7 +263,7 @@ getAvtar() {
                                                             this.setAvtaarSix();
                                                         }} >
                                                         
-                                                       <Image  source={require("../../Image/pic6.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic6.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -285,7 +279,7 @@ getAvtar() {
                                                             this.setAvtaarSix();
                                                         }} >
                                                         
-                                                       <Image  source={require("../../Image/pic7.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic7.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -297,7 +291,7 @@ getAvtar() {
                                                             this.setAvtaarSeven();
                                                         }}>
                                                         
-                                                       <Image  source={require("../../Image/pic8.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic8.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -310,7 +304,7 @@ getAvtar() {
                                                         }}
                                                     >
                                                         
-                                                       <Image  source={require("../../Image/pic9.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic9.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -325,7 +319,7 @@ getAvtar() {
                                                         }}
                                                     >
                                                         
-                                                       <Image  source={require("../../Image/pic10.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic10.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -337,7 +331,7 @@ getAvtar() {
                                                             this.setAvtaarTen();
                                                         }} >
                                                         
-                                                       <Image  source={require("../../Image/pic11.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic11.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -350,7 +344,7 @@ getAvtar() {
                                                         }}
                                                     >
                                                         
-                                                       <Image  source={require("../../Image/pic12.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic12.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -365,7 +359,7 @@ getAvtar() {
                                                         }}
                                                     >
                                                         
-                                                       <Image  source={require("../../Image/pic13.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic13.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -378,7 +372,7 @@ getAvtar() {
                                                         }}
                                                     >
                                                         
-                                                       <Image  source={require("../../Image/pic14.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic14.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -391,12 +385,12 @@ getAvtar() {
                                                         }}
                                                     >
                                                         
-                                                       <Image  source={require("../../Image/pic15.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic15.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
                                                 </View>
-                                             
+                                               
                                                 <View style={{width:"100%",flexDirection:'row'}}>
                                                     <View style={{width:"33%"}} >
                                                     <TouchableOpacity
@@ -406,7 +400,7 @@ getAvtar() {
                                                             this.setAvtaarFifteen();
                                                         }} >
                                                         
-                                                       <Image  source={require("../../Image/pic19.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic19.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -418,7 +412,7 @@ getAvtar() {
                                                             this.setAvtaarSixteen();
                                                         }} >
                                                         
-                                                       <Image  source={require("../../Image/pic20.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic20.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
@@ -430,31 +424,29 @@ getAvtar() {
                                                             this.setAvtaarSeventeen();
                                                         }}>
                                                         
-                                                       <Image  source={require("../../Image/pic21.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                       <Image  source={require("../../Image/pic21.png")} style={ChooseAvatarTeacherStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
                                                 </View>
                                                  </View>
                                                 </View>
-            
-        <View style={ChooseAvtarStyle.buttonContainer}>
-        <View  style={ChooseAvtarStyle.buttonStyle}>
+                                 
+           <View style={ChooseAvatarTeacherStyle.buttonContainer}>
+        <View  style={ChooseAvatarTeacherStyle.buttonStyle}>
         <TouchableOpacity
         
           activeOpacity={0.5}
             onPress={() => {
               this.OnButtonClick();
             }} >
-            <Text style={ChooseAvtarStyle.newStudentNextTxt}>التالى</Text>
+            <Text style={ChooseAvatarTeacherStyle.newStudentNextTxt}>التالى</Text>
               </TouchableOpacity>
                   </View>
               </View>
-             
-              </View>
-                    
 
-                </ScrollView>
+                              </View>
+                            </ScrollView>
                 </View>
              
              </ScrollView>

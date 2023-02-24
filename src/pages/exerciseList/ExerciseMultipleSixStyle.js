@@ -243,7 +243,7 @@ studentButtonStyle:{
        marginRight:80,
        backgroundColor:"#FBFEFD",
        alignItems:"center",   
-       marginTop:60,
+       marginTop:10,
        height:110,
        borderRadius:10,
            },

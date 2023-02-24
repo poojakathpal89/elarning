@@ -1,16 +1,23 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const ChooseAvtarStyle = StyleSheet.create({
+const ListOfGradeStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
         paddingHorizontal: 24,
         paddingVertical: 24,
+        marginTop:150
       },
-      chopseAvtarOnlyHeader:{
+      logoOnlyHeader:{
 		height:"10%",
 		alignItems: "center",
-		marginTop:90,
+		marginTop:30,
+        },
+
+        btnTextContainer:{
+            marginTop:50,
+          width:370,
+            height:109
         },
     commonStudentBtnTxt:{
         fontSize:16,
@@ -106,44 +113,47 @@ const ChooseAvtarStyle = StyleSheet.create({
             fontFamily:'CircularStd-Bold',
 
         },
-        chooseAvatarBox: {
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            marginBottom: 10,
-        },
-        chooseAvatarImage: {
-          width:43,
-          height: 43,
-          margin:4
-          // resizeMode: 'contain',
-          
-          /// backgroundColor:'red'
-      },
-  
       btncontainer: {
-        flex: 1,
        flexDirection: 'row',
         alignItems: 'center',
-        marginTop:30,     
+        marginTop:10,  
+        justifyContent:"center",   
     },
-    buttonContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        marginLeft:40,
-        marginRight:40,
+    buttonContainerOne: {
+       justifyContent: 'center',
+        marginLeft:50,
+        marginRight:50,
         backgroundColor:"#FBFEFD",
-       
-        height:60,
+        alignItems:"center",
+      paddingLeft:40,
+      paddingRight:40,
+        marginTop:20,
+        height:50,
+        padding:50,
         borderRadius:10,
-        marginBottom:60
-       
-        // borderWidth:1,
-        
-    },
+            },
+            buttonContainerTwo: {
+                justifyContent: 'center',
+                 marginLeft:50,
+                 marginRight:50,
+                 backgroundColor:"#FBFEFD",
+                 alignItems:"center",
+               paddingLeft:40,
+               paddingRight:40,
+                 marginTop:50,
+                 height:50,
+                 padding:50,
+                 borderRadius:10,
+                     },
     buttonStyle:{
        
-        height:100,
+        height:50,
+        color:"black",
+        alignItems:"center",
+        justifyContent:"center"
+    },
+    topTitle:{
+        height:50,
         color:"black",
         alignItems:"center",
         justifyContent:"center"
@@ -157,81 +167,23 @@ const ChooseAvtarStyle = StyleSheet.create({
     },
     newStudentNextTxt:{
         color:"#000000",
-        fontSize:22,
-        fontWeight:'700',
+        fontSize:30,
+        fontWeight:'400',
         fontFamily:'CircularStd-Bold',
         },
-        chooseAvatarImage: {
-            width:43,
-            height: 43,
-            margin:4
-            // resizeMode: 'contain',
-            
-            /// backgroundColor:'red'
+        toptxtHeading:{
+            alignItems:"center",
+            justifyContent:"center",
+            textAlign:"center",
+            marginTop:60,
         },
-        bottomswiperHeadingBox: {
-          // borderBottomWidth: 1,
-          // borderStyle: "dashed",
-          // borderColor: "#D1D5DB",
-          alignItems: "center",
-       
-          paddingBottom: 5,
-      },
-      bottomswiperHeading: {
-        fontSize: 18,
-        fontWeight: "700",
-        color: "#0C222C",
-        fontFamily:'CircularStd-bold',
-        marginTop:10
-       
-    },
-    btncontainer: {
-      flexDirection: 'row',
-       alignItems: 'center',
-       marginTop:10,  
-       justifyContent:"center",   
-   },
-    chooseAvatarBox: {
-      flexDirection: "row",
-      flexWrap: "wrap",
-      justifyContent: "space-between",
-      marginBottom: 20,
-  },
-  chooseAvatarImage: {
-    width:88,
-    height: 70,
-    margin:4
-    // resizeMode: 'contain',
-    
-    /// backgroundColor:'red'
-},
-dashedSeparator:{
-  width:'96%',
-  height:2,
-  marginTop:3,
-  marginBottom:5,
-  resizeMode: "cover",
-},
-starImage:{
-  justifyContent: 'center',
-  marginLeft:80,
-  marginRight:80,
-  backgroundColor:"#FBFEFD",
-  alignItems:"center",
-  paddingLeft:10,
-  paddingRight:10,    
-  marginTop:10,
-  height:90,
-  borderRadius:10,
-},
-buttonStyle:{
-  height:20,
-   color:"black",
-   alignItems:"center",
-   justifyContent:"center",
-   flex:1,
-   flexDirection:'row',
-},
+        toptxtHeadingStyle:{
+        alignItems:"center",
+        color:"#000000",
+        fontSize:30,
+        fontWeight:'400',
+        fontFamily:'CircularStd-Bold',
+        }
 });
 
-export default ChooseAvtarStyle;
+export default ListOfGradeStyle;

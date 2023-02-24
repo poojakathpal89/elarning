@@ -23,6 +23,10 @@ export default class StudentScreenCode extends React.Component {
   groups(){
     this.props.navigation.navigate("multipleStudent");
   }
+  createADAM(){
+    this.props.navigation.navigate("multipleStudent");
+
+  }
 
   render() {
       return (
@@ -44,9 +48,23 @@ export default class StudentScreenCode extends React.Component {
                   <Text style={StudentCodeStyle.newStudentNextTxt}>Nick Name</Text>
                   </View>
                  
-                 <View style={StudentCodeStyle.studentCodeContainer}>
+                 {/* <View style={StudentCodeStyle.studentCodeContainer}>
                <View  style={StudentCodeStyle.buttonStyle}>
                   <Text style={StudentCodeStyle.studentCodeTxt}>ADAM</Text>
+                  </View>
+              </View> */}
+                <View style={StudentCodeStyle.createContainer}>
+               <View  style={StudentCodeStyle.buttonStyle}>
+               <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.createADAM();
+              }} >
+                  <Text style={StudentCodeStyle.studentCodeTxt}>ADAM</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
                   </View>
               </View>
               <View style={StudentCodeStyle.createStuContainer}>

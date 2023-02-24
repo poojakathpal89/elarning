@@ -21,6 +21,8 @@ import NewGroupOneScreen from './src/pages/group/NewGroupOneScreen';
 import NewGroupThreeScreen from  './src/pages/group/NewGroupThreeScreen';
 import MainDashBoardScreen from './src/pages/dashboard/MainDashBoardScreen';
 import ChooseAvatarScreen from './src/pages/chooseAvatar/ChooseAvtarScreen';
+import ChooseAvatarTeacherScreen from './src/pages/chooseAvatar/ChooseAvatarTeacherScreen';
+import NewTeacherPrintScreen from './src/pages/newTeacher/NewTeacherPrintScreen';
 import NewStudentNameCodeScreen from './src/pages/newStudentCodeName/NewStudentNameCodeScreen';
 import TeacherNameScreen from './src/pages/teacherName/TeacherNameScreen';
 import NewStudentName from './src/pages/newStudentName/NewStudentName';
@@ -46,6 +48,9 @@ import HomeMenuScreen from './src/pages/home/HomeMenu';
 import HomeMenuScreenTwo from './src/pages/home/HomeMenuScreenTwo';
 import ProfilePageScreen from './src/pages/profile/ProfilePageScreen';
 import UserEditScreen from './src/pages/profile/UserEditScreen';
+import DashboardScreenOne from './src/pages/dashboard/DashboardScreenOne';
+import PraticLatterScreen from './src/pages/praticlatter/PraticLatterScreen';
+import ListofGradeScreen from './src/pages/grades/ListOfGradeScreen';
 
 
 const Stack = createStackNavigator();
@@ -75,6 +80,54 @@ const Welcome = () => {
     </Stack.Navigator>
   );
 };
+// const dashboardScreenOne = () => {
+ 
+//   return (
+//     <Stack.Navigator initialRouteName="DashboardScreenOne">
+//       <Stack.Screen
+//         name="DashboardScreenOne"
+//         component={DashboardScreenOne}
+//         options={{headerShown: false}}
+//       />
+//     </Stack.Navigator>
+//   );
+// };
+
+const typeOfGrade = () => {
+ return (
+    <Stack.Navigator initialRouteName="ListofGradeScreen">
+      <Stack.Screen
+        name="ListofGradeScreen"
+        component={ListofGradeScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
+const newTeacherPrint = () => {
+  return (
+     <Stack.Navigator initialRouteName="NewTeacherPrintScreen">
+       <Stack.Screen
+         name="NewTeacherPrintScreen"
+         component={NewTeacherPrintScreen}
+         options={{headerShown: false}}
+       />
+     </Stack.Navigator>
+   );
+ };
+
+const newAvatarTeacher = () => {
+  return (
+     <Stack.Navigator initialRouteName="ChooseAvatarTeacherScreen">
+       <Stack.Screen
+         name="ChooseAvatarTeacherScreen"
+         component={ChooseAvatarTeacherScreen}
+         options={{headerShown: false}}
+       />
+     </Stack.Navigator>
+   );
+ };
+
 const userEditScreen = () => {
  
   return (
@@ -125,6 +178,19 @@ const profilePage = () => {
   );
 };
 
+
+const praticlatter= () => {
+ 
+  return (
+    <Stack.Navigator initialRouteName="PraticLatterScreen">
+      <Stack.Screen
+        name="PraticLatterScreen"
+        component={PraticLatterScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
 const homeMenuTwo= () => {
  
   return (
@@ -530,6 +596,12 @@ const Register = () => {
         component={TeacherScreen}
         options={{headerShown: false}}
       />
+        {/* <Stack.Screen
+        name="listOfGrade"
+        component={listOfGrade}
+        options={{headerShown: false}}
+      /> */}
+      
 
 
     </Stack.Navigator>
@@ -773,6 +845,30 @@ export default class AppContainer extends React.Component {
                 component={userEditScreen}
                 options={{headerShown: false}}
               />
+
+            <Stack.Screen
+                name="praticlatter"
+                component={praticlatter}
+                options={{headerShown: false}}
+              />
+              
+            <Stack.Screen
+                name="typeOfGrade"
+                component={typeOfGrade}
+                options={{headerShown: false}}
+              />
+               <Stack.Screen
+                name="newAvatarTeacher"
+                component={newAvatarTeacher}
+                options={{headerShown: false}}
+              />
+                <Stack.Screen
+                name="newTeacherPrint"
+                component={newTeacherPrint}
+                options={{headerShown: false}}
+              />
+              
+              
             </Stack.Navigator>
           </NavigationContainer>
          

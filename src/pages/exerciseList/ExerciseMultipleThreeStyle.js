@@ -19,7 +19,16 @@ const ExerciseMultipleThreeStyle = StyleSheet.create({
             marginTop:40,
             marginStart:100
          },
-
+         chooseAvatarImage: {
+          width:43,
+          height: 43,
+          margin:4,
+          fontSize:20,
+         
+          // resizeMode: 'contain',
+          
+          /// backgroundColor:'red'
+      },
 starImage:{
     justifyContent: 'center',
     marginLeft:80,
@@ -296,7 +305,6 @@ studentButtonStyle:{
                alignItems:"center",
                paddingLeft:150,
                paddingRight:150,    
-               marginTop:40,
                height:10,
                borderRadius:10,
                    },

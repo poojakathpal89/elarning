@@ -1,17 +1,19 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const ChooseAvtarStyle = StyleSheet.create({
+const NewTeacherPrintStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
         paddingHorizontal: 24,
         paddingVertical: 24,
       },
-      chopseAvtarOnlyHeader:{
+      logoOnlyHeader:{
 		height:"10%",
 		alignItems: "center",
-		marginTop:90,
-        },
+		marginTop:50,
+        
+		
+	},
     commonStudentBtnTxt:{
         fontSize:16,
         fontFamily:'CircularStd-Bold',
@@ -106,21 +108,19 @@ const ChooseAvtarStyle = StyleSheet.create({
             fontFamily:'CircularStd-Bold',
 
         },
-        chooseAvatarBox: {
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            marginBottom: 10,
-        },
-        chooseAvatarImage: {
-          width:43,
-          height: 43,
-          margin:4
-          // resizeMode: 'contain',
-          
-          /// backgroundColor:'red'
+      languagesName:{
+        color:'#0C222C',
+        fontSize:16,
+        fontWeight:'500',
+        fontFamily:'CircularStd-Bold',
+        opacity:0.6
       },
-  
+      languagesCode:{
+        color:'#0C222C',
+        fontSize:18,
+        fontWeight:'500',
+        opacity:0.6
+      },
       btncontainer: {
         flex: 1,
        flexDirection: 'row',
@@ -130,13 +130,12 @@ const ChooseAvtarStyle = StyleSheet.create({
     buttonContainer: {
         flex: 1,
         justifyContent: 'center',
-        marginLeft:40,
-        marginRight:40,
+        marginLeft:10,
+        marginRight:10,
         backgroundColor:"#FBFEFD",
-       
-        height:60,
+        marginTop:50,
+        height:100,
         borderRadius:10,
-        marginBottom:60
        
         // borderWidth:1,
         
@@ -153,85 +152,20 @@ const ChooseAvtarStyle = StyleSheet.create({
     fontSize:30,
     fontWeight:'400',
     fontStyle:"normal"
-   
-    },
+   },
+   newTeacherTxt:{
+    color:"#000000",
+    fontSize:30,
+    fontWeight:'400',
+    height:150,
+    fontStyle:"normal"
+   },
     newStudentNextTxt:{
         color:"#000000",
         fontSize:22,
         fontWeight:'700',
         fontFamily:'CircularStd-Bold',
-        },
-        chooseAvatarImage: {
-            width:43,
-            height: 43,
-            margin:4
-            // resizeMode: 'contain',
-            
-            /// backgroundColor:'red'
-        },
-        bottomswiperHeadingBox: {
-          // borderBottomWidth: 1,
-          // borderStyle: "dashed",
-          // borderColor: "#D1D5DB",
-          alignItems: "center",
-       
-          paddingBottom: 5,
-      },
-      bottomswiperHeading: {
-        fontSize: 18,
-        fontWeight: "700",
-        color: "#0C222C",
-        fontFamily:'CircularStd-bold',
-        marginTop:10
-       
-    },
-    btncontainer: {
-      flexDirection: 'row',
-       alignItems: 'center',
-       marginTop:10,  
-       justifyContent:"center",   
-   },
-    chooseAvatarBox: {
-      flexDirection: "row",
-      flexWrap: "wrap",
-      justifyContent: "space-between",
-      marginBottom: 20,
-  },
-  chooseAvatarImage: {
-    width:88,
-    height: 70,
-    margin:4
-    // resizeMode: 'contain',
-    
-    /// backgroundColor:'red'
-},
-dashedSeparator:{
-  width:'96%',
-  height:2,
-  marginTop:3,
-  marginBottom:5,
-  resizeMode: "cover",
-},
-starImage:{
-  justifyContent: 'center',
-  marginLeft:80,
-  marginRight:80,
-  backgroundColor:"#FBFEFD",
-  alignItems:"center",
-  paddingLeft:10,
-  paddingRight:10,    
-  marginTop:10,
-  height:90,
-  borderRadius:10,
-},
-buttonStyle:{
-  height:20,
-   color:"black",
-   alignItems:"center",
-   justifyContent:"center",
-   flex:1,
-   flexDirection:'row',
-},
+        }
 });
 
-export default ChooseAvtarStyle;
+export default NewTeacherPrintStyle;

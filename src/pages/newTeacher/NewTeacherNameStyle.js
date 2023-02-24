@@ -11,8 +11,7 @@ const NewTeacherNameStyle = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
-       
-      },
+       },
       menuCardBox:{
         borderRadius:10,
         shadowColor:'#40B2E7',
@@ -73,6 +72,18 @@ const NewTeacherNameStyle = StyleSheet.create({
                 zIndex:999,
                 left:"4%",
               },
+              newTeacherError: {
+                width:"50%",
+                height: 40,
+                alignSelf:'flex-end',
+                justifyContent:"flex-end",
+                right:0,
+                 },
+                 errorclass: { color: "red", 
+                 fontSize:12, marginLeft: 0,
+                  marginTop: 0, 
+                  marginBottom: 5 ,
+                alignSelf:'flex-end'},
 
 });
 

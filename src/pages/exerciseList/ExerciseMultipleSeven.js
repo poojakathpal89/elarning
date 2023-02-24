@@ -18,14 +18,16 @@ export default class ExerciseMultipleSeven extends React.Component {
       // console.log(StringsOfLanguages.languageObj);
   }
   groups(){
-    this.props.navigation.navigate("multipleStudent");
+    this.props.navigation.navigate("subscription");
   }
-
+  OnClick(){
+    this.props.navigation.navigate("subscription"); 
+  }
   render() {
       return (
       
     <View style={[ExerciseMultipleSevenStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
-       {/* <FooterComponent/> */}
+    
        <HeaderWithBackComponent props={this.props} />
       <ScrollView>
       <View style={ExerciseMultipleSevenStyle.container}>
@@ -53,17 +55,31 @@ export default class ExerciseMultipleSeven extends React.Component {
 
                     </View>
               </View>
-
 </View>
 <View style={{ flex:1,flexDirection:'row',width:'100%',alignItems:'center',justifyContent:"center",marginTop:60}}>
 
 
 <View style={ExerciseMultipleSevenStyle.txtContainerOne}>
-<Image source={require("../../Image/multipleBottemtxt.png")} style={{width: 30, height:30, resizeMode: 'contain',borderRadius:10}} />
+<TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+         this.OnClick();
+        }}
+        >
+    <Image source={require("../../Image/multipleBottemtxt.png")} style={{width: 30, height:30, resizeMode: 'contain',borderRadius:10}} />
+
+        </TouchableOpacity>
 
               </View>
               <View style={ExerciseMultipleSevenStyle.txtContainerTwo}>
+              <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => {
+         this.OnClick();
+        }} >
               <Image source={require("../../Image/multipleBottemtxt.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+
+        </TouchableOpacity>
 
               </View>
               </View>

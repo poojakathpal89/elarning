@@ -4,6 +4,7 @@ import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import ExerciseTwoStyle from './ExerciseTwoStyle';
 import ExerciseMultipleFourStyle from './ExerciseMultipleFourStyle';
+import { HeaderWithBackComponent } from "../../component/AllComponent";
 
 
 
@@ -28,13 +29,12 @@ export default class ExerciseMultipleFour extends React.Component {
       return (
       
     <View style={[ExerciseMultipleFourStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
-       {/* <FooterComponent/> */}
+       <HeaderWithBackComponent props={this.props} />
       
 
       <ScrollView>
       <View style={ExerciseMultipleFourStyle.container}>
-      <View style={[ExerciseMultipleFourStyle.menuArea2]}>
-    </View>
+     
       <View style={ExerciseMultipleFourStyle.btnTextContainer}>
       <View style={ExerciseMultipleFourStyle.toplayoutContainer}>
         <View style={ExerciseMultipleFourStyle.multipleTopCodeContainer}>
