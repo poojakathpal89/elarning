@@ -11,9 +11,6 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
  import { AuthService, GlobalService, RequestHandler, ToastService } from "../../services/AllServices";
 
 
-
-
-
 export default class NewtudentName extends React.Component {
   constructor(props) {
       super(props);

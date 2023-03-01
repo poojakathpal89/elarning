@@ -11,7 +11,7 @@ const RegisterStyle = StyleSheet.create({
         borderWidth: 0,
         alignItems: 'center',
         height:50,
-      width:"100%",
+      width:"210%",
         borderRadius:50,
        marginLeft:60,
        fontSize:20,
@@ -19,6 +19,7 @@ const RegisterStyle = StyleSheet.create({
        marginRight:60,
         flexDirection: 'row',
         justifyContent: 'center',
+        // borderColor:'red',borderWidth:1,
         alignItems: 'center',
         backgroundColor:"#FFFFFF"
      },
@@ -83,7 +84,7 @@ const RegisterStyle = StyleSheet.create({
             flex:1,
                },
                studentBtnArea:{
-              width: "70%",
+                width: "70%",
                 height: 54,
                 alignItems:"center",
                 justifyContent:"center",
@@ -124,6 +125,23 @@ const RegisterStyle = StyleSheet.create({
                     alignItems:"center",
                     marginBottom:10,
                        },
+                       registerError: {
+                        width:"50%",
+                        height: 80,
+                        justifyContent:"flex-end",
+                        right:0,
+                         },
+                         newTeacherError: {
+                            width:"50%",
+                            height: 55,
+                            justifyContent:'center',
+                            alignItems:'center',
+                           borderWidth:1,
+                          
+                             },
+                         errorclass: { color: "red", marginLeft: 0, marginTop: 10, minWidth:250,
+                         marginBottom: 15,height:60,borderColor:'red',borderRadius:50,borderWidth:1 },
+
 });
 
 export default RegisterStyle;

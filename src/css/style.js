@@ -52,6 +52,17 @@ inputStyle: {
   paddingHorizontal:15,
   height:40
 },
+inputStyleError: {
+  flex: 1,
+  color: '#2A3B69',
+  borderWidth: 1,
+  borderColor: 'red',
+  backgroundColor:'#F6F6F7',
+  borderRadius:8,
+  paddingHorizontal:15,
+  height:48,
+  paddingLeft:40
+},
 errorTextStyle: {
   color: 'red',
   textAlign: 'center',

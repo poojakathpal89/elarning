@@ -3,16 +3,21 @@ import { Text,Button, View ,ScrollView,TextInput,Image,TouchableOpacity} from 'r
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import RegisterStyle from './RegisterStyle';
 import CommonStyle from '../../css/common';
+import GlobalStyle from "../../css/style";
+import { AuthService, GlobalService, RequestHandler, ToastService } from "../../services/AllServices";
+
 
 
 export default class RegisterScreen extends React.Component {
   constructor(props) {
       super(props);
-  }
-  state = {
+      this.state = {
       loading: false,
       secureTextEntry: true,
-      errorPass:false
+      errorPass:false,
+      studentCode: false,
+      teacherCode: "",
+  }
   };
 
   componentDidMount() {
@@ -23,21 +28,30 @@ export default class RegisterScreen extends React.Component {
      
   }
   goToStudentCode() {
-    alert("Welcome to test")
-    this.props.navigation.navigate("newStudentCodeName");
+    this.setState({studentCodeError: ""});
+    let error = false;
+
+    if (this.state.studentCode == "") {
+      this.setState({ studentCodeError: GlobalService.Register ? GlobalService.Register.RAPP_PHONE +' '+GlobalService.Register.RAPP_FORM_REQUIRED :"Student Code is required" });
+      error = true;
+    }
+  
+       this.props.navigation.navigate("newStudentCodeName");
   
 }
 goToNewTeacher(){
   this.props.navigation.navigate("newTeacherName");
 }
   goToTeacherCode() {
+    this.setState({teacherCodeError:""});
+
+      if (this.state.teacherCode == "") {
+      this.setState({ teacherCodeError: GlobalService.Register ? GlobalService.Register.RAPP_PHONE +' '+GlobalService.Register.RAPP_FORM_REQUIRED :"teacher Code is required" });
+      error = true;
+    }
     this.props.navigation.navigate("subscription");
    
 }
-
-
-
-
 
   render() {
     // const goToStudentCode = () => {
@@ -75,22 +89,50 @@ goToNewTeacher(){
             {/* {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null} */}
           </TouchableOpacity>
         </View>
-        <View style={RegisterStyle.studentBtnArea }>
-        <TextInput style = {RegisterStyle.input}
+                 
+         <View style={RegisterStyle.studentBtnArea }>
+         {/* {this.state.studentCodeError ?
+                         
+               
+                   <View style={RegisterStyle.errorclass}>  
+   </View>
+           : null}             */}
+            <View style={RegisterStyle.newTeacherError}>
+                                    {this.state.studentCodeError ?
+                                    <Text style={GlobalStyle.errorclass}>{this.state.studentCodeError}</Text>
+                                    : null}
+                            
+
+        <View  style = {RegisterStyle.input}>
+            <TextInput
+           onChangeText={(studentCode) => {
+               this.setState({ studentCode: studentCode });
+               }}
                underlineColorAndroid = "transparent"
-               placeholder = "STUDENT CODE"
+               placeholder={GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_ENTER_EMAIL : "STUDENT CODE"} 
                placeholderTextColor = "black"
                textAlign='center'
                autoCapitalize = "none"
                keyboardType="numeric"
-               onSubmitEditing={() =>{this.props.navigation.navigate("newStudentCodeName");}}/>
+               onSubmitEditing={() =>{this.goToStudentCode();
+
+              //  onSubmitEditing={() =>{this.props.navigation.navigate("newStudentCodeName");
+              }}
               
-        </View>
-
+               />
+              </View>
+              </View>
+            
+                </View> 
+               
+                
       
-
-
-        <View style={RegisterStyle.teacherBtnArea }>
+ <View style={RegisterStyle.teacherBtnArea }>
+        {/* <View style={RegisterStyle.studentError}>
+                  {this.state.teacherCodeError ?
+                  <Text style={GlobalStyle.errorclass}>{this.state.teacherCodeError}</Text>
+                  : null}
+                                </View> */}
         <TouchableOpacity
         style={[RegisterStyle.comnButtonStyle,RegisterStyle.loginbtn]}
         activeOpacity={0.5}
@@ -104,17 +146,24 @@ goToNewTeacher(){
         </View>
 
         <View style={RegisterStyle.teacherBtnArea }>
-        <TextInput style = {RegisterStyle.input}
+        <View style={RegisterStyle.newTeacherError}>
+                                    {this.state.studentCodeError ?
+                                    <Text style={GlobalStyle.errorclass}>{this.state.studentCodeError}</Text>
+                                    : null}
+       
+          <View style = {RegisterStyle.input}>
+        <TextInput 
                underlineColorAndroid = "transparent"
                placeholder = "TEACHER CODE"
                placeholderTextColor = "black"
                textAlign='center'
                keyboardType="numeric"
                autoCapitalize = "none"
-               onSubmitEditing={() =>{this.props.navigation.navigate("subscription");}}/>
+               onSubmitEditing={() =>{this.goToTeacherCode()}}/>
+               </View>
+               </View>
         </View>
 
-    
       </View>
       </ScrollView>
       </View>
