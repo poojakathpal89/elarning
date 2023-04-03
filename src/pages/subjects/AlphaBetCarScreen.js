@@ -39,14 +39,13 @@ gradeThreeBtn() {
       
         
       <View style={{justifyContent: 'space-between'}}>
-   <Text style={{alignSelf: 'flex-end',fontSize:20,}}>X</Text>
+   <Text style={{alignSelf: 'flex-end',fontSize:20,marginBottom:20}}>X</Text>
 </View>
 
-<View style={AlphabetCarStyle.mainContainerPin}>
-<Text style={{alignSelf: 'flex-end',fontSize:20,}}>X</Text>
-</View>
-     
-      <View style={AlphabetCarStyle.buttonContainerOne}>
+<View style={AlphabetCarStyle.MainContainerBox}>
+
+
+ <View style={AlphabetCarStyle.buttonContainerOne}>
             <View  style={AlphabetCarStyle.pinbuttonStyle}>
                   <Text style={AlphabetCarStyle.newStudentNextTxt}>pin in</Text>
                   </View>
@@ -74,7 +73,145 @@ gradeThreeBtn() {
                   </View>
                   </View>
               </View>
+             
+              <View style={AlphabetCarStyle.buttonBox}>
+            <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>أ</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ب</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ت</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ث</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ا ب ت</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ج</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ح</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>خ</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ج ح خ</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>د</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ذ</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ث</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ث</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ر</Text>
+                </View>
 
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ز</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>د ذ ر ز </Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>س</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ش</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ص</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ض</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>س ش ص ض</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ط</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ظ</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>غ</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ط ظ ع غ</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ف</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ق</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ك</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}> ف ق ك</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ل</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>م</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}> ن</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}> ل م ن</Text>
+                </View>
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}> ھ</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}> ھ</Text>
+                </View>
+              
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>ى</Text>
+                </View>
+
+                <View style={AlphabetCarStyle.buttonContainerSecond}>
+              <Text style={AlphabetCarStyle.buttonTextStyle}>كل الحروف</Text>
+                </View>
+                </View>
+               
+</View>
+     
+     
+
+                
         </View>   
 
        </ScrollView>

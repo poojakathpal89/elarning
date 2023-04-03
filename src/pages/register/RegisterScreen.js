@@ -39,6 +39,7 @@ export default class RegisterScreen extends React.Component {
        this.props.navigation.navigate("newStudentCodeName");
   
 }
+ 
 goToNewTeacher(){
   this.props.navigation.navigate("newTeacherName");
 }
@@ -90,13 +91,8 @@ goToNewTeacher(){
           </TouchableOpacity>
         </View>
                  
-         <View style={RegisterStyle.studentBtnArea }>
-         {/* {this.state.studentCodeError ?
-                         
-               
-                   <View style={RegisterStyle.errorclass}>  
-   </View>
-           : null}             */}
+         <View style={RegisterStyle.studentBtnArea && RegisterStyle.newTeacherError }>
+      
             <View style={RegisterStyle.newTeacherError}>
                                     {this.state.studentCodeError ?
                                     <Text style={GlobalStyle.errorclass}>{this.state.studentCodeError}</Text>
@@ -128,11 +124,11 @@ goToNewTeacher(){
                 
       
  <View style={RegisterStyle.teacherBtnArea }>
-        {/* <View style={RegisterStyle.studentError}>
+        <View style={RegisterStyle.studentError}>
                   {this.state.teacherCodeError ?
                   <Text style={GlobalStyle.errorclass}>{this.state.teacherCodeError}</Text>
                   : null}
-                                </View> */}
+                                </View>
         <TouchableOpacity
         style={[RegisterStyle.comnButtonStyle,RegisterStyle.loginbtn]}
         activeOpacity={0.5}
@@ -145,13 +141,13 @@ goToNewTeacher(){
         </TouchableOpacity>
         </View>
 
-        <View style={RegisterStyle.teacherBtnArea }>
+        <View style={RegisterStyle.teacherBtnArea && RegisterStyle.newTeacherError}>
         <View style={RegisterStyle.newTeacherError}>
                                     {this.state.studentCodeError ?
                                     <Text style={GlobalStyle.errorclass}>{this.state.studentCodeError}</Text>
                                     : null}
        
-          <View style = {RegisterStyle.input}>
+               <View style = {RegisterStyle.input}>
         <TextInput 
                underlineColorAndroid = "transparent"
                placeholder = "TEACHER CODE"

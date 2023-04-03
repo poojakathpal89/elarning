@@ -8,7 +8,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
  import DropdownMenu from '../../react-native-dropdown-menu';
  import SelectDropdown from 'react-native-select-dropdown';
  import { default as FontAwesome, default as Icon } from "react-native-vector-icons/FontAwesome";
- import { AuthService, GlobalService, RequestHandler, ToastService } from "../../services/AllServices";
+ import { AuthService, GlobalService, RequestHandler, ToastService ,GlobalShareService} from "../../services/AllServices";
 
 
 export default class NewtudentName extends React.Component {
@@ -33,6 +33,8 @@ export default class NewtudentName extends React.Component {
 
   componentDidMount() {
       // console.log(StringsOfLanguages.languageObj);
+      console.log("GlobalService.locationEnabled",GlobalService);
+      GlobalService.shareNavigate = true;
       this.getCountriesArray();
   }
   validateEmail(_email) {
@@ -89,10 +91,27 @@ if (this.state.selectedStates <1) {
     this.setState({ stateError:GlobalService.Register ? GlobalService.Register.RAPP_PROFILE_STATE +' '+GlobalService.Register.RAPP_FORM_REQUIRED :  "State is required" });
     error = true;
 }
-    //  this.props.navigation.navigate("chooseAvtar");
-       // this.props.navigation.navigate("newStudentTwo");
+
+if (error == false) {
+           
+  let postData = {
+      user_name: this.state.name,
+      user_email: this.state.email,
+      user_country_id: parseInt(this.state.selectedCountry),
+      user_state_id: parseInt(this.state.selectedStates),
+      user_school: this.state.school,
+      user_mobile: this.state.mobile,
+
+  }; 
+  console.log('register post data',postData)
+  GlobalService.regData = postData;
+  GlobalShareService.shareData = '';
+  this.props.navigation.navigate("chooseAvtar");
+} else {
+  return false;
+    
   }
- 
+}
   getCountriesArray() {
     this.setState({ isLoading: true, countriesArray: [] });
    
@@ -207,7 +226,7 @@ getStates(_country_id) {
                                     : null}
                                 </View>
                             </View>
-                                <View style={{width:"100%",'position':'relative',marginTop:3,marginBottom:10}} >
+                                <View style={{width:"100%",'position':'relative',marginTop:0,marginBottom:10}} >
 
                                 <TextInput
                                     // style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
@@ -237,11 +256,8 @@ getStates(_country_id) {
         <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',alignSelf: 'flex-end', fontWeight: "700",marginTop:3 }}>
             Country
         </Text> 
-            <View style={[NewStudentNameStyle.newStudentError,{width:"100%",justifyContent:"flex-start",top:5,alignSelf:'flex-end'}]}>
-                {this.state.countryError ? 
-            <Text style={[NewStudentNameStyle.errorclass]}>{this.state.countryError}</Text>
-            : null} 
-            </View>
+
+          
                                 </View>
                                 </View>
                        <View style={{width:"100%",'position':'relative',alignSelf:'flex-end'}} >
@@ -301,6 +317,11 @@ getStates(_country_id) {
                 </View>
               );}} />
            </View>
+           <View style={[NewStudentNameStyle.newStudentError,{width:"100%",justifyContent:"flex-start",top:5,right:0,left:0,alignSelf:'flex-start'}]}>
+                {this.state.countryError ? 
+            <Text style={[NewStudentNameStyle.errorclass]}>{this.state.countryError}</Text>
+            : null} 
+            </View>
         </View>
      </View>
 
@@ -313,11 +334,7 @@ getStates(_country_id) {
                                     <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',alignSelf: 'flex-end', fontWeight: "700",marginTop:3 }}>
                                          State
                                     </Text> 
-                                    <View style={[NewStudentNameStyle.newStudentError,{width:"100%",justifyContent:"flex-start",top:5}]}>
-                             {this.state.stateError ? 
-                          <Text style={[NewStudentNameStyle.errorclass]}>{this.state.stateError}</Text>
-                            : null} 
-                          </View>
+                                
                                 </View>
                                 </View>
                        <View style={{width:"100%",alignItems:'flex-end'}} >
@@ -368,6 +385,11 @@ getStates(_country_id) {
                 </View>
               );}} /> 
                             
+                          </View>
+                          <View style={[NewStudentNameStyle.newStudentError,{width:"100%",justifyContent:"flex-start",top:5}]}>
+                             {this.state.stateError ? 
+                          <Text style={[NewStudentNameStyle.errorclass]}>{this.state.stateError}</Text>
+                            : null} 
                           </View>
                          </View>
 
@@ -430,6 +452,7 @@ getStates(_country_id) {
                                     placeholder="(406) 555-0120"
                                     placeholderTextColor="#8b9cb5"
                                     autoCapitalize="none"
+                                    keyboardType='numeric'
                                     returnKeyType="next"
                                    underlineColorAndroid="#f000"
                                     // selectionColor={"#fff"}

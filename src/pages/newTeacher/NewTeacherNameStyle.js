@@ -75,15 +75,18 @@ const NewTeacherNameStyle = StyleSheet.create({
               newTeacherError: {
                 width:"50%",
                 height: 40,
-                alignSelf:'flex-end',
+                alignSelf:'flex-start',
                 justifyContent:"flex-end",
                 right:0,
+                left:0,
                  },
-                 errorclass: { color: "red", 
-                 fontSize:12, marginLeft: 0,
+                 errorclass: { 
+                  color: "red", 
+                 fontSize:12, 
+                 marginLeft: 0,
                   marginTop: 0, 
                   marginBottom: 5 ,
-                alignSelf:'flex-end'},
+                alignSelf:'flex-start'},
 
 });
 

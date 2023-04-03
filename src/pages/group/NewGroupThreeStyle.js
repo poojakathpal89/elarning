@@ -140,13 +140,58 @@ marginTop:40,
         marginTop:20,
         height:40,
         borderRadius:10,
-        
-    },
+        },
+
+        buttonContainerStyleOne: {
+          justifyContent: 'center',
+         width:40,
+          backgroundColor:"#19E98B",
+          alignItems:"center",
+          marginTop:20,
+          height:40,
+          marginBottom:18,
+          borderRadius:12,
+          },
+          buttonContainerStyleTwo: {
+            justifyContent: 'center',
+           width:40,
+            backgroundColor:"#E92619",
+            alignItems:"center",
+            marginTop:20,
+            height:40,
+            marginBottom:18,
+            borderRadius:12,
+            },
+
+
+            buttonContainerStyleRightOne: {
+              justifyContent: 'center',
+             width:40,
+              backgroundColor:"#19E98B",
+              alignItems:"center",
+              marginTop:20,
+              marginStart:50,
+              height:40,
+              marginBottom:18,
+              borderRadius:12,
+              },
+              buttonContainerStyleRighTwo: {
+                justifyContent: 'center',
+               width:40,
+                backgroundColor:"#E92619",
+                alignItems:"center",
+                marginTop:20,
+                height:40,
+                marginRight:5,
+                marginBottom:18,
+                borderRadius:12,
+                },
     buttonStyle:{
        height:40,
         color:"black",
         alignItems:"center",
-        justifyContent:"center"
+        justifyContent:"center",
+        backgroundColor:'green'
     },
     newStudentTxt:{
     color:"#000000",
@@ -223,12 +268,20 @@ inputWrap: {
     justifyContent:'space-between',
     marginLeft:70,
     color:'red',
+    borderWidth:'1',
+    backgroundColor:'red',
     marginRight:70
 
 },
 buttonImageContainer: {
     flex: 1,
     backgroundColor:'red'
+},
+buttonTextStyle:{
+  fontSize:25,
+  marginTop:7,
+  paddingTop:6
+  
 }
 });
 

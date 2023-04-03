@@ -9,7 +9,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
  import SelectDropdown from 'react-native-select-dropdown';
  import { default as FontAwesome, default as Icon } from "react-native-vector-icons/FontAwesome";
 //  import { default as FontAwesome, default as Icon } from "react-native-vector-icons/FontAwesome";
-import { AuthService, GlobalService, RequestHandler, ToastService } from "../../services/AllServices";
+import { AuthService, GlobalService, RequestHandler, GlobalShareService,ToastService } from "../../services/AllServices";
 
 
 
@@ -38,6 +38,8 @@ export default class NewTeacherName extends React.Component {
 
   componentDidMount() {
       // console.log(StringsOfLanguages.languageObj);
+      console.log("GlobalService.locationEnabled",GlobalService);
+      GlobalService.shareNavigate = true;
       this.getCountriesArray();
   }
 
@@ -94,8 +96,27 @@ if (this.state.selectedStates <1) {
     this.setState({ stateError:GlobalService.Register ? GlobalService.Register.RAPP_PROFILE_STATE +' '+GlobalService.Register.RAPP_FORM_REQUIRED :  "State is required" });
     error = true;
 }
-        // this.props.navigation.navigate("chooseAvtar");
+    
+if (error == false) {
+           
+  let postData = {
+      user_name: this.state.name,
+      user_email: this.state.email,
+      user_country_id: parseInt(this.state.selectedCountry),
+      user_state_id: parseInt(this.state.selectedStates),
+      user_school: this.state.school,
+      user_mobile: this.state.mobile,
+
+  }; 
+  console.log('register post data',postData)
+  GlobalService.regData = postData;
+  GlobalShareService.shareData = '';
+  this.props.navigation.navigate("chooseAvtar");
+} else {
+  return false;
+    
   }
+}
  
   getCountriesArray() {
     this.setState({ isLoading: true, countriesArray: [] });
@@ -213,10 +234,10 @@ getStates(_country_id) {
                                     : null}
                                 </View>
                             </View>
-                                <View style={{width:"100%",'position':'relative',marginTop:6}} >
+                                <View style={{width:"100%",'position':'relative',marginTop:1}} >
 
                                 <TextInput
-                                   style={[{fontFamily:'CircularStd-Book',textAlign:'right',marginTop:1},this.state.emailError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'},]}
+                                   style={[{fontFamily:'CircularStd-Book',textAlign:'right',marginTop:0},this.state.emailError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'},]}
                                    onChangeText={(email) => {
                                        this.validateEmail(email);
                                        this.setState({ email: email });
@@ -243,11 +264,7 @@ getStates(_country_id) {
         <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', alignSelf: 'flex-end',fontWeight: "700",marginTop:3 }}>
             Country
         </Text> 
-            <View style={[NewTeacherNameStyle.newTeacherError,{width:"100%",justifyContent:"flex-start",top:5,alignSelf:'flex-end',}]}>
-                {this.state.countryError ? 
-            <Text style={[NewTeacherNameStyle.errorclass]}>{this.state.countryError}</Text>
-            : null} 
-            </View>
+            
                                 </View>
                                 </View>
                        <View style={{width:"100%",'position':'relative'}} >
@@ -309,6 +326,12 @@ getStates(_country_id) {
                 </View>
               );}} />
            </View>
+
+           <View style={[NewTeacherNameStyle.newTeacherError,{width:"100%",justifyContent:"flex-start",top:5,}]}>
+                {this.state.countryError ? 
+            <Text style={[NewTeacherNameStyle.errorclass]}>{this.state.countryError}</Text>
+            : null} 
+            </View>
         </View>
      </View>
      
@@ -439,6 +462,7 @@ getStates(_country_id) {
                                     placeholderTextColor="#8b9cb5"
                                     autoCapitalize="none"
                                     returnKeyType="next"
+                                    keyboardType='numeric'
                                    underlineColorAndroid="#f000"
                                     // selectionColor={"#fff"}
                                     blurOnSubmit={false}

@@ -88,7 +88,7 @@ const RegisterStyle = StyleSheet.create({
                 height: 54,
                 alignItems:"center",
                 justifyContent:"center",
-             marginTop:30,
+             marginTop:70,
                 },
               loginbtn:{
                 backgroundColor:"#FFFFFF",
@@ -121,7 +121,7 @@ const RegisterStyle = StyleSheet.create({
                   teacherBtnArea:{
                    width: "70%",
                     height: 54,
-                    marginTop:30,
+                    marginTop:20,
                     alignItems:"center",
                     marginBottom:10,
                        },
@@ -134,9 +134,11 @@ const RegisterStyle = StyleSheet.create({
                          newTeacherError: {
                             width:"50%",
                             height: 55,
+                            marginTop:3,
                             justifyContent:'center',
                             alignItems:'center',
                            borderWidth:1,
+                           borderColor:'red',
                           
                              },
                          errorclass: { color: "red", marginLeft: 0, marginTop: 10, minWidth:250,

@@ -12,8 +12,29 @@ const AlphabetCarStyle = StyleSheet.create({
 		alignItems: "center",
 		marginTop:30,
         },
+        buttonTextStyle:{
+          fontSize:25,
+          marginTop:7,
+          paddingTop:6
+          
+        },
+        buttonLeft:{
+       },
+       buttonBox:{
+flexDirection:'column',marginEnd:10,
+marginBottom:15
+       },
 
-       
+        buttonContainerSecond: {
+          justifyContent: 'center',
+         width:50,
+         marginEnd:10,
+          backgroundColor:"#FBFEFD",
+          alignItems:"center",
+          marginTop:5,
+          height:40,
+          borderRadius:10,
+          },
     commonStudentBtnTxt:{
         fontSize:16,
         fontFamily:'CircularStd-Bold',
@@ -113,6 +134,10 @@ const AlphabetCarStyle = StyleSheet.create({
         alignItems: 'center',
         marginTop:10,  
         justifyContent:"center",   
+    },
+    MainContainerBox:{
+flexDirection:'row',
+marginRight:10
     },
     mainContainerPin:
     {flexDirection:'row',

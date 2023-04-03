@@ -45,24 +45,56 @@ export default class NewGroupThreeScreen extends React.Component {
                    </View>
          <View style={NewGroupThreeStyle.btncontainer}>
         <View style={NewGroupThreeStyle.buttonContainer}>
+     
+            <View  style={{width:'100%',flexDirection:'row',}}>
+              <View style={NewGroupThreeStyle.buttonContainerStyleOne}>
+              </View>
+              <View style={NewGroupThreeStyle.buttonContainerStyleTwo}>
+              </View>
+              <View style={NewGroupThreeStyle.buttonContainerStyleOne}>
+              </View>
+              <View style={NewGroupThreeStyle.buttonContainerStyleRightOne}>
+              </View>
+              <View style={NewGroupThreeStyle.buttonContainerStyleRighTwo}>
+              </View>
+             
+                  
+        </View>
+        
+     
+     
+     
+     
+     
+      </View>
+              <View style={NewGroupThreeStyle.buttonContainerSecond}>
+              <Text style={NewGroupThreeStyle.buttonTextStyle}>أ</Text>
+
+              </View>
+              </View>
+
+              <View style={NewGroupThreeStyle.btncontainer}>
+        <View style={NewGroupThreeStyle.buttonContainer}>
         <View  style={NewGroupThreeStyle.buttonStyle}>
-          <View style={NewGroupThreeStyle.btnBox}>
-        <View style={NewGroupThreeStyle.Imagecontainer}>
-              <View style={NewGroupThreeStyle.buttonImageContainer}>
-                <Button title="Button 1"/>
-              </View>
-              <View style={NewGroupThreeStyle.buttonImageContainer}>
-                <Button title="Button 2"/>
-              </View>
-              <View style={NewGroupThreeStyle.buttonImageContainer}>
-                <Button title="Button 2"/>
-              </View>
-            </View>
-            </View>
                   
                   </View>
               </View>
               <View style={NewGroupThreeStyle.buttonContainerSecond}>
+              <Text style={NewGroupThreeStyle.buttonTextStyle}>ب</Text>
+                <View  style={NewGroupThreeStyle.buttonStyle}>
+              
+                  </View>
+              </View>
+              </View>
+              <View style={NewGroupThreeStyle.btncontainer}>
+       <View style={NewGroupThreeStyle.buttonContainer}>
+        <View  style={NewGroupThreeStyle.buttonStyle}>
+                  
+                  </View>
+              </View>
+              <View style={NewGroupThreeStyle.buttonContainerSecond}>
+              <Text style={NewGroupThreeStyle.buttonTextStyle}>ت</Text>
+
                 <View  style={NewGroupThreeStyle.buttonStyle}>
               
                   </View>
@@ -75,22 +107,8 @@ export default class NewGroupThreeScreen extends React.Component {
                   </View>
               </View>
               <View style={NewGroupThreeStyle.buttonContainerSecond}>
-                <View  style={NewGroupThreeStyle.buttonStyle}>
-              
-                  </View>
-              </View>
-              </View>
-              <View style={NewGroupThreeStyle.btncontainer}>
-        <View style={NewGroupThreeStyle.buttonContainer}>
-        <View  style={NewGroupThreeStyle.buttonStyle}>
-                  
-                  </View>
-              </View>
-              <View style={NewGroupThreeStyle.buttonContainerSecond}>
-                <View  style={NewGroupThreeStyle.buttonStyle}>
-              
-                  </View>
-              </View>
+              <Text style={NewGroupThreeStyle.buttonTextStyle}>ث</Text>
+                </View>
               </View>
         </View>
        
