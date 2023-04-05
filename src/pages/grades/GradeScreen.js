@@ -20,7 +20,7 @@ export default class GradeScreen extends React.Component {
 
   componentDidMount() {
       // console.log(StringsOfLanguages.languageObj);
-     // this.getGradeList();
+      this.getGradeList();
   }
   gradeOneBtn(gradeId){
     GlobalService.regData.gradeId=gradeId
@@ -82,7 +82,7 @@ export default class GradeScreen extends React.Component {
                                         activeOpacity={0.5}
                                         onPress={() => {
                                           this.gradeOneBtn(item.id);
-                                          this.gradeOneBtn(1);
+                                         // this.gradeOneBtn();
                                         }} >
                                         {/* <Text style={NewStudentthreeStyle.newStudentNextTxt}>{item.name}</Text> */}
                                         <Text style={NewStudentthreeStyle.newStudentNextTxt}>Sanskarit</Text>
