@@ -20,7 +20,7 @@ export default class GradeScreen extends React.Component {
 
   componentDidMount() {
       // console.log(StringsOfLanguages.languageObj);
-      this.getGradeList();
+     // this.getGradeList();
   }
   gradeOneBtn(gradeId){
     GlobalService.regData.gradeId=gradeId
@@ -69,11 +69,11 @@ export default class GradeScreen extends React.Component {
                       </View>
                   </View>
                 <View style={NewStudentthreeStyle.btnTextContainer}>
-                {this.state.gradeListArray != "" &&
+                {/* {this.state.gradeListArray != "" &&
                                                             this.state.gradeListArray.length > 0 &&
-                                                            this.state.gradeListArray.map((item, key) => (
+                                                            this.state.gradeListArray.map((item, key) => ( */}
               
-                    <View key={key} style={NewStudentthreeStyle.btncontainer}>
+                    <View style={NewStudentthreeStyle.btncontainer}>
                             <View style={NewStudentthreeStyle.buttonContainer}>
                                 <View  style={NewStudentthreeStyle.buttonStyle}>
                                     <TouchableOpacity
@@ -82,14 +82,17 @@ export default class GradeScreen extends React.Component {
                                         activeOpacity={0.5}
                                         onPress={() => {
                                           this.gradeOneBtn(item.id);
+                                          this.gradeOneBtn(1);
                                         }} >
-                                        <Text style={NewStudentthreeStyle.newStudentNextTxt}>{item.name}</Text>
+                                        {/* <Text style={NewStudentthreeStyle.newStudentNextTxt}>{item.name}</Text> */}
+                                        <Text style={NewStudentthreeStyle.newStudentNextTxt}>Sanskarit</Text>
+
                                         {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
                                     </TouchableOpacity>
                                 </View>
                             </View>
                     </View>
-  ))}
+  {/* ))} */}
                 </View>
             </View>
         
