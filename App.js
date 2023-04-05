@@ -10,7 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import TestScreen from './src/pages/usertest/TestScreen';
 import NewStudentScreen from './src/pages/newStudent2/NewStudentScreen';
-import NewStudentThree from './src/pages/newStudent3/NewStudentThree';
+import GradeScreen from './src/pages/grades/GradeScreen';
 import MeenuScreen from './src/pages/menu/MenuScreen';
 import MakeGroups from './src/pages/makegroups/MakeGroups';
 import GroupOneScreen from './src/pages/makeGroups1/MakeGroupOneScreen';
@@ -49,8 +49,11 @@ import HomeMenuScreenTwo from './src/pages/home/HomeMenuScreenTwo';
 import ProfilePageScreen from './src/pages/profile/ProfilePageScreen';
 import UserEditScreen from './src/pages/profile/UserEditScreen';
 import DashboardScreenOne from './src/pages/dashboard/DashboardScreenOne';
-import PraticLatterScreen from './src/pages/praticlatter/PraticLatterScreen';
-import ListofGradeScreen from './src/pages/grades/ListOfGradeScreen';
+
+// import ListofGradeScreen from './src/pages/grades/ListOfGradeScreen';
+import SubjectScreen from './src/pages/grades/SubjectScreen';
+import LessonScreen from './src/pages/lesson/LessonScreen';
+
 
 
 const Stack = createStackNavigator();
@@ -93,18 +96,18 @@ const Welcome = () => {
 //   );
 // };
 
-const typeOfGrade = () => {
+const Subjects = () => {
  return (
-    <Stack.Navigator initialRouteName="ListofGradeScreen">
+    <Stack.Navigator initialRouteName="SubjectScreen">
       <Stack.Screen
-        name="ListofGradeScreen"
-        component={ListofGradeScreen}
+        name="SubjectScreen"
+        component={SubjectScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
   );
 };
-const newTeacherPrint = () => {
+const NewTeacherPrint = () => {
   return (
      <Stack.Navigator initialRouteName="NewTeacherPrintScreen">
        <Stack.Screen
@@ -116,7 +119,7 @@ const newTeacherPrint = () => {
    );
  };
 
-const newAvatarTeacher = () => {
+const NewAvatarTeacher = () => {
   return (
      <Stack.Navigator initialRouteName="ChooseAvatarTeacherScreen">
        <Stack.Screen
@@ -128,7 +131,7 @@ const newAvatarTeacher = () => {
    );
  };
 
-const userEditScreen = () => {
+const UserEdit = () => {
  
   return (
     <Stack.Navigator initialRouteName="UserEditScreen">
@@ -141,7 +144,7 @@ const userEditScreen = () => {
   );
 };
 
-const homeMenuScreen = () => {
+const HomeMenu = () => {
  
   return (
     <Stack.Navigator initialRouteName="HomeMenuScreen">
@@ -153,7 +156,7 @@ const homeMenuScreen = () => {
     </Stack.Navigator>
   );
 };
-const subscription = () => {
+const Subscription = () => {
  
   return (
     <Stack.Navigator initialRouteName="SubscriptionScreen">
@@ -165,7 +168,7 @@ const subscription = () => {
     </Stack.Navigator>
   );
 };
-const profilePage = () => {
+const ProfilePage = () => {
  
   return (
     <Stack.Navigator initialRouteName="ProfilePageScreen">
@@ -179,19 +182,19 @@ const profilePage = () => {
 };
 
 
-const praticlatter= () => {
+const Lesson= () => {
  
   return (
-    <Stack.Navigator initialRouteName="PraticLatterScreen">
+    <Stack.Navigator initialRouteName="LessonScreen">
       <Stack.Screen
-        name="PraticLatterScreen"
-        component={PraticLatterScreen}
+        name="LessonScreen"
+        component={LessonScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
   );
 };
-const homeMenuTwo= () => {
+const HomeMenuTwo= () => {
  
   return (
     <Stack.Navigator initialRouteName="HomeMenuScreenTwo">
@@ -215,7 +218,7 @@ const Test = () => {
   );
 };
 
-const oneExercise = () => {
+const OneExercise = () => {
   return (
     <Stack.Navigator initialRouteName="ExerciseOne">
       <Stack.Screen
@@ -227,7 +230,7 @@ const oneExercise = () => {
   );
 };
 
-const twoExercise = () => {
+const TwoExercise = () => {
   return (
     <Stack.Navigator initialRouteName="ExerciseTwo">
       <Stack.Screen
@@ -239,7 +242,7 @@ const twoExercise = () => {
   );
 };
 
-const userNewStudent = () => {
+const UserNewStudent = () => {
   return (
     <Stack.Navigator initialRouteName="NewStudentScreen">
       <Stack.Screen
@@ -251,18 +254,18 @@ const userNewStudent = () => {
   );
 };
 
-const newStudentThree = () => {
+const GradeList = () => {
   return (
-    <Stack.Navigator initialRouteName="NewStudentThree">
+    <Stack.Navigator initialRouteName="GradeScreen">
       <Stack.Screen
-        name="NewStudentThree"
-        component={NewStudentThree}
+        name="GradeScreen"
+        component={GradeScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
   );
 };
-const menu= () => {
+const Menu= () => {
   return (
     <Stack.Navigator initialRouteName="MeenuScreen">
       <Stack.Screen
@@ -274,7 +277,7 @@ const menu= () => {
   );
 };
 
-const makegroups= () => {
+const Makegroups= () => {
   return (
     <Stack.Navigator initialRouteName="MakeGroups">
       <Stack.Screen
@@ -285,7 +288,7 @@ const makegroups= () => {
     </Stack.Navigator>
   );
 };
-const groupOne= () => {
+const GroupOne= () => {
   return (
     <Stack.Navigator initialRouteName="GroupOneScreen">
       <Stack.Screen
@@ -296,7 +299,7 @@ const groupOne= () => {
     </Stack.Navigator>
   );
 };
-const studentCode= () => {
+const StudentCode= () => {
   return (
     <Stack.Navigator initialRouteName="StudentCodeScreen">
       <Stack.Screen
@@ -307,7 +310,7 @@ const studentCode= () => {
     </Stack.Navigator>
   );
 };
-const multipleStudent= () => {
+const MultipleStudent= () => {
   return (
     <Stack.Navigator initialRouteName="MultipleStudentScreen">
       <Stack.Screen
@@ -319,7 +322,7 @@ const multipleStudent= () => {
   );
 };
 
-const newGroupOne= () => {
+const NewGroupOne= () => {
   return (
     <Stack.Navigator initialRouteName="NewGroupOneScreen">
       <Stack.Screen
@@ -330,7 +333,7 @@ const newGroupOne= () => {
     </Stack.Navigator>
   );
 };
-const newGroupTwo= () => {
+const NewGroupTwo= () => {
   return (
     <Stack.Navigator initialRouteName="NewGroupTwoScreen">
       <Stack.Screen
@@ -341,7 +344,7 @@ const newGroupTwo= () => {
     </Stack.Navigator>
   );
 };
-const newGroupThree= () => {
+const NewGroupThree= () => {
   return (
     <Stack.Navigator initialRouteName="NewGroupThreeScreen">
       <Stack.Screen
@@ -352,7 +355,7 @@ const newGroupThree= () => {
     </Stack.Navigator>
   );
 };
-const dashBoard= () => {
+const DashBoard= () => {
   return (
     <Stack.Navigator initialRouteName="MainDashBoardScreen">
       <Stack.Screen
@@ -364,7 +367,7 @@ const dashBoard= () => {
   );
 };
 
-const chooseAvtar= () => {
+const ChooseAvtar= () => {
   return (
     <Stack.Navigator initialRouteName="ChooseAvatarScreen">
       <Stack.Screen
@@ -376,7 +379,7 @@ const chooseAvtar= () => {
   );
 };
 
-const newStudentCodeName= () => {
+const NewStudentCodeName= () => {
   return (
     <Stack.Navigator initialRouteName="NewStudentNameCodeScreen">
       <Stack.Screen
@@ -387,7 +390,7 @@ const newStudentCodeName= () => {
     </Stack.Navigator>
   );
 };
-const newStudentName= () => {
+const NewStudentsName= () => {
   return (
     <Stack.Navigator initialRouteName="NewStudentName">
       <Stack.Screen
@@ -398,7 +401,7 @@ const newStudentName= () => {
     </Stack.Navigator>
   );
 };
-const newStudentTwo= () => {
+const NewStudentTwo= () => {
   return (
     <Stack.Navigator initialRouteName="NewStudentScreenTwo">
       <Stack.Screen
@@ -409,7 +412,7 @@ const newStudentTwo= () => {
     </Stack.Navigator>
   );
 };
-const teacherName= () => {
+const TeacherName= () => {
   return (
     <Stack.Navigator initialRouteName="TeacherNameScreen">
       <Stack.Screen
@@ -420,7 +423,7 @@ const teacherName= () => {
     </Stack.Navigator>
   );
 };
-const newTeacherName= () => {
+const NewTeachersName= () => {
   return (
     <Stack.Navigator initialRouteName="NewTeacherName">
       <Stack.Screen
@@ -431,7 +434,7 @@ const newTeacherName= () => {
     </Stack.Navigator>
   );
 };
-const exerciseMultipleOne= () => {
+const ExerciseMultiplesOne= () => {
   return (
     <Stack.Navigator initialRouteName="ExerciseMultipleOne">
       <Stack.Screen
@@ -442,7 +445,7 @@ const exerciseMultipleOne= () => {
     </Stack.Navigator>
   );
 };
-const exerciseMultipleTwo= () => {
+const ExerciseMultiplesTwo= () => {
   return (
     <Stack.Navigator initialRouteName="ExerciseMultipleTwo">
       <Stack.Screen
@@ -453,7 +456,7 @@ const exerciseMultipleTwo= () => {
     </Stack.Navigator>
   );
 };
-const exerciseMultipleThree= () => {
+const ExerciseMultiplesThree= () => {
   return (
     <Stack.Navigator initialRouteName="ExerciseMultipleThree">
       <Stack.Screen
@@ -464,7 +467,7 @@ const exerciseMultipleThree= () => {
     </Stack.Navigator>
   );
 };
-const exerciseMultipleFour= () => {
+const ExerciseMultiplesFour= () => {
   return (
     <Stack.Navigator initialRouteName="ExerciseMultipleFour">
       <Stack.Screen
@@ -475,7 +478,7 @@ const exerciseMultipleFour= () => {
     </Stack.Navigator>
   );
 };
-const exerciseMultipleFive= () => {
+const ExerciseMultiplesFive= () => {
   return (
     <Stack.Navigator initialRouteName="ExerciseMultipleFive">
       <Stack.Screen
@@ -486,7 +489,7 @@ const exerciseMultipleFive= () => {
     </Stack.Navigator>
   );
 };
-const exerciseMultipleSix= () => {
+const ExerciseMultiplesSix= () => {
   return (
     <Stack.Navigator initialRouteName="ExerciseMultipleSix">
       <Stack.Screen
@@ -497,7 +500,7 @@ const exerciseMultipleSix= () => {
     </Stack.Navigator>
   );
 };
-const exerciseMultipleSeven= () => {
+const ExerciseMultiplesSeven= () => {
   return (
     <Stack.Navigator initialRouteName="ExerciseMultipleSeven">
       <Stack.Screen
@@ -508,7 +511,7 @@ const exerciseMultipleSeven= () => {
     </Stack.Navigator>
   );
 };
-const exerciseLearn= () => {
+const ExerciseLearn= () => {
   return (
     <Stack.Navigator initialRouteName="LearnExreciseScreen">
       <Stack.Screen
@@ -520,7 +523,7 @@ const exerciseLearn= () => {
   );
 };
 
-const gradeFirst= () => {
+const GradeFirst= () => {
   return (
     <Stack.Navigator initialRouteName="FirstGradeScreen">
       <Stack.Screen
@@ -531,7 +534,7 @@ const gradeFirst= () => {
     </Stack.Navigator>
   );
 };
-const subject= () => {
+const Subject= () => {
   return (
     <Stack.Navigator initialRouteName="SubjectsScreen">
       <Stack.Screen
@@ -542,7 +545,7 @@ const subject= () => {
     </Stack.Navigator>
   );
 };
-const arabic= () => {
+const Arabic= () => {
   return (
     <Stack.Navigator initialRouteName="ArabicScreen">
       <Stack.Screen
@@ -554,7 +557,7 @@ const arabic= () => {
   );
 };
 
-const arabicSubject= () => {
+const ArabicSubject= () => {
   return (
     <Stack.Navigator initialRouteName="ArabicSubjectScreen">
       <Stack.Screen
@@ -565,7 +568,7 @@ const arabicSubject= () => {
     </Stack.Navigator>
   );
 };
-const alphaBetCar= () => {
+const AlphaBetCar= () => {
   return (
     <Stack.Navigator initialRouteName="AlphaBetCarScreen">
       <Stack.Screen
@@ -644,227 +647,227 @@ export default class AppContainer extends React.Component {
 
 
                 <Stack.Screen
-                name="userNewStudent"
-                component={userNewStudent}
+                name="UserNewStudent"
+                component={UserNewStudent}
                 options={{headerShown: false}}
               />
 
             <Stack.Screen
-                name="newStudentThree"
-                component={newStudentThree}
+                name="GradeList"
+                component={GradeList}
                 options={{headerShown: false}}
               />
 
               <Stack.Screen
-                name="menu"
-                component={menu}
+                name="Menu"
+                component={Menu}
                 options={{headerShown: false}}
               />
 
        
                 <Stack.Screen
-                name="makegroups"
-                component={makegroups}
+                name="Makegroups"
+                component={Makegroups}
                 options={{headerShown: false}}
               />
 
                   <Stack.Screen
-                name="groupOne"
-                component={groupOne}
+                name="GroupOne"
+                component={GroupOne}
                 options={{headerShown: false}}
               />
 
              <Stack.Screen
-                name="studentCode"
-                component={studentCode}
+                name="StudentCode"
+                component={StudentCode}
                 options={{headerShown: false}}
               />
 
                <Stack.Screen
-                name="multipleStudent"
-                component={multipleStudent}
+                name="MultipleStudent"
+                component={MultipleStudent}
                 options={{headerShown: false}}
               />
 
 
             <Stack.Screen
-                name="newGroupOne"
-                component={newGroupOne}
+                name="NewGroupOne"
+                component={NewGroupOne}
                 options={{headerShown: false}}
               />
 
               <Stack.Screen
-                name="newGroupTwo"
-                component={newGroupTwo}
+                name="NewGroupTwo"
+                component={NewGroupTwo}
                 options={{headerShown: false}}
               />
               <Stack.Screen
-                name="newGroupThree"
-                component={newGroupThree}
+                name="NewGroupThree"
+                component={NewGroupThree}
                 options={{headerShown: false}}
               />
 
                 <Stack.Screen
-                name="dashBoard"
-                component={dashBoard}
+                name="DashBoard"
+                component={DashBoard}
                 options={{headerShown: false}}
               />
                 <Stack.Screen
-                name="chooseAvtar"
-                component={chooseAvtar}
+                name="ChooseAvtar"
+                component={ChooseAvtar}
                 options={{headerShown: false}}
               />
               <Stack.Screen
-                name="newStudentCodeName"
-                component={newStudentCodeName}
+                name="NewStudentCodeName"
+                component={NewStudentCodeName}
                 options={{headerShown: false}}
               />
                <Stack.Screen
-                name="teacherName"
-                component={teacherName}
+                name="TeacherName"
+                component={TeacherName}
                 options={{headerShown: false}}
               />
                 <Stack.Screen
-                name="newStudentName"
-                component={newStudentName}
+                name="NewStudentsName"
+                component={NewStudentsName}
                 options={{headerShown: false}}
               />
                <Stack.Screen
-                name="newStudentTwo"
-                component={newStudentTwo}
+                name="NewStudentTwo"
+                component={NewStudentTwo}
                 options={{headerShown: false}}
               />
                 <Stack.Screen
-                name="newTeacherName"
-                component={newTeacherName}
+                name="NewTeachersName"
+                component={NewTeachersName}
                 options={{headerShown: false}}
               />
                 <Stack.Screen
-                name="oneExercise"
-                component={oneExercise}
+                name="OneExercise"
+                component={OneExercise}
                 options={{headerShown: false}}
               />
                <Stack.Screen
-                name="twoExercise"
-                component={twoExercise}
+                name="TwoExercise"
+                component={TwoExercise}
                 options={{headerShown: false}}
               />
               <Stack.Screen
-                name="exerciseMultipleOne"
-                component={exerciseMultipleOne}
+                name="ExerciseMultiplesOne"
+                component={ExerciseMultiplesOne}
                 options={{headerShown: false}}
               />
                <Stack.Screen
-                name="exerciseMultipleThree"
-                component={exerciseMultipleThree}
+                name="ExerciseMultiplesThree"
+                component={ExerciseMultiplesThree}
                 options={{headerShown: false}}
               />
                <Stack.Screen
-                name="exerciseMultipleTwo"
-                component={exerciseMultipleTwo}
+                name="ExerciseMultiplesTwo"
+                component={ExerciseMultiplesTwo}
                 options={{headerShown: false}}
               />
                <Stack.Screen
-                name="exerciseMultipleFour"
-                component={exerciseMultipleFour}
+                name="ExerciseMultiplesFour"
+                component={ExerciseMultiplesFour}
                 options={{headerShown: false}}
               />
               
               <Stack.Screen
-                name="exerciseMultipleFive"
-                component={exerciseMultipleFive}
+                name="ExerciseMultiplesFive"
+                component={ExerciseMultiplesFive}
                 options={{headerShown: false}}
               />
                  <Stack.Screen
-                name="exerciseMultipleSix"
-                component={exerciseMultipleSix}
+                name="ExerciseMultiplesSix"
+                component={ExerciseMultiplesSix}
                 options={{headerShown: false}}
               />
                <Stack.Screen
-                name="exerciseMultipleSeven"
-                component={exerciseMultipleSeven}
+                name="ExerciseMultiplesSeven"
+                component={ExerciseMultiplesSeven}
                 options={{headerShown: false}}
               />
               
               <Stack.Screen
-                name="exerciseLearn"
-                component={exerciseLearn}
+                name="ExerciseLearn"
+                component={ExerciseLearn}
                 options={{headerShown: false}}
               />
            <Stack.Screen
-                name="gradeFirst"
-                component={gradeFirst}
+                name="GradeFirst"
+                component={GradeFirst}
                 options={{headerShown: false}}
               />
                    <Stack.Screen
-                name="subject"
-                component={subject}
+                name="Subject"
+                component={Subject}
                 options={{headerShown: false}}
               />
                  <Stack.Screen
-                name="arabic"
-                component={arabic}
+                name="Arabic"
+                component={Arabic}
                 options={{headerShown: false}}
               />
               
               <Stack.Screen
-                name="arabicSubject"
-                component={arabicSubject}
+                name="ArabicSubject"
+                component={ArabicSubject}
                 options={{headerShown: false}}
               />
                  <Stack.Screen
-                name="alphaBetCar"
-                component={alphaBetCar}
+                name="AlphaBetCar"
+                component={AlphaBetCar}
                 options={{headerShown: false}}
               />
                 <Stack.Screen
-                name="subscription"
-                component={subscription}
+                name="Subscription"
+                component={Subscription}
                 options={{headerShown: false}}
               />
              
              <Stack.Screen
-                name="homeMenuScreen"
-                component={homeMenuScreen}
+                name="HomeMenu"
+                component={HomeMenu}
                 options={{headerShown: false}}
               />
              
              <Stack.Screen
-                name="homeMenuTwo"
-                component={homeMenuTwo}
+                name="HomeMenuTwo"
+                component={HomeMenuTwo}
                 options={{headerShown: false}}
               />
               <Stack.Screen
-                name="profilePage"
-                component={profilePage}
+                name="ProfilePage"
+                component={ProfilePage}
                 options={{headerShown: false}}
               />
               
               <Stack.Screen
-                name="userEditScreen"
-                component={userEditScreen}
+                name="UserEdit"
+                component={UserEdit}
                 options={{headerShown: false}}
               />
 
             <Stack.Screen
-                name="praticlatter"
-                component={praticlatter}
+                name="Lesson"
+                component={Lesson}
                 options={{headerShown: false}}
               />
               
             <Stack.Screen
-                name="typeOfGrade"
-                component={typeOfGrade}
+                name="Subjects"
+                component={Subjects}
                 options={{headerShown: false}}
               />
                <Stack.Screen
-                name="newAvatarTeacher"
-                component={newAvatarTeacher}
+                name="NewAvatarTeacher"
+                component={NewAvatarTeacher}
                 options={{headerShown: false}}
               />
                 <Stack.Screen
-                name="newTeacherPrint"
-                component={newTeacherPrint}
+                name="NewTeacherPrint"
+                component={NewTeacherPrint}
                 options={{headerShown: false}}
               />
               

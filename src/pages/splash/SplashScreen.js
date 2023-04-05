@@ -16,8 +16,10 @@ import splashStyle from "./SplashStyle";
                     //  navigation.replace("exerciseLearn");
                     //   navigation.replace("newGroupThree");
                        navigation.replace("Register");
+                       navigation.replace("Lesson");
+                       
                     } else {
-                        navigation.replace("Register");
+                        navigation.replace("Lesson");
                         
                         
                     }

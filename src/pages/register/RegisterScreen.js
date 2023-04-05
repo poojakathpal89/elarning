@@ -24,7 +24,7 @@ export default class RegisterScreen extends React.Component {
       // console.log(StringsOfLanguages.languageObj);
   }
   goToNewStudentName() {
-       this.props.navigation.navigate("newStudentName");
+       this.props.navigation.navigate("NewStudentsName");
      
   }
   goToStudentCode() {
@@ -114,8 +114,7 @@ goToNewTeacher(){
 
               //  onSubmitEditing={() =>{this.props.navigation.navigate("newStudentCodeName");
               }}
-              
-               />
+              />
               </View>
               </View>
             

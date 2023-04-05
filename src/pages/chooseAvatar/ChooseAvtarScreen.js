@@ -72,7 +72,7 @@ export default class ChooseAvatarScreen extends React.Component {
       this.getAvtar();
   }
   setAvtaarOne(){
-    this.props.navigation.navigate("newStudentThree");
+    this.props.navigation.navigate("GradeList");
   }
   setAvtaarTwo(){
     this.props.navigation.navigate("newStudentThree");

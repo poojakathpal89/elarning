@@ -1,6 +1,7 @@
 //live api  url 
 ///export const API_BASE_URL = "https://beta.rebatus.com/app-api/v1.3/";
 export const API_BASE_URL = "https://www.rebatus.com/app-api/v1.3/";
+export const EAPI_BASE_URL= "http://13.51.105.220/";
 
 export const GET_GUEST_USER_PRODUCT_TOUR = "guest-user/get-product-tour";
 export const UPDATE_FINGER_DATA = "my-account/update-user-data";
@@ -60,3 +61,13 @@ export const MANAGE_SUSCRIPTION_DATA_URL = "my-account/manage-subscription";
 export const CHECK_NORDIGEN_STATUS_URL = "bank-response/check-nordigen-status";
 export const GETUSER_REFRAL_CODE = "guest-user/get-referal-code";
 export const DELETE_USER_ACCOUNT_URL = "app-user/send-truncate-request";
+
+
+
+
+export const GRADE_URL = "guest-user/list-grades";
+export const SUBJECT_URL = "guest-user/list-subjects";
+export const LESSON_URL = "guest-user/list-lessons";
+
+
+

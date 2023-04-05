@@ -134,7 +134,7 @@ const RegisterStyle = StyleSheet.create({
                          newTeacherError: {
                             width:"50%",
                             height: 55,
-                            marginTop:3,
+                            marginTop:15,
                             justifyContent:'center',
                             alignItems:'center',
                            borderWidth:1,

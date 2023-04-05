@@ -26,7 +26,6 @@ export default class NewtudentName extends React.Component {
       name: "",
       email: "",
       school:"",
-      multiPlayer:"",
       mobile: "",
       }
   };
@@ -62,7 +61,7 @@ export default class NewtudentName extends React.Component {
         let error = false;
 
         if (this.state.name == "") {
-          this.setState({ nameError:GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_FULL_NAME +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "Nickname is required" });
+           this.setState({ nameError:GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_FULL_NAME +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "Nickname is required" });
           error = true;
       }
     if (this.state.email == "") {
@@ -92,7 +91,7 @@ if (this.state.selectedStates <1) {
     error = true;
 }
 
-if (error == false) {
+if (error == true) {
            
   let postData = {
       user_name: this.state.name,
@@ -106,7 +105,8 @@ if (error == false) {
   console.log('register post data',postData)
   GlobalService.regData = postData;
   GlobalShareService.shareData = '';
-  this.props.navigation.navigate("chooseAvtar");
+  this.props.navigation.navigate("ChooseAvtar");
+ 
 } else {
   return false;
     
@@ -236,7 +236,7 @@ getStates(_country_id) {
                                         this.setState({ email: email });
                                     }}
                                   
-                                  placeholder={GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_ENTER_EMAIL : "Enter email"} 
+                                  placeholder={GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_ENTER_EMAIL : ""} 
                                   placeholderTextColor="#0C222C"
                                   autoCapitalize="none"
                                   returnKeyType="next"

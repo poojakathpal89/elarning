@@ -29,6 +29,11 @@ class AuthService extends Component {
     getReffralEndpoint=null
     logoutEndpoint=null
     checkAppUpdateAvailableEndpoint=null
+
+    gradeEndpoint = null
+    subjectEndpoint = null
+    lessonEndpoint = null
+
     constructor(props){  
         super(props);  
         this.getlanguageEndpoint= myConstClass.API_BASE_URL+myConstClass.GET_lANGUAGE_LABELS;
@@ -37,6 +42,8 @@ class AuthService extends Component {
         this.saveChangeResetPasswordEndpoint= myConstClass.API_BASE_URL+myConstClass.CHANGE_RESET_PASSWORD;
         this.checkAppUpdateAvailableEndpoint= myConstClass.API_BASE_URL+myConstClass.APP_UPDATE_CHECK;
         this.countriesArrayEndpoint= myConstClass.API_BASE_URL+myConstClass.COUNTRIES_ARRAY_URL;
+      
+
         this.statesArrayEndpoint= myConstClass.API_BASE_URL+myConstClass.STATES_ARRAY_URL;
         this.loginEndpoint= myConstClass.API_BASE_URL+myConstClass.LOGIN_URL;
         this.registerEndpoint= myConstClass.API_BASE_URL+myConstClass.REGISTER_URL;
@@ -55,12 +62,62 @@ class AuthService extends Component {
         this.DeleteUserDataEndPoint= myConstClass.API_BASE_URL+myConstClass.DELETE_USER_ACCOUNT_URL;
         this.getReffralEndpoint= myConstClass.API_BASE_URL+myConstClass.GETUSER_REFRAL_CODE;
 
+
+
+
+
+
+        this.gradeEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.GRADE_URL;
+        this.subjectEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.SUBJECT_URL;
+        this.lessonEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.LESSON_URL;
+
+
+
       }
 
     getLanguageData(getData) {
         let state = this;
         return new Promise(function(resolve) {
             requestHandler.apiRequest(state.getlanguageEndpoint+getData.id,state.postMethod).then(response=>{
+                resolve(response)
+           }).catch(error=>{
+                resolve(error);
+           })
+        })
+    }
+
+    getLessonList(postData) {
+        let state = this;
+        console.log(postData,"postData")
+        return new Promise(function(resolve) {
+            requestHandler.apiRequest(state.lessonEndpoint,state.postMethod,postData).then(response=>{
+                console.log(response,"userdata")
+                resolve(response)
+           }).catch(error=>{
+                resolve(error);
+           })
+        })
+    }
+
+    getSubjectList(postData) {
+        let state = this;
+        console.log(postData,"postData")
+        return new Promise(function(resolve) {
+            requestHandler.apiRequest(state.subjectEndpoint,state.postMethod,postData).then(response=>{
+                console.log(response,"userdata")
+                resolve(response)
+           }).catch(error=>{
+                resolve(error);
+           })
+        })
+    }
+
+
+    getStudentGradeList() {
+        let state = this;
+        return new Promise(function(resolve) {
+            requestHandler.apiRequest(state.gradeEndpoint,state.postMethod).then(response=>{
+                console.log(response,"userdata")
                 resolve(response)
            }).catch(error=>{
                 resolve(error);
