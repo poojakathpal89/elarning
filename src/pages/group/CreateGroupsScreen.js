@@ -3,12 +3,13 @@ import {Text,Image,TouchableOpacity, View,Button,ScrollView} from 'react-native'
 // import  MakeGroupStyle  from '../makegroups/MakeGroupStyle';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
-import MakeGroupStyle from '../makegroups/MakeGroupStyle';
+// import MakeGroupStyle from '../makegroups/MakeGroupStyle';
+import CreateGroupScreenStyle from './CreateGroupScreenStyle';
 import {FooterComponentWithTeacher} from "../../component/AllComponent";
 
 
 
-export default class MakeGroups extends React.Component {
+export default class CreateGroupsScreen extends React.Component {
   constructor(props) {
       super(props);
   }
@@ -31,12 +32,12 @@ export default class MakeGroups extends React.Component {
     <View style={[GlobalStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
        {/* <FooterComponent/> */}
       <ScrollView>
-      <View style={MakeGroupStyle.container}>
-      <View style={[MakeGroupStyle.menuArea2]}>
+      <View style={CreateGroupScreenStyle.container}>
+      <View style={[CreateGroupScreenStyle.menuArea2]}>
    
 
-    <View style={MakeGroupStyle.newStudentText}>
-              <Text  style={MakeGroupStyle.makeGroupText}>easily create your own group</Text>
+    <View style={CreateGroupScreenStyle.newStudentText}>
+              <Text  style={CreateGroupScreenStyle.makeGroupText}>easily create your own group</Text>
              
                   </View>
      
@@ -44,10 +45,10 @@ export default class MakeGroups extends React.Component {
     
 
         </View>
-      <View style={MakeGroupStyle.btnTextContainer}>
-      <View style={MakeGroupStyle.btncontainer}>
-        <View style={MakeGroupStyle.buttonContainer}>
-        <View  style={MakeGroupStyle.buttonStyle}>
+      <View style={CreateGroupScreenStyle.btnTextContainer}>
+      <View style={CreateGroupScreenStyle.btncontainer}>
+        <View style={CreateGroupScreenStyle.buttonContainer}>
+        <View  style={CreateGroupScreenStyle.buttonStyle}>
         <TouchableOpacity
             disabled={this.state.loading}
                                           
@@ -55,7 +56,7 @@ export default class MakeGroups extends React.Component {
               onPress={() => {
                 this.newBtn();
               }} >
-          <Text style={MakeGroupStyle.newStudentNextTxt}>+ New Group</Text>
+          <Text style={CreateGroupScreenStyle.newStudentNextTxt}>+ New Group</Text>
                {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
                 </TouchableOpacity>
                 

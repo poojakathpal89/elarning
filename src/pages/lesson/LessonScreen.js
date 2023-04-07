@@ -27,18 +27,7 @@ export default class LessonScreen extends React.Component {
     this.props.navigation.navigate("ExerciseLearn");
    
 }
-twoBtn(){
-  this.props.navigation.navigate("ExerciseLearn");
- 
-}
-gradeThreeBtn() {
-  this.props.navigation.navigate("ExerciseLearn");
- 
-}
-gradeFourBtn(){
-  this.props.navigation.navigate("ExerciseLearn");
 
-}
 
 getLessonList() {
 
@@ -52,12 +41,12 @@ getLessonList() {
       .then((response) => {
         
       
-          this.setState({ lessonListArray: response.subjects});
+          this.setState({ lessonListArray: response.lessons});
           console.log(lessonListArray,"lessonList")
     
       })
       .catch((error) => {
-          ToastService.tostShort(error);
+          // ToastService.tostShort(error);
       });
 }
 
@@ -73,54 +62,20 @@ getLessonList() {
       <View style={LessonStyle.btnTextContainer}>
 
      
-        <View style={LessonStyle.btncontainer}>
-        <View style={LessonStyle.buttonContainer}>
-        <View  style={LessonStyle.buttonStyle}>
-        <TouchableOpacity
-          disabled={this.state.loading}
-                                        
-            activeOpacity={0.5}
-            onPress={() => {
-              this.oneBtn();
-            }} >
-                  <Text style={LessonStyle.newStudentNextTxt}>الرياضيات</Text>
-             {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
-              </TouchableOpacity>
-                  </View>
-              </View>
-             
-              </View>
-              <View style={LessonStyle.btncontainer}>
-        <View style={LessonStyle.buttonContainer}>
-        <View  style={LessonStyle.buttonStyle}>
-        <TouchableOpacity
-          disabled={this.state.loading}
-                                        
-            activeOpacity={0.5}
-            onPress={() => {
-              this.twoBtn();
-            }} >
-                  <Text style={LessonStyle.newStudentNextTxt}>الرياضيات</Text>
-             {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
-              </TouchableOpacity>
-                  </View>
-              </View>
-             
-              </View>
               <View style={LessonStyle.btncontainer}>
 
               {this.state.lessonListArray != "" &&
       this.state.lessonListArray.length > 0 &&
       this.state.lessonListArray.map((item, key) => (
 
-                  <View style={LessonStyle.buttonContainer}>
+                  <View key={key} style={LessonStyle.buttonContainer}>
                   <View  style={LessonStyle.buttonStyle}>
                   <TouchableOpacity
                     disabled={this.state.loading}
                                                   
                       activeOpacity={0.5}
                       onPress={() => {
-                        this.gradeThreeBtn(item.id);
+                        this.oneBtn(item.id);
                       }} >
                       <Text style={LessonStyle.newStudentNextTxt}>{item.name}</Text>
                       {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}

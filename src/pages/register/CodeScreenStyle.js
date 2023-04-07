@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const MakeGroupStyle = StyleSheet.create({
+const CodeScreenStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -10,12 +10,10 @@ const MakeGroupStyle = StyleSheet.create({
       logoOnlyHeader:{
 		height:"10%",
 		alignItems: "center",
-		marginTop:30,
-        },
-
-        btnTextContainer:{
-            marginTop:30,
-        },
+		marginTop:50,
+        
+		
+	},
     commonStudentBtnTxt:{
         fontSize:16,
         fontFamily:'CircularStd-Bold',
@@ -100,38 +98,51 @@ const MakeGroupStyle = StyleSheet.create({
         paddingBottom:15,
         },
 
-        makeGroupText:{
+        newStudentText:{
            alignItems:"center",
             marginTop:100,
             textAlign:"center",
-            fontSize:20,
-            color:"#000000",
-            fontWeight:'500',
-           fontFamily:'CircularStd-Bold',
-},
+            fontSize:50,
+            fontWeight:'600',
+            fontStyle:"bold",
+            fontFamily:'CircularStd-Bold',
+
+        },
+      languagesName:{
+        color:'#0C222C',
+        fontSize:16,
+        fontWeight:'500',
+        fontFamily:'CircularStd-Bold',
+        opacity:0.6
+      },
+      languagesCode:{
+        color:'#0C222C',
+        fontSize:18,
+        fontWeight:'500',
+        opacity:0.6
+      },
       btncontainer: {
+        flex: 1,
        flexDirection: 'row',
         alignItems: 'center',
-        marginTop:10,  
-        justifyContent:"center",   
+        marginTop:30,     
     },
     buttonContainer: {
-       
+        flex: 1,
         justifyContent: 'center',
-        marginLeft:50,
-        marginRight:50,
+        marginLeft:10,
+        marginRight:10,
         backgroundColor:"#FBFEFD",
-        alignItems:"center",
-      paddingLeft:40,
-      paddingRight:40,
-        marginTop:20,
-        height:50,
+        marginTop:50,
+        height:100,
         borderRadius:10,
+       
+        // borderWidth:1,
         
     },
     buttonStyle:{
        
-        height:50,
+        height:100,
         color:"black",
         alignItems:"center",
         justifyContent:"center"
@@ -145,11 +156,16 @@ const MakeGroupStyle = StyleSheet.create({
     },
     newStudentNextTxt:{
         color:"#000000",
-        fontSize:20,
-        fontWeight:'400',
-        color:"#000000",
- fontFamily:'CircularStd-Bold',
-        }
+        fontSize:22,
+        fontWeight:'700',
+        fontFamily:'CircularStd-Bold',
+        },
+        logoOnlyHeader:{
+            height:"10%",
+            alignItems: "center",
+            marginTop:100,
+            
+        },
 });
 
-export default MakeGroupStyle;
+export default CodeScreenStyle;

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const NewStudentStyle = StyleSheet.create({
+const StudentRegisterStyle = StyleSheet.create({
     authArea:{
         width:'100%',
         height:'100%',
@@ -75,6 +75,7 @@ const NewStudentStyle = StyleSheet.create({
                 width: 20,
                 height: 20,
                 marginTop:15,
+                justifyContent:'flex-end',
                 zIndex:999,
                 left:"4%",
               },
@@ -89,4 +90,4 @@ const NewStudentStyle = StyleSheet.create({
 
 });
 
-export default NewStudentStyle;
+export default StudentRegisterStyle;

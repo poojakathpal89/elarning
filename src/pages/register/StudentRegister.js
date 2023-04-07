@@ -1,38 +1,33 @@
 import React from 'react';
 import { Text,Image,Button,TextInput,ScrollView, View ,TouchableOpacity,StyleSheet} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
- import NewTeacherNameStyle from './NewTeacherNameStyle';
+//  import NewStudentNameStyle from './NewStudentStyle';
+import StudentRegisterStyle from './StudentRegisterStyle';
  import GlobalStyle from "../../css/style";
  import CommonStyle from '../../css/common';
  import ButtonStyle from "../../css/button";
  import DropdownMenu from '../../react-native-dropdown-menu';
  import SelectDropdown from 'react-native-select-dropdown';
  import { default as FontAwesome, default as Icon } from "react-native-vector-icons/FontAwesome";
-//  import { default as FontAwesome, default as Icon } from "react-native-vector-icons/FontAwesome";
-import { AuthService, GlobalService, RequestHandler, GlobalShareService,ToastService } from "../../services/AllServices";
+ import { AuthService, GlobalService, RequestHandler, ToastService ,GlobalShareService} from "../../services/AllServices";
 
 
-
-
-
-export default class NewTeacherName extends React.Component {
+export default class StudentRegister extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-      countriesArray: [],
-      selectedStates: "",
-            selectedCountry: "",
-            displayState:false,
-            displayCountry:false,
-            errorPass:false,
-            name: "",
-            email: "",
-            school:"",
-            multiPlayer:"",
-            mobile: "",
-      loading: false,
+        countriesArray: [],
+        selectedStates: "",
+              selectedCountry: "",
+              displayState:false,
+              displayCountry:false,
+               loading: false,
       secureTextEntry: true,
-      errorPass:false
+      errorPass:false,
+      name: "",
+      email: "",
+      school:"",
+      mobile: "",
       }
   };
 
@@ -42,7 +37,6 @@ export default class NewTeacherName extends React.Component {
       GlobalService.shareNavigate = true;
       this.getCountriesArray();
   }
-
   validateEmail(_email) {
     let postDataValidate = {
         value: _email,
@@ -61,13 +55,14 @@ export default class NewTeacherName extends React.Component {
             console.log("error", error);
         });
 }
+
   goToNextBtn(){
     this.setState({  nameError: "",emailError: "",schoolError:"", mobileError: "" ,countryError: "", stateError: "", mobileError: "" ,});
     let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
         let error = false;
 
         if (this.state.name == "") {
-          this.setState({ nameError:GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_FULL_NAME +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "Nickname is required" });
+           this.setState({ nameError:GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_FULL_NAME +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "Nickname is required" });
           error = true;
       }
     if (this.state.email == "") {
@@ -96,7 +91,8 @@ if (this.state.selectedStates <1) {
     this.setState({ stateError:GlobalService.Register ? GlobalService.Register.RAPP_PROFILE_STATE +' '+GlobalService.Register.RAPP_FORM_REQUIRED :  "State is required" });
     error = true;
 }
-    
+
+error = false;
 if (error == false) {
            
   let postData = {
@@ -106,18 +102,20 @@ if (error == false) {
       user_state_id: parseInt(this.state.selectedStates),
       user_school: this.state.school,
       user_mobile: this.state.mobile,
+      userType: 1,
+   
 
   }; 
   console.log('register post data',postData)
   GlobalService.regData = postData;
   GlobalShareService.shareData = '';
-  this.props.navigation.navigate("chooseAvtar");
+  this.props.navigation.navigate("ChooseAvtar");
+ 
 } else {
   return false;
     
   }
 }
- 
   getCountriesArray() {
     this.setState({ isLoading: true, countriesArray: [] });
    
@@ -132,7 +130,7 @@ if (error == false) {
                     this.setState({ countryIndex:index,selectedCountry: [this.state.selectedCountry] });
                   
                 }
-    console.log("select country",parseInt(this.state.selectedCountry))
+        console.log("select country",parseInt(this.state.selectedCountry))
                 this.getStates(parseInt(this.state.selectedCountry));
             }
 
@@ -145,7 +143,6 @@ if (error == false) {
             ToastService.tostShort(error);
         });
 }
-
 getStates(_country_id) {
        
     this.setState({ isLoading: true, statesArray: [] });
@@ -166,7 +163,6 @@ getStates(_country_id) {
             ToastService.tostShort(error);
         });
 }
-
   render() {
       return (
         <View style={[GlobalStyle.MainBody,{backgroundColor:'#E7E2E2',}]}>
@@ -183,19 +179,19 @@ getStates(_country_id) {
                 />
         </View>
         
-            <View style={[NewTeacherNameStyle.authArea,{  }]}>
-                <View style={[NewTeacherNameStyle.menuCardBox]}>
+            <View style={[StudentRegisterStyle.authArea,{  }]}>
+                <View style={[StudentRegisterStyle.menuCardBox]}>
 
-                              <View style={NewTeacherNameStyle.SectionStyle}>
-                            <View style={NewTeacherNameStyle.studentTitleBox}>
-                            <View style={NewTeacherNameStyle.studentTitle}>
+                              <View style={StudentRegisterStyle.SectionStyle}>
+                            <View style={StudentRegisterStyle.studentTitleBox}>
+                            <View style={StudentRegisterStyle.studentTitle}>
 
                            <Text style={{ fontSize: 16, color: "#000000",fontFamily:'CircularStd-Bold', alignSelf: 'flex-end',fontWeight: "700",marginTop:6,}}> 
                             nickname
                             </Text>  
          
                          </View>
-                                <View style={NewTeacherNameStyle.newTeacherError}>
+                                <View style={StudentRegisterStyle.newStudentError}>
                                     {this.state.nameError ?
                                     <Text style={GlobalStyle.errorclass}>{this.state.nameError}</Text>
                                     : null}
@@ -205,44 +201,46 @@ getStates(_country_id) {
 
                                 {/* <Image source={require('../../../Image/usericon.png')}  style={profileStyles.userIcon} /> */}
                                 <TextInput
-                                   style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
-                                   onChangeText={(name) => {
-                                     this.setState({ name: name });
-                                 }}
-                                   placeholder=""
-                                   placeholderTextColor="#8b9cb5"
-                                   autoCapitalize="none"
-                                   returnKeyType="next"
-                                   value={this.state.name}
-                                  underlineColorAndroid="#f000"
-                                   blurOnSubmit={false}
+                                    style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
+                                    onChangeText={(name) => {
+                                      this.setState({ name: name });
+                                  }}
+                                    placeholder=""
+                                    placeholderTextColor="#8b9cb5"
+                                    autoCapitalize="none"
+                                    returnKeyType="next"
+                                    value={this.state.name}
+                                   underlineColorAndroid="#f000"
+                                    blurOnSubmit={false}
                                      />
                             </View>
                              </View>
-                             <View style={NewTeacherNameStyle.SectionStyle}>
-                            <View style={NewTeacherNameStyle.studentTitleBox}>
-                            <View style={NewTeacherNameStyle.studentTitle}>
+                             <View style={StudentRegisterStyle.SectionStyle}>
+                            <View style={StudentRegisterStyle.studentTitleBox}>
+                            <View style={StudentRegisterStyle.studentTitle}>
 
                            <Text style={{ fontSize: 16, color: "#000000",fontFamily:'CircularStd-Bold', alignSelf: 'flex-end',fontWeight: "700",marginTop:6,}}> 
                             email(Optional)
                             </Text>  
          
                          </View>
-                                <View style={NewTeacherNameStyle.newTeacherError}>
+                                <View style={StudentRegisterStyle.newStudentError}>
                                     {this.state.emailError ?
                                     <Text style={GlobalStyle.errorclass}>{this.state.emailError}</Text>
                                     : null}
                                 </View>
                             </View>
-                                <View style={{width:"100%",'position':'relative',marginTop:1}} >
+                                <View style={{width:"100%",'position':'relative',marginTop:0,marginBottom:10}} >
 
                                 <TextInput
-                                   style={[{fontFamily:'CircularStd-Book',textAlign:'right',marginTop:0},this.state.emailError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'},]}
-                                   onChangeText={(email) => {
-                                       this.validateEmail(email);
-                                       this.setState({ email: email });
-                                   }}
-                                   placeholder={GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_ENTER_EMAIL : "Enter email"} 
+                                    // style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
+                                    style={[{fontFamily:'CircularStd-Book',textAlign:'right',marginTop:1},this.state.emailError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'},]}
+                                    onChangeText={(email) => {
+                                        this.validateEmail(email);
+                                        this.setState({ email: email });
+                                    }}
+                                  
+                                  placeholder={GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_ENTER_EMAIL : ""} 
                                   placeholderTextColor="#0C222C"
                                   autoCapitalize="none"
                                   returnKeyType="next"
@@ -253,21 +251,18 @@ getStates(_country_id) {
                             </View>
                              </View>
                           
-
-
-<View style={NewTeacherNameStyle.SectionStyle}>
- <View style={[NewTeacherNameStyle.SectionStyle, { width: "100%", position: "relative" }]}>
-                        
-     <View style={[NewTeacherNameStyle.profileTitleBox]}>
-         <View style={[NewTeacherNameStyle.profileTitle,{height:40}]}>
-            
-        <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold', alignSelf: 'flex-end',fontWeight: "700",marginTop:3 }}>
-            Country
-        </Text> 
-            
-                                </View>
-                                </View>
-                       <View style={{width:"100%",'position':'relative'}} >
+                  <View style={StudentRegisterStyle.SectionStyle}>
+                  <View style={[StudentRegisterStyle.SectionStyle, { width: "100%", position: "relative" }]}>
+                                      
+                    <View style={[StudentRegisterStyle.profileTitleBox]}>
+                        <View style={[StudentRegisterStyle.profileTitle,{height:40}]}>
+                          
+                      <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',alignSelf: 'flex-end', fontWeight: "700",marginTop:3 }}>
+                          Country
+                      </Text>         
+</View>
+</View>
+                       <View style={{width:"100%",'position':'relative',alignSelf:'flex-end'}} >
                            
              <SelectDropdown
               dropdownIconPosition ="right"
@@ -279,9 +274,7 @@ getStates(_country_id) {
                         this.getStates(data.id);
                         this.setState({ selectedCountry: data.id });
                     }}
-                   
-            // data={countriesWithFlags}
-             defaultValueByIndex={this.state.countryIndex}
+                    defaultValueByIndex={this.state.countryIndex}
              defaultValue={this.state.countriesArray[this.state.countryIndex]}
             // onSelect={(selectedItem, index) => {
             //   console.log(selectedItem, index);
@@ -292,20 +285,22 @@ getStates(_country_id) {
                 <View style={styles.dropdown3BtnChildStyle}>
                    {selectedItem ? (
                     <View style={styles.dropdown3BtnChildStyle}>
-                     
-                        <Image source={{ uri: selectedItem.image }} style={[NewTeacherNameStyle.userIcon,{borderRadius:12}]} />
+                                   <Image source={{ uri: selectedItem.image }} style={[StudentRegisterStyle.userIcon,{borderRadius:12}]} />
+
+                                <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select country'}</Text>
+
                    
                    
-                         <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select country'}</Text>
                          <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
                      
                   </View>
                   ) : 
                   (
                     <View style={styles.dropdown3BtnChildStyle}>
-                      <Image source={require("../../Image/arrow_down.png")} style={NewTeacherNameStyle.userIcon} />
                     
                         <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select country'}</Text>
+                        {/* <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} /> */}
+
                         <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
                     
                     </View>
@@ -320,37 +315,33 @@ getStates(_country_id) {
             renderCustomizedRowChild={(item, index) => {
               return (
                 <View style={styles.dropdown3RowChildStyle}>
+                 <Text style={styles.dropdown3BtnTxt}>{item.name}</Text>
                    <Image source={{ uri: item.image }} style={styles.dropdown3BtnImage} />
                                                                            
-                  <Text style={styles.dropdown3BtnTxt}>{item.name}</Text>
                 </View>
               );}} />
            </View>
-
-           <View style={[NewTeacherNameStyle.newTeacherError,{width:"100%",justifyContent:"flex-start",top:5,}]}>
+           <View style={[StudentRegisterStyle.newStudentError,{width:"100%",justifyContent:"flex-start",top:5,right:0,left:0,alignSelf:'flex-start'}]}>
                 {this.state.countryError ? 
-            <Text style={[NewTeacherNameStyle.errorclass]}>{this.state.countryError}</Text>
+            <Text style={[StudentRegisterStyle.errorclass]}>{this.state.countryError}</Text>
             : null} 
             </View>
         </View>
      </View>
-     
-  <View style={NewTeacherNameStyle.SectionStyle}>
-                         <View style={[NewTeacherNameStyle.SectionStyle, { width: "100%"}]}>
-                          <View style={[NewTeacherNameStyle.profileTitleBox]}>
-                                <View style={[NewTeacherNameStyle.profileTitle,{height:40}]}>
+
+
+            <View style={StudentRegisterStyle.SectionStyle}>
+                         <View style={[StudentRegisterStyle.SectionStyle, { width: "100%"}]}>
+                          <View style={[StudentRegisterStyle.profileTitleBox]}>
+                                <View style={[StudentRegisterStyle.profileTitle,{height:40}]}>
             
                                     <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',alignSelf: 'flex-end', fontWeight: "700",marginTop:3 }}>
                                          State
                                     </Text> 
-                                    <View style={[NewTeacherNameStyle.newTeacherError,{width:"100%",justifyContent:"flex-start",top:5}]}>
-                             {this.state.stateError ? 
-                          <Text style={[NewTeacherNameStyle.errorclass]}>{this.state.stateError}</Text>
-                            : null} 
-                          </View>
+                                
                                 </View>
                                 </View>
-                       <View style={{width:"100%"}} >
+                       <View style={{width:"100%",alignItems:'flex-end'}} >
                        <SelectDropdown
             data={this.state.statesArray}
             onSelect={(data) => {
@@ -366,16 +357,17 @@ getStates(_country_id) {
                  
                  {selectedItem ? (
                     <View style={styles.dropdown3BtnChildStyle}>
-                      <Image source={require("../../Image/arrow_down.png")} style={NewTeacherNameStyle.userIcon} />
                    
                          <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select State'}</Text>
+                         <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} />
+
                          <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
                      
                   </View>
                   ) :  
                   (
                     <View style={styles.dropdown3BtnChildStyle}>
-                      <Image source={require("../../Image/arrow_down.png")} style={NewTeacherNameStyle.userIcon} />
+                      <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} />
                     
                         <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select State'}</Text>
                         <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
@@ -392,28 +384,32 @@ getStates(_country_id) {
             renderCustomizedRowChild={(item, index) => {
               return (
                 <View style={styles.dropdown3RowChildStyle}>
-                      <Image source={require("../../Image/arrow_down.png")} style={NewTeacherNameStyle.userIcon} />
+                      <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} />
                    
                   <Text style={styles.dropdown3RowTxt}>{item.name}</Text>
                 </View>
               );}} /> 
                             
                           </View>
+                          <View style={[StudentRegisterStyle.newStudentError,{width:"100%",justifyContent:"flex-start",top:5}]}>
+                             {this.state.stateError ? 
+                          <Text style={[StudentRegisterStyle.errorclass]}>{this.state.stateError}</Text>
+                            : null} 
+                          </View>
                          </View>
 
-                         </View>      
-                                      
-
-                             <View style={NewTeacherNameStyle.SectionStyle}>
-                            <View style={NewTeacherNameStyle.studentTitleBox}>
-                            <View style={NewTeacherNameStyle.studentTitle}>
+                         </View>                  
+                              
+                             <View style={StudentRegisterStyle.SectionStyle}>
+                            <View style={StudentRegisterStyle.studentTitleBox}>
+                            <View style={StudentRegisterStyle.studentTitle}>
 
                            <Text style={{ fontSize: 16, color: "#000000",fontFamily:'CircularStd-Bold', alignSelf: 'flex-end',fontWeight: "700",marginTop:6,}}> 
                             school(optional)
                             </Text>  
          
                          </View>
-                                <View style={NewTeacherNameStyle.newTeacherError}>
+                                <View style={StudentRegisterStyle.newStudentError}>
                                     {this.state.schoolError ?
                                     <Text style={GlobalStyle.errorclass}>{this.state.schoolError}</Text>
                                     : null}
@@ -436,16 +432,16 @@ getStates(_country_id) {
                                      />
                             </View>
                              </View>
-                             <View style={NewTeacherNameStyle.SectionStyle}>
-                            <View style={NewTeacherNameStyle.studentTitleBox}>
-                            <View style={NewTeacherNameStyle.studentTitle}>
+                             <View style={StudentRegisterStyle.SectionStyle}>
+                            <View style={StudentRegisterStyle.studentTitleBox}>
+                            <View style={StudentRegisterStyle.studentTitle}>
 
                            <Text style={{ fontSize: 16, color: "#000000",fontFamily:'CircularStd-Bold', alignSelf: 'flex-end',fontWeight: "700",marginTop:6,}}> 
                             mobile(optional)
                             </Text>  
          
                          </View>
-                                <View style={NewTeacherNameStyle.newTeacherError}>
+                                <View style={StudentRegisterStyle.newStudentError}>
                                     {this.state.mobileError ?
                                     <Text style={GlobalStyle.errorclass}>{this.state.mobileError}</Text>
                                     : null}
@@ -461,8 +457,8 @@ getStates(_country_id) {
                                     placeholder="(406) 555-0120"
                                     placeholderTextColor="#8b9cb5"
                                     autoCapitalize="none"
-                                    returnKeyType="next"
                                     keyboardType='numeric'
+                                    returnKeyType="next"
                                    underlineColorAndroid="#f000"
                                     // selectionColor={"#fff"}
                                     blurOnSubmit={false}
@@ -473,7 +469,7 @@ getStates(_country_id) {
                              <View style={{ marginTop:30 ,marginLeft:'auto',marginBottom:10}}>
                                     <TouchableOpacity
                                         disabled={this.state.loading}
-                                        style={[NewTeacherNameStyle.comnButtonStyle, { width: 100 }]}
+                                        style={[StudentRegisterStyle.comnButtonStyle, { width: 100 }]}
                                         activeOpacity={0.5}
                                         onPress={() => {
                                          this.goToNextBtn();
@@ -504,6 +500,7 @@ const styles = StyleSheet.create({
     dropdown3DropdownStyle: {backgroundColor: '#fff',border:12},
     dropdown3RowStyle: {
       backgroundColor: '#fff',
+     
       borderColor:"#F9FAFB",
       borderWidth:1,
       height: 50,
@@ -513,10 +510,14 @@ const styles = StyleSheet.create({
     dropdown3BtnTxt: {
         color:'#0C222C',
         paddingHorizontal:15,
-        paddingLeft:40,
+       alignItems:'flex-start',
+        paddingRight:40,
+        justifyContent: 'flex-end',
         fontFamily:"CircularStd-Book",
         fontSize: 14,
-       marginHorizontal: 12,
+        right:0,
+       
+        marginHorizontal: 12,
       },
       dropdown3BtnStyle: {
         width: '100%',
@@ -524,7 +525,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         paddingHorizontal: 0,
         borderWidth: 1,
-      
+        alignSelf:'flex-end',
         borderRadius: 8,
         borderColor:"#F9FAFB",
       },
@@ -532,10 +533,10 @@ const styles = StyleSheet.create({
       dropdown3BtnChildStyle: {
         flex: 1,
         flexDirection: 'row',
-        alignSelf:'flex-end',
         fontFamily:"CircularStd-Book",
         alignItems: 'center',
         borderColor:"#F9FAFB",
+        justifyContent:'flex-start',
         padding:0,
         colorL:"#0C222C"
        
@@ -551,7 +552,7 @@ const styles = StyleSheet.create({
       dropdown3RowChildStyle: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         color:'#2A3B69',
          

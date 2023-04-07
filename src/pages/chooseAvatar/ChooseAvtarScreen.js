@@ -72,76 +72,9 @@ export default class ChooseAvatarScreen extends React.Component {
       this.getAvtar();
   }
   setAvtaarOne(){
-    this.props.navigation.navigate("GradeList");
+    this.props.navigation.navigate("CodeScreen");
   }
-  setAvtaarTwo(){
-    this.props.navigation.navigate("newStudentThree");
-
-  }
-  setAvtaarThree(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarFour(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarFive(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarSix(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarSeven(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarEight(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarNine(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarTen(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarEleven(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarTwelve(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarThirteen(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarFourteen(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarFifteen(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarSixteen(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarSeventeen(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarEighteen(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarNinteen(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarTwenty(){
-    this.props.navigation.navigate("newStudentThree");
- }
- setAvtaarTwentyOne(){
-    this.props.navigation.navigate("newStudentThree");
- }
-
-  nextBtn() {
-    this.props.navigation.navigate("newStudentThree");  
-}
-OnButtonClick() {
-    this.props.navigation.navigate("newStudentThree");  
-}
+ 
 setAvtaar(_item) {
     /// console.log('ite=============',_item[1])
 

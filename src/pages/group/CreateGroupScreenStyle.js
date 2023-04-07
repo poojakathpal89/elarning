@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const NewStudentStyleTwo = StyleSheet.create({
+const CreateGroupScreenStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -10,10 +10,12 @@ const NewStudentStyleTwo = StyleSheet.create({
       logoOnlyHeader:{
 		height:"10%",
 		alignItems: "center",
-		marginTop:50,
-        
-		
-	},
+		marginTop:30,
+        },
+
+        btnTextContainer:{
+            marginTop:30,
+        },
     commonStudentBtnTxt:{
         fontSize:16,
         fontFamily:'CircularStd-Bold',
@@ -98,51 +100,38 @@ const NewStudentStyleTwo = StyleSheet.create({
         paddingBottom:15,
         },
 
-        newStudentText:{
+        makeGroupText:{
            alignItems:"center",
             marginTop:100,
             textAlign:"center",
-            fontSize:50,
-            fontWeight:'600',
-            fontStyle:"bold",
-            fontFamily:'CircularStd-Bold',
-
-        },
-      languagesName:{
-        color:'#0C222C',
-        fontSize:16,
-        fontWeight:'500',
-        fontFamily:'CircularStd-Bold',
-        opacity:0.6
-      },
-      languagesCode:{
-        color:'#0C222C',
-        fontSize:18,
-        fontWeight:'500',
-        opacity:0.6
-      },
+            fontSize:20,
+            color:"#000000",
+            fontWeight:'500',
+           fontFamily:'CircularStd-Bold',
+},
       btncontainer: {
-        flex: 1,
        flexDirection: 'row',
         alignItems: 'center',
-        marginTop:30,     
+        marginTop:10,  
+        justifyContent:"center",   
     },
     buttonContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        marginLeft:10,
-        marginRight:10,
-        backgroundColor:"#FBFEFD",
-        marginTop:50,
-        height:100,
-        borderRadius:10,
        
-        // borderWidth:1,
+        justifyContent: 'center',
+        marginLeft:50,
+        marginRight:50,
+        backgroundColor:"#FBFEFD",
+        alignItems:"center",
+      paddingLeft:40,
+      paddingRight:40,
+        marginTop:20,
+        height:50,
+        borderRadius:10,
         
     },
     buttonStyle:{
        
-        height:100,
+        height:50,
         color:"black",
         alignItems:"center",
         justifyContent:"center"
@@ -156,16 +145,11 @@ const NewStudentStyleTwo = StyleSheet.create({
     },
     newStudentNextTxt:{
         color:"#000000",
-        fontSize:22,
-        fontWeight:'700',
-        fontFamily:'CircularStd-Bold',
-        },
-        logoOnlyHeader:{
-            height:"10%",
-            alignItems: "center",
-            marginTop:100,
-            
-        },
+        fontSize:20,
+        fontWeight:'400',
+        color:"#000000",
+ fontFamily:'CircularStd-Bold',
+        }
 });
 
-export default NewStudentStyleTwo;
+export default CreateGroupScreenStyle;

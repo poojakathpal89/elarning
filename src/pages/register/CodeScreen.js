@@ -1,12 +1,14 @@
 import React from 'react';
 import {Text,Image, View,TouchableOpacity,Button,ScrollView} from 'react-native';
-import NewStudentStyleTwo from './NewStudentStyleTwo';
+// import NewStudentStyleTwo from './NewStudentStyleTwo';
+import CodeScreenStyle from './CodeScreenStyle';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import {FooterComponentWithTeacher} from "../../component/AllComponent";
+import { GlobalService } from '../../services/AllServices';
 
 
-export default class NewStudentScreenTwo extends React.Component {
+export default class CodeScreen extends React.Component {
   constructor(props) {
       super(props);
   }
@@ -22,9 +24,16 @@ export default class NewStudentScreenTwo extends React.Component {
   }
 
   nextBtn() {
-    this.props.navigation.navigate("makegroups");
-   
+    if (GlobalService.regData.userType == 1){
+        this.props.navigation.navigate("GradeList");
+    }
+    
+    else {GlobalService.regData.userType == 2}
+    this.props.navigation.navigate("CreateGroups");
+
+    
 }
+
 nextPrint(){
     this.props.navigation.navigate("newStudentThree");
 }
@@ -32,18 +41,10 @@ nextPrint(){
       return (
               <View style={[GlobalStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
                 <ScrollView>
-                <View style={NewStudentStyleTwo.container}>
-                <View style={[NewStudentStyleTwo.menuArea2]}>
-                {/* <View style={[NewStudentStyle.menuCardBox,{}]}> */}
-            {/* <View style={NewStudentStyle.languagesBox}>
-            <View style={NewStudentStyle.languagesList}>
-              <Text >Student Data</Text>
-             
-                  </View>
-                  <Text >ABC 123</Text>
-              </View> */}
-              {/* </View> */}
-              <View style={NewStudentStyleTwo.logoOnlyHeader}>
+                <View style={CodeScreenStyle.container}>
+                <View style={[CodeScreenStyle.menuArea2]}>
+          
+              <View style={CodeScreenStyle.logoOnlyHeader}>
                       <Image
                           source={require("../../Image/text-title.png")}
                           style={{
@@ -57,13 +58,13 @@ nextPrint(){
               
           
                   </View>
-                  <View style={NewStudentStyleTwo.newStudentText}>
-              <Text  style={NewStudentStyleTwo.newStudentTxt}>ABC-123</Text>
+                  <View style={CodeScreenStyle.newStudentText}>
+              <Text  style={CodeScreenStyle.newStudentTxt}>ABC-123</Text>
              
                   </View>
-                  <View style={NewStudentStyleTwo.btncontainer}>
-                  <View style={NewStudentStyleTwo.buttonContainer}>
-                  <View  style={NewStudentStyleTwo.buttonStyle}>
+                  <View style={CodeScreenStyle.btncontainer}>
+                  <View style={CodeScreenStyle.buttonContainer}>
+                  <View  style={CodeScreenStyle.buttonStyle}>
                   <TouchableOpacity
                                         disabled={this.state.loading}
                                         
@@ -72,14 +73,14 @@ nextPrint(){
                                          this.nextPrint();
                                         }}
                                     >
-                                         <Text style={NewStudentStyleTwo.newStudentNextTxt}>print</Text>
+                                         <Text style={CodeScreenStyle.newStudentNextTxt}>print</Text>
                                         
                                         {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
                                     </TouchableOpacity>
                             </View>
                         </View>
-                        <View style={NewStudentStyleTwo.buttonContainer}>
-                          <View  style={NewStudentStyleTwo.buttonStyle}>
+                        <View style={CodeScreenStyle.buttonContainer}>
+                          <View  style={CodeScreenStyle.buttonStyle}>
                           <TouchableOpacity
                                         disabled={this.state.loading}
                                         
@@ -88,7 +89,7 @@ nextPrint(){
                                          this.nextBtn();
                                         }}
                                     >
-                                         <Text style={NewStudentStyleTwo.newStudentNextTxt}>next</Text>
+                                         <Text style={CodeScreenStyle.newStudentNextTxt}>next</Text>
                                         
                                         {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
                                     </TouchableOpacity>
@@ -101,7 +102,7 @@ nextPrint(){
                  
           
                 </ScrollView>
-                <FooterComponentWithTeacher props={this.props} active={"home"} /> 
+                {/* <FooterComponentWithTeacher props={this.props} active={"home"} />  */}
 
                 </View>
           

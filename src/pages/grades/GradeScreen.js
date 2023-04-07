@@ -36,15 +36,15 @@ export default class GradeScreen extends React.Component {
   
     AuthService.getStudentGradeList()
         .then((response) => {
-          
+          console.log(response)
         
             this.setState({ gradeListArray: response.grades});
-            console.log(gradeListArray,"gradeListArray")
+          //  console.log(gradeListArray,"gradeListArray")
       
             //this.getAvtar(this.state.selectedCountry);
         })
         .catch((error) => {
-            ToastService.tostShort(error);
+            // ToastService.tostShort(error);
         });
 }
 
@@ -69,11 +69,11 @@ export default class GradeScreen extends React.Component {
                       </View>
                   </View>
                 <View style={NewStudentthreeStyle.btnTextContainer}>
-                {/* {this.state.gradeListArray != "" &&
+               {this.state.gradeListArray != "" &&
                                                             this.state.gradeListArray.length > 0 &&
-                                                            this.state.gradeListArray.map((item, key) => ( */}
+                                                            this.state.gradeListArray.map((item, key) => ( 
               
-                    <View style={NewStudentthreeStyle.btncontainer}>
+                    <View key={key} style={NewStudentthreeStyle.btncontainer}>
                             <View style={NewStudentthreeStyle.buttonContainer}>
                                 <View  style={NewStudentthreeStyle.buttonStyle}>
                                     <TouchableOpacity
@@ -85,14 +85,14 @@ export default class GradeScreen extends React.Component {
                                          // this.gradeOneBtn();
                                         }} >
                                         {/* <Text style={NewStudentthreeStyle.newStudentNextTxt}>{item.name}</Text> */}
-                                        <Text style={NewStudentthreeStyle.newStudentNextTxt}>Sanskarit</Text>
+                                        <Text style={NewStudentthreeStyle.newStudentNextTxt}>{item.name}</Text>
 
                                         {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
                                     </TouchableOpacity>
                                 </View>
                             </View>
                     </View>
-  {/* ))} */}
+   ))} 
                 </View>
             </View>
         

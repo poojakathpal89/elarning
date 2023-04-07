@@ -22,13 +22,10 @@ export default class SubjectScreen extends React.Component {
     this.getSubjectList();
   }
   selectGrade() {
-    this.props.navigation.navigate("Lesson");
+    this.props.navigation.navigate("Lessons");
    
 }
-selectGrade() {
-    this.props.navigation.navigate("Lesson");
-   
-}
+
 getSubjectList() {
 
   this.setState({ isLoading: true, subjectListArray: [] });
@@ -39,14 +36,14 @@ getSubjectList() {
 
   AuthService.getSubjectList(postData)
       .then((response) => {
-        
+       
       
           this.setState({ subjectListArray: response.subjects});
-          console.log(subjectListArray,"subjectlist")
+       
     
       })
       .catch((error) => {
-          ToastService.tostShort(error);
+        //  ToastService.tostShort(error);
       });
 }
 
@@ -60,11 +57,11 @@ getSubjectList() {
                 
       <View style={SubjectStyle.btnTextContainer}>
 
-      {this.state.subjectListArray != "" &&
+       {this.state.subjectListArray != "" &&
       this.state.subjectListArray.length > 0 &&
-      this.state.subjectListArray.map((item, key) => (
+      this.state.subjectListArray.map((item, key) => ( 
 
-      <View  key={key} style={SubjectStyle.buttonContainerOne}>
+      <View key={key}  style={SubjectStyle.buttonContainerOne}>
         <View  style={SubjectStyle.buttonStyle}>
         <TouchableOpacity
           disabled={this.state.loading}
@@ -79,7 +76,7 @@ getSubjectList() {
                   </View>
               </View>
 
-))}
+ ))} 
               </View>
 
 
