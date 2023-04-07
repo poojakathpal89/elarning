@@ -130,16 +130,19 @@ bottomNavIcon:{
   marginBottom:8
 },
 bottomNavText:{
-  fontSize:12,
+  fontSize:16,
   fontWeight:'700',
   color:'gery'
 },
 bottomNavTextActive:{
-  fontSize:13,
+  fontSize:16,
   fontWeight:'700',
   color:'grey',
   textAlign:'center',
   marginRight:50,
   justifyContent:'center',
+},
+avatarSelected:{
+  borderWidth:1,
 }
 });

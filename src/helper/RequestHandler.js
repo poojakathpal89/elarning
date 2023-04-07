@@ -38,6 +38,7 @@ class RequestHandler extends Component {
             GenderArray:null,
             Month:null,
             shareUrl : '',
+            avtarArray:[],
         };
         this.getToken();
     }

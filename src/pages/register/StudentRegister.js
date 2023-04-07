@@ -122,7 +122,7 @@ if (error == false) {
   
     AuthService.getCountriesArray()
         .then((response) => {
-          
+          console.log(response.data.countries)
             if (this.state.selectedCountry != "") {
                 const index = response.data.countries.findIndex((e) => e.id == this.state.selectedCountry);
                 if (index != -1) {
@@ -144,6 +144,7 @@ if (error == false) {
         });
 }
 getStates(_country_id) {
+  console.log("countryId",_country_id)
        
     this.setState({ isLoading: true, statesArray: [] });
     AuthService.getStatesArray(_country_id)

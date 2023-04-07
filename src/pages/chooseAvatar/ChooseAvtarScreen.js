@@ -4,6 +4,8 @@ import ChooseAvtarStyle from './ChooseAvtarStyle';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import { AuthService } from "../../services/AllServices";
+import { GlobalService ,RequestHandler} from '../../services/AllServices';
+
 
 const coloursArray = [
     "#3658C9",
@@ -59,50 +61,83 @@ const coloursArray = [
 export default class ChooseAvatarScreen extends React.Component {
   constructor(props) {
       super(props);
-      state = {
      
-        avtarArray: [{"1":"../../Image/logo-icon.png"}],
-      }
-  
   };
-
+  state = {
+    avatarId:0,
+       avtarArray: [],
+     }
   
   componentDidMount() {
+    
+     
       // console.log(StringsOfLanguages.languageObj);
       this.getAvtar();
   }
-  setAvtaarOne(){
-    this.props.navigation.navigate("CodeScreen");
+
+  setAvtar(_itemId){
+    console.log("itemSeleted",_itemId)
+    GlobalService.regData.avatarId = _itemId
+    console.log(this.state)
+    this.setState({avatarId:_itemId})
+   
+   
+  }
+  OnButtonClick(){
+    if (GlobalService.regData.userType == 1){
+        this.props.navigation.navigate("GradeList");
+    }
+    
+    else {
+    
+        this.props.navigation.navigate("CodeScreen");    }
   }
  
-setAvtaar(_item) {
-    /// console.log('ite=============',_item[1])
+//   setAvtar(_item) {
+//      (GlobalService.regData.avatarId == 1)
+//         this.props.navigation.navigate("Subjects");
+    
+    
+  
+//     /// console.log('ite=============',_item[1])
 
-    //  if(this.state.colorId!=''){
-    //      this.setState({ avatarId: parseInt(_item[0]), avtarimage: _item[1], isPic: false,photo:"" });
-    //  }else{
-    //  }
-     /// this.RBSheet.close();
- }
+//     //  if(this.state.colorId!=''){
+//     //      this.setState({ avatarId: parseInt(_item[0]), avtarimage: _item[1], isPic: false,photo:"" });
+//     //  }else{
+//     //  }
+//      /// this.RBSheet.close();
+//  }
 
 getAvtar() {
     this.setState({ avtarArray: [] });
     AuthService.getAvtar()
         .then((response) => {
-             console.log(typeof response.avatar);
+           
              console.log('response',response.avatars)
             if (response.status == 1) {
+                RequestHandler.state.avtarArray= response.avatars;
                 this.setState({ avtarArray: response.avatars, isLoading: false });
-                this.state.avtarArray;
+                   this.forceUpdate() 
             } else {
-                ToastService.tostShort(response.msg);
-            }
+                // ToastService.tostShort(response.msg);
+            } 
         })
         .catch((error) => {
-            ToastService.tostShort(error);
+         //   ToastService.tostShort(error);
         });
 }
   render() {
+    function toChunkArray(myArray: any, chunkSize: any): any {
+        var results = [];
+
+        while (myArray.length) {
+            results.push(myArray.splice(0, chunkSize));
+        }
+
+        return results;
+    }
+
+     let chunkedArraysOfColSize  = toChunkArray( RequestHandler.state.avtarArray,3);
       return (
               <View style={[GlobalStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
                 <ScrollView>
@@ -133,242 +168,29 @@ getAvtar() {
                                        
                                     </View>
                                     <View style={ChooseAvtarStyle.chooseAvatarArea}>
-                                            <View style={ChooseAvtarStyle.chooseAvatarBox}>
-                                                <View style={{width:"100%",flexDirection:'row',alignItems:'center',justifyContent:'center',}}>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarOne();
-                                                        }} >
-                                                        
-                                                       <Image  source={require("../../Image/pic1.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarTwo();
-                                                        }}>
-                                                         <Image  source={require("../../Image/pic2.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarThree();
-                                                        }} >
-                                                        <Image  source={require("../../Image/pic3.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                </View>
-                                                <View style={{width:"100%",flexDirection:'row'}}>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarFour();
-                                                        }}>
-                                                        <Image  source={require("../../Image/pic4.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarFive();
-                                                        }} >
-                                                        
-                                                       <Image  source={require("../../Image/pic5.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarSix();
-                                                        }} >
-                                                        
-                                                       <Image  source={require("../../Image/pic6.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                </View>
-                                              
-                                                
-                                                <View style={{width:"100%",flexDirection:'row'}}>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarSix();
-                                                        }} >
-                                                        
-                                                       <Image  source={require("../../Image/pic7.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarSeven();
-                                                        }}>
-                                                        
-                                                       <Image  source={require("../../Image/pic8.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarEight();
-                                                        }}
-                                                    >
-                                                        
-                                                       <Image  source={require("../../Image/pic9.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                </View>
-                                                <View style={{width:"100%",flexDirection:'row'}}>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarNine();
-                                                        }}
-                                                    >
-                                                        
-                                                       <Image  source={require("../../Image/pic10.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarTen();
-                                                        }} >
-                                                        
-                                                       <Image  source={require("../../Image/pic11.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarEleven();
-                                                        }}
-                                                    >
-                                                        
-                                                       <Image  source={require("../../Image/pic12.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                </View>
-                                                <View style={{width:"100%",flexDirection:'row'}}>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarTwelve();
-                                                        }}
-                                                    >
-                                                        
-                                                       <Image  source={require("../../Image/pic13.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarThirteen();
-                                                        }}
-                                                    >
-                                                        
-                                                       <Image  source={require("../../Image/pic14.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarFourteen();
-                                                        }}
-                                                    >
-                                                        
-                                                       <Image  source={require("../../Image/pic15.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                </View>
+                                    <View style={ChooseAvtarStyle.chooseAvatarBox}>
                                              
-                                                <View style={{width:"100%",flexDirection:'row'}}>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
+                                              {  chunkedArraysOfColSize.map( (colSizeArray, index) =>
+                                                     <View style={{width:"100%",flexDirection:'row',alignItems:'center',justifyContent:'center'}}  key={index.toString()}>
+                                                        {colSizeArray.map((o, i) =>
+                                                           <View  style={[{width:"33%"}]} key={i.toString()}>
+                                                            <TouchableOpacity
+                                                        style={[(this.state.avatarId == o.id)  ? GlobalStyle.avatarSelected :"",{marginHorizontal:0}]}
+                                                        // style={{ marginHorizontal: 0 }}
                                                         onPress={() => {
-                                                            this.setAvtaarFifteen();
+                                                            this.setAvtar(o.id);
                                                         }} >
                                                         
-                                                       <Image  source={require("../../Image/pic19.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
+                                                        <Image  source={{uri:o.name}} style={ChooseAvtarStyle.chooseAvatarImage} />
                                                       
                                                     </TouchableOpacity>
                                                     </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarSixteen();
-                                                        }} >
-                                                        
-                                                       <Image  source={require("../../Image/pic20.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                    <View style={{width:"33%"}} >
-                                                    <TouchableOpacity
-                                                        // key={key}
-                                                        style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtaarSeventeen();
-                                                        }}>
-                                                        
-                                                       <Image  source={require("../../Image/pic21.png")} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
-                                                    </TouchableOpacity>
-                                                    </View>
-                                                </View>
-                                                 </View>
+                                                        )}
+                                                    </View>  
+  )}
+                                               
+                                              
+                                              </View>
                                                 </View>
             
         <View style={ChooseAvtarStyle.buttonContainer}>

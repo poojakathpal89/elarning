@@ -23,7 +23,9 @@ export default class StudentFooterComponent extends Component {
         return (
             <>
              {active != undefined && (
+                // <View style={[GlobalStyle.bottemComponent]}>
                 <View style={[GlobalStyle.bottomNav]}>
+  <View style={{ width: "50%" }}>
                     <TouchableOpacity
                         onPress={() => {
                             // props.navigation.navigate("DashboardPageStack", {
@@ -41,25 +43,10 @@ export default class StudentFooterComponent extends Component {
                                 <Text style={GlobalStyle.bottomNavText}>subjects</Text>
                             }
                     </TouchableOpacity>
+</View>
+                
 
-                    <TouchableOpacity
-                        onPress={() => {
-                            // props.navigation.navigate("DashboardPageStack", {
-                            //     screen: "DashboardPage",
-                            // });
-                            this.RBSheetEarn.open()
-                        }} style={GlobalStyle.bottomNavItem}>
-                            { active == 'home' ?
-                               <>
-                                <Text style={GlobalStyle.bottomNavTextActive}>groups</Text>
-                                <View style={GlobalStyle.bottomNavActiveVector}></View>
-                               </>
-                                :
-                                <Text style={GlobalStyle.bottomNavText}>groups</Text>
-                            }
-                    </TouchableOpacity>
-
-
+<View style ={{width:"50%"}}>
                     <TouchableOpacity
                         onPress={() => {
                             // props.navigation.navigate("MyVoucherScreenStack", {
@@ -68,7 +55,7 @@ export default class StudentFooterComponent extends Component {
                             this.RBSheetEarn.open()
 
                         }} style={GlobalStyle.bottomNavRightItem}>
-                            <Image source={require("../Image/pic12.png")} style={{width: 90, height:10, resizeMode: 'contain',borderRadius:5}} />
+                            <Image source={require("../Image/pic12.png")} style={{width: 70, height:30, resizeMode: 'contain',borderRadius:5}} />
 
                         
                         { active == 'myVouchers' ?
@@ -81,6 +68,9 @@ export default class StudentFooterComponent extends Component {
                                 <Text style={GlobalStyle.bottomNavText}>student Name</Text>
                             }
                     </TouchableOpacity>
+                    </View>
+                   
+                   
                     <View style={{ flex: 1 }}>
                     <RBSheet
                         ref={(ref) => {
@@ -158,8 +148,9 @@ export default class StudentFooterComponent extends Component {
                             </View>
                         </ScrollView>
                     </RBSheet>
-                </View>
+                   </View>
                 </View> 
+                // </View>
                 )}
             </>
         );

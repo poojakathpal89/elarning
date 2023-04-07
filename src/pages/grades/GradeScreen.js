@@ -7,6 +7,7 @@ import { AuthService,GlobalService,ToastService} from "../../services/AllService
 
 
 
+
 export default class GradeScreen extends React.Component {
   constructor(props) {
       super(props);
@@ -24,7 +25,7 @@ export default class GradeScreen extends React.Component {
   }
   gradeOneBtn(gradeId){
     GlobalService.regData.gradeId=gradeId
-    this.props.navigation.navigate("Subjects");
+    this.props.navigation.navigate("CodeScreen");
     //subeject
   
   }
@@ -98,7 +99,7 @@ export default class GradeScreen extends React.Component {
         
 
         </ScrollView>
-    
+
       </View>
 
       );
