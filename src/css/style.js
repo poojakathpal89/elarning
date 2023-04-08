@@ -98,7 +98,7 @@ bottomNavItem:{
 },
 bottomNavRightItem:{
   alignItems:'center',
-  paddingVertical:22,
+  paddingVertical:20,
   position:'relative',
   alignItems:'center',
   borderLeftWidth:1,
@@ -110,7 +110,7 @@ bottomNavLeftItem:{
   position:'relative',
   alignItems:'center',
   borderColor:'#ccc',
-  borderRightWidth:1,
+
 },
 
 bottomNavActiveVector:{
@@ -132,14 +132,15 @@ bottomNavIcon:{
 bottomNavText:{
   fontSize:16,
   fontWeight:'700',
-  color:'gery'
+  color:'gery',
+  marginTop:10,
+  marginRight:20
 },
 bottomNavTextActive:{
   fontSize:16,
   fontWeight:'700',
   color:'grey',
-  textAlign:'center',
-  marginRight:50,
+alignItems:'center',
   justifyContent:'center',
 },
 avatarSelected:{

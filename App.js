@@ -50,7 +50,6 @@ import SubscriptionScreen from './src/pages/subscribe/SubscribeScreen';
 import HomeMenuScreen from './src/pages/home/HomeMenu';
 import HomeMenuScreenTwo from './src/pages/home/HomeMenuScreenTwo';
 import ProfilePageScreen from './src/pages/profile/ProfilePageScreen';
-import UserEditScreen from './src/pages/profile/UserEditScreen';
 import DashboardScreenOne from './src/pages/dashboard/DashboardScreenOne';
 
 // import ListofGradeScreen from './src/pages/grades/ListOfGradeScreen';
@@ -60,8 +59,10 @@ import Lessons from './src/pages/lesson/LessonScreen';
 import TeacherRegisterScreen from './src/pages/register/TeacherRegisterScreen';
 import CodeScreen from './src/pages/register/CodeScreen';
 import CreateGroups from './src/pages/group/CreateGroupsScreen';
+import UserEdit from './src/pages/profile/UserEditScreen';
 
-//import DrawerNavigationRoutes from './src/route/DrawerNavigationRoutes';
+
+// import DrawerNavigationRoutes from './src/route/DrawerNavigationRoutes';
 
 
 
@@ -95,7 +96,11 @@ const Stack = createStackNavigator();
           options={{headerShown: false}}
         /> */}
         
-  
+        <Stack.Screen
+          name="UserEdit"
+          component={UserEdit}
+          options={{headerShown: false}}
+        /> 
   
       </Stack.Navigator>
     );
@@ -141,6 +146,12 @@ const Stack = createStackNavigator();
           component={Lessons}
           options={{headerShown: false}}
         /> 
+
+<Stack.Screen
+          name="UserEdit"
+          component={UserEdit}
+          options={{headerShown: false}}
+        /> 
   
       </Stack.Navigator>
     );
@@ -171,7 +182,8 @@ const Stack = createStackNavigator();
           component={CreateGroups}
           options={{headerShown: false}}
         /> 
-        
+
+      
         
   
   

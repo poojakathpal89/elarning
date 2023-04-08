@@ -4,6 +4,8 @@ import GlobalStyle from "../css/style";
 import {GlobalService} from "../services/AllServices";
 import RBSheet from 'react-native-raw-bottom-sheet';
 import { scale, verticalScale, moderateScale } from "react-native-size-matters";
+import { NavigationContainer } from '@react-navigation/native';
+
 
 
 export default class StudentFooterComponent extends Component {
@@ -25,28 +27,82 @@ export default class StudentFooterComponent extends Component {
              {active != undefined && (
                 // <View style={[GlobalStyle.bottemComponent]}>
                 <View style={[GlobalStyle.bottomNav]}>
-  <View style={{ width: "50%" }}>
+                <View style={{ width: "50%" }}>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    props.navigation.navigate("Subjects", {
+                                        screen: "Subjects",
+                                    });
+                                    // this.props.navigation.navigate("Subjects");
+                                    //  this.RBSheetEarn.open()
+                                }} style={GlobalStyle.bottomNavLeftItem}>
+                              <Image source={require("../Image/text-books.png")} style={{width: 40, height:30, resizeMode: 'contain',marginEnd:30,marginTop:10}} />
+
+                                 {/* <Image source={require("../Image/text-books.png")} style={{width: 0, height:30, resizeMode: 'contain'}} /> */}
+                                 <View style={{width: 0, height:10, }} />
+                                    { active == 'home' ?
+                                        <>
+                                        <Text style={GlobalStyle.bottomNavTextActive}>subjects</Text>
+                                        <View style={GlobalStyle.bottomNavActiveVector}></View>
+                                        </>
+                                        :
+                                        <Text style={GlobalStyle.bottomNavText}>subjects</Text>
+                                    }
+                            </TouchableOpacity>
+                </View>
+                <View style ={{width:"50%"}}>
                     <TouchableOpacity
                         onPress={() => {
-                            // props.navigation.navigate("DashboardPageStack", {
-                            //     screen: "DashboardPage",
+                            // props.navigation.navigate("MyVoucherScreenStack", {
+                            //     screen: "MyVoucherScreen",
                             // });
-                            this.RBSheetEarn.open()
-                        }} style={GlobalStyle.bottomNavLeftItem}>
-                        {/* <Image source={require("../Image/Vector.png")} style={GlobalStyle.bottomNavIcon} /> */}
-                            { active == 'home' ?
+                          
+
+                        }} style={GlobalStyle.bottomNavRightItem}>
+                        <Image source={require("../Image/meeting.png")} style={{width: 40, height:30, resizeMode: 'contain',marginEnd:30,marginTop:10}} />
+
+                            <View style={{width: 0, height:10,}} />
+
+                        
+                        { active == 'myVouchers' ?
                                <>
-                                <Text style={GlobalStyle.bottomNavTextActive}>subjects</Text>
-                                <View style={GlobalStyle.bottomNavActiveVector}></View>
+
+                                <Text style={GlobalStyle.bottomNavTextActive}>group</Text>
+                                {/* <View style={GlobalStyle.bottomNavActiveVector}></View> */}
                                </>
                                 :
-                                <Text style={GlobalStyle.bottomNavText}>subjects</Text>
+                                <Text style={GlobalStyle.bottomNavText}>group</Text>
                             }
                     </TouchableOpacity>
-</View>
-                
+                    </View>
 
-<View style ={{width:"50%"}}>
+                    <View style ={{width:"50%"}}>
+                    <TouchableOpacity
+                        onPress={() => {
+                            // props.navigation.navigate("MyVoucherScreenStack", {
+                            //     screen: "MyVoucherScreen",
+                            // });
+                            this.RBSheetEarn.open()
+
+                        }} style={GlobalStyle.bottomNavRightItem}>
+                            <Image source={require("../Image/pic12.png")} style={{width: 40, height:30,marginTop:10 }} />
+
+                            <View style={{width: 0, height:10,}} />
+
+                        
+                        { active == 'myVouchers' ?
+                               <>
+
+                                <Text style={GlobalStyle.bottomNavTextActive}>student Name</Text>
+                                {/* <View style={GlobalStyle.bottomNavActiveVector}></View> */}
+                               </>
+                                :
+                                <Text style={GlobalStyle.bottomNavText}>student Name</Text>
+                            }
+                    </TouchableOpacity>
+                    </View>
+
+            {/* <View style ={{width:"50%"}}>
                     <TouchableOpacity
                         onPress={() => {
                             // props.navigation.navigate("MyVoucherScreenStack", {
@@ -68,10 +124,10 @@ export default class StudentFooterComponent extends Component {
                                 <Text style={GlobalStyle.bottomNavText}>student Name</Text>
                             }
                     </TouchableOpacity>
-                    </View>
+                    </View> */}
                    
                    
-                    <View style={{ flex: 1 }}>
+                    <View style={{ flex: 1 ,width:"50%"}}>
                     <RBSheet
                         ref={(ref) => {
                             this.RBSheetEarn = ref;
@@ -85,54 +141,54 @@ export default class StudentFooterComponent extends Component {
                                 paddingVertical: moderateScale(20),
                                 paddingHorizontal: moderateScale(20),
                             },
-                        }}
-                    >
+                        }}  >
+
+
                         <ScrollView >
                             <View style={styles.bottomActionSheetBox}>
                                 <View style={styles.bottomswiperHeadingBox}>
-                                <View style={{flexDirection:'row',flex:1}}>
-                                      <Image source={require("../Image/pic12.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
+                                <View style={{flexDirection:'row',flex:1,alignSelf:'flex-end'}}>
+                                      <Image source={require("../Image/pic12.png")} style={{width: 90, height:50, resizeMode: 'contain',borderRadius:10,marginRight:30}} />
                                       <Image source={require("../Image/star1.png")} style={{width: 30, height:20, resizeMode: 'contain',borderRadius:10,marginTop:5}} />
                               <Text style={{marginTop:5,fontSize:20,marginStart:5}}>0</Text>
-                              <Image source={require("../Image/dollersign.png")} style={{width: 30, height:20, resizeMode: 'contain',borderRadius:10,marginTop:5}} />
+                              <Image source={require("../Image/dollersign.png")} style={{width: 30, height:20, resizeMode: 'contain',borderRadius:10,marginTop:5,}} />
                               <Text style={{marginTop:5,fontSize:20,marginStart:5}}>0</Text>
 
                               </View>
-                                    
                                 </View>
-                                <View style={styles.shareWithFrndBg}>
-                                <TouchableOpacity
-                                        style={[styles.earnComnButtonStyle,styles.earnBtn]}
-                                        activeOpacity={0.5}
-                                        onPress={() => {
-                                             props.navigation.navigate("profilePage", {
-                                screen: "ProfilePageScreen",
-                            });
-                            <Text style={styles.shareTicketTextStyle}>{'Log out / change account'}</Text>
- 
-                                        }} >
 
-                                      </TouchableOpacity>
-                                    <Text style={styles.shareTicketTextStyle}>{'Settings'}</Text>
-                                      </View>
-                                      <View style={styles.shareWithFrndBg}>
-                                    <Text style={styles.shareTicketTextStyle}>{'share app'}</Text>
-                                      </View>
-                                      <View style={styles.shareWithFrndBg}>
-                                      <TouchableOpacity
-                                        style={[styles.earnComnButtonStyle,styles.earnBtn]}
-                                        activeOpacity={0.5}
-                                        onPress={() => {
-                                             props.navigation.navigate("userEditScreen", {
-                                screen: "UserEditScreen",
-                            });
-                                            
-                                        }} >
-                                    <Text style={styles.shareTicketTextStyle}>{'Log out / change account'}</Text>
 
-                                      </TouchableOpacity>
-                                      </View>
 
+
+                                <View style={{flexDirection:'row',flex:1,alignSelf:'flex-end',marginTop:5}}>
+                            <Text style={styles.shareTicketTextStyle}>{'Settings'}</Text>
+                                  </View>
+
+
+                                  <View style={{flexDirection:'row',flex:1,alignSelf:'flex-end',marginTop:10}}>
+                            <Text style={styles.shareTicketTextStyle}>{'share app'}</Text>
+                                  </View>
+
+                          
+                                      
+         <View style={{alignSelf:'flex-end'}}>
+        <View style={styles.shareWithFrndBg}>
+        <TouchableOpacity
+        style={[styles.earnComnButtonStyle,styles.earnBtn]}
+        activeOpacity={0.5}
+        onPress={() => {
+                props.navigation.navigate("UserEdit", {
+                screen: "UserEdit",
+                    });
+            
+        }} >
+        <Text style={styles.shareTicketTextStyle}>{'Log out / change account'}</Text>
+
+        </TouchableOpacity>
+        </View>
+        </View>
+
+{/* 
                                 <View style={{ alignItems: "center" }}>
                                     <TouchableOpacity
                                         style={[styles.earnComnButtonStyle,styles.earnBtn]}
@@ -143,7 +199,7 @@ export default class StudentFooterComponent extends Component {
                                       </TouchableOpacity>
                                    
 
-                                </View>
+                                </View> */}
                             
                             </View>
                         </ScrollView>
@@ -170,8 +226,6 @@ const styles = StyleSheet.create({
         fontSize: moderateScale(14), 
         color: "#3EB881",
         marginBottom:10,
-        justifyContent: "center",
-        alignContent:"center",
         fontWeight: "500",
         marginTop:10
       },
@@ -179,7 +233,9 @@ const styles = StyleSheet.create({
         color: '#000',
         fontSize: 20,
         fontFamily:'CircularStd-Book',
-        fontWeight:'500'
+        fontWeight:'500',
+       
+        alignSelf:"flex-end"
       },
 
    
