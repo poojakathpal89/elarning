@@ -282,27 +282,27 @@ getStates(_country_id) {
             buttonStyle={styles.dropdown3BtnStyle}
             renderCustomizedButtonChild={(selectedItem, index) => {
               return (
-                <View style={styles.dropdown3BtnChildStyle}>
+                 <View style={styles.dropdownRowRightChildStyle}>
                    {selectedItem ? (
-                    <View style={styles.dropdown3BtnChildStyle}>
-                                   <Image source={{ uri: selectedItem.image }} style={[StudentRegisterStyle.userIcon,{borderRadius:12}]} />
+                    <View style={styles.dropdownRowRightChildStyle}>
+                       <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} /> 
 
+                                    
                                 <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select country'}</Text>
+                                <Image source={{ uri: selectedItem.image }} style={styles.dropdown3BtnImage} />
 
                    
                    
-                         <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
-                     
+                        
                   </View>
                   ) : 
                   (
-                    <View style={styles.dropdown3BtnChildStyle}>
+                    <View style={styles.dropdownRowRightChildStyle}>
+                    
                     
                         <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select country'}</Text>
-                        {/* <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} /> */}
+                        <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} /> 
 
-                        <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
-                    
                     </View>
                   )}
                   </View>
@@ -314,10 +314,11 @@ getStates(_country_id) {
             selectedRowStyle={styles.dropdown1SelectedRowStyle}
             renderCustomizedRowChild={(item, index) => {
               return (
-                <View style={styles.dropdown3RowChildStyle}>
+                <View style={styles.dropdownRowRightChildStyle}>
+                  
                  <Text style={styles.dropdown3BtnTxt}>{item.name}</Text>
-                   <Image source={{ uri: item.image }} style={styles.dropdown3BtnImage} />
-                                                                           
+                     <Image source={{ uri: item.image }} style={styles.dropdown3BtnImage} />
+                                                                         
                 </View>
               );}} />
            </View>
@@ -352,30 +353,31 @@ getStates(_country_id) {
             renderCustomizedButtonChild={(selectedItem, index) => {
               return (
 
-               
-                <View style={styles.dropdown3BtnChildStyle}>
-                 
-                 {selectedItem ? (
-                    <View style={styles.dropdown3BtnChildStyle}>
-                   
-                         <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select State'}</Text>
-                         <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} />
+                <View style={styles.dropdownRowRightChildStyle}>
+                   {selectedItem ? (
+                    <View style={styles.dropdownRowRightChildStyle}>
+                       <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} /> 
 
-                         <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
-                     
+                                    
+                                <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select State'}</Text>
+                                <Image source={{ uri: selectedItem.image }} style={styles.dropdown3BtnImage} />
+
+                   
+                   
+                        
                   </View>
-                  ) :  
+                  ) : 
                   (
-                    <View style={styles.dropdown3BtnChildStyle}>
-                      <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} />
+                    <View style={styles.dropdownRowRightChildStyle}>
+                    
                     
                         <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select State'}</Text>
-                        <FontAwesome name="chevron-down" color={'#3eb881'} size={12} style={ {left:100}} />
-                    
+                        <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} /> 
+
                     </View>
                   )}
-
-                </View>
+                  </View>
+                
               );
             }}
             dropdownStyle={styles.dropdown3DropdownStyle}
@@ -386,7 +388,7 @@ getStates(_country_id) {
                 <View style={styles.dropdown3RowChildStyle}>
                       <Image source={require("../../Image/arrow_down.png")} style={StudentRegisterStyle.userIcon} />
                    
-                  <Text style={styles.dropdown3RowTxt}>{item.name}</Text>
+                  <Text style={styles.dropdown3RowTxt}>{item.name}s</Text>
                 </View>
               );}} /> 
                             
@@ -499,20 +501,23 @@ const styles = StyleSheet.create({
     },
     dropdown3DropdownStyle: {backgroundColor: '#fff',border:12},
     dropdown3RowStyle: {
-      backgroundColor: '#fff',
-     
-      borderColor:"#F9FAFB",
-      borderWidth:1,
-      height: 50,
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      color:'#2A3B69',
+       
+      paddingHorizontal: 18,
     },
-    dropdown1SelectedRowStyle: 
-    {backgroundColor: '#fff'},
+    dropdown1SelectedRowStyle: {
+      backgroundColor: '#fff'
+    },
     dropdown3BtnTxt: {
         color:'#0C222C',
         paddingHorizontal:15,
-       alignItems:'flex-start',
-        paddingRight:40,
+        flexDirection: 'row',
         justifyContent: 'flex-end',
+        alignItems: 'center',
         fontFamily:"CircularStd-Book",
         fontSize: 14,
         right:0,
@@ -557,5 +562,13 @@ const styles = StyleSheet.create({
         color:'#2A3B69',
          
         paddingHorizontal: 18,
+      },
+      dropdownRowRightChildStyle: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        color:'#2A3B69',
+        
       },
   });
