@@ -5,6 +5,8 @@ import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import { HeaderWithBackComponent } from "../../component/AllComponent";
 import { AuthService,GlobalService,ToastService} from "../../services/AllServices";
+import {StudentFooterComponent} from "../../component/AllComponent";
+
 
 
 
@@ -88,7 +90,8 @@ getLessonList() {
       </View>
         </View>
        </ScrollView>
-   
+       <StudentFooterComponent props={this.props} active={"home"} /> 
+
       </View>
 
       );

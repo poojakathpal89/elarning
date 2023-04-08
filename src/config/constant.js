@@ -1,7 +1,7 @@
 //live api  url 
 ///export const API_BASE_URL = "https://beta.rebatus.com/app-api/v1.3/";
 export const API_BASE_URL = "https://www.rebatus.com/app-api/v1.3/";
-export const EAPI_BASE_URL= "http://13.51.105.220/";
+export const EAPI_BASE_URL= "http://13.51.105.220/app-api/v1.3/";
 
 export const GET_GUEST_USER_PRODUCT_TOUR = "guest-user/get-product-tour";
 export const UPDATE_FINGER_DATA = "my-account/update-user-data";
@@ -14,7 +14,6 @@ export const LOGIN_URL = "guest-user/login";
 export const LOGOUT_URL = "guest-user/logout";
 export const GET_PACKAGE_URL = "guest-user/get_packages";
 export const GET_GUEST_LANGUAGE_URL = "guest-user/get-languages-and-currencies/1";
-export const GET_AVTAR_URL = "app-user/get_avatars";
 export const VALIDATE_URL = "app-user/check-unique";
 export const CHANGE_PASSWORD_URL = "my-account/update-password";
 export const GET_PROFILE_DATA_URL = "account/get-profile-data";
@@ -37,7 +36,7 @@ export const TICKET_DATA_URL = "buyer/get-tickets-data";
 export const TICKET_URL = "buyer/reward-points-search";
 export const SHARE_TICKET_URL = "account/share-tickets";
 export const COUNTRIES_ARRAY_URL = "custom/getCountriesArr";
-export const STATES_ARRAY_URL = "mobile-app-api/get_states/";
+export const STATES_ARRAY_URL = "custom/get-states/";
 export const DASHBOARD_URL = "buyer";
 export const GET_BANK_URL = "money-matters/connected-banks";
 export const GET_BANK_ACCOUNT = "bank-accounts/accounts";
@@ -68,6 +67,8 @@ export const DELETE_USER_ACCOUNT_URL = "app-user/send-truncate-request";
 export const GRADE_URL = "guest-user/list-grades";
 export const SUBJECT_URL = "guest-user/list-subjects";
 export const LESSON_URL = "guest-user/list-lessons";
+export const GET_AVTAR_URL = "custom/get-avatars";
+
 
 
 

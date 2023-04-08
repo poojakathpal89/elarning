@@ -41,7 +41,6 @@ class AuthService extends Component {
         this.validateOtpEndpoint= myConstClass.API_BASE_URL+myConstClass.VALIDATE_OTP;
         this.saveChangeResetPasswordEndpoint= myConstClass.API_BASE_URL+myConstClass.CHANGE_RESET_PASSWORD;
         this.checkAppUpdateAvailableEndpoint= myConstClass.API_BASE_URL+myConstClass.APP_UPDATE_CHECK;
-        this.countriesArrayEndpoint= myConstClass.API_BASE_URL+myConstClass.COUNTRIES_ARRAY_URL;
       
 
         this.statesArrayEndpoint= myConstClass.API_BASE_URL+myConstClass.STATES_ARRAY_URL;
@@ -50,7 +49,6 @@ class AuthService extends Component {
         this.getPackageEndpoint= myConstClass.API_BASE_URL+myConstClass.GET_PACKAGE_URL;
         this.appBuyEndpoint= myConstClass.API_BASE_URL+myConstClass.APP_BUY_PACKAGE_URL;
         this.userChargeEndpoint= myConstClass.API_BASE_URL+myConstClass.USER_CHARGE_PACKAGE_URL;
-        this.getavtarEndpoint= myConstClass.API_BASE_URL+myConstClass.GET_AVTAR_URL;
         this.validateEndpoint= myConstClass.API_BASE_URL+myConstClass.VALIDATE_URL;
         this.changePasswordEndpoint= myConstClass.API_BASE_URL+myConstClass.CHANGE_PASSWORD_URL;
         this.getProfileDataEndpoint= myConstClass.API_BASE_URL+myConstClass.GET_PROFILE_DATA_URL;
@@ -70,6 +68,12 @@ class AuthService extends Component {
         this.gradeEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.GRADE_URL;
         this.subjectEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.SUBJECT_URL;
         this.lessonEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.LESSON_URL;
+        this.countriesArrayEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.COUNTRIES_ARRAY_URL;
+        this.statesArrayEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.STATES_ARRAY_URL;
+        this.getavtarEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.GET_AVTAR_URL;
+
+
+
 
 
 
@@ -128,8 +132,11 @@ class AuthService extends Component {
     getCountriesArray() {
         let state = this;
         return new Promise(function(resolve) {
+          
             requestHandler.apiRequest(state.countriesArrayEndpoint,state.postMethod).then(response=>{
+            
                 resolve(response)
+              
            }).catch(error=>{
                 resolve(error);
            })
@@ -137,9 +144,13 @@ class AuthService extends Component {
     }
 
     getStatesArray(_getdata) {
+      
         let state = this;
+        console.log(state.statesArrayEndpoint+_getdata)
         return new Promise(function(resolve) {
+            console.log("StateApiCode",state.statesArrayEndpoint+_getdata)
             requestHandler.apiRequest(state.statesArrayEndpoint+_getdata,state.postMethod).then(response=>{
+                console.log("statessApiCodeResponse",response)
                 resolve(response)
            }).catch(error=>{
                 resolve(error);
@@ -149,8 +160,11 @@ class AuthService extends Component {
 
     getAvtar() {
         let state = this;
+        console.log("avatarCode",state.getavtarEndpoint)
         return new Promise(function(resolve) {
             requestHandler.apiRequest(state.getavtarEndpoint,state.postMethod).then(response=>{
+                console.log()
+                
                 resolve(response)
            }).catch(error=>{
                 resolve(error);

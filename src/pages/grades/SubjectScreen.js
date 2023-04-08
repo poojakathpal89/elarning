@@ -5,6 +5,8 @@ import CommonStyle from '../../css/common';
 // import ListOfGradeStyle from './ListOfGradeStyle';
 import SubjectStyle from './SubjectStyle';
 import { AuthService,GlobalService,ToastService} from "../../services/AllServices";
+import {StudentFooterComponent} from "../../component/AllComponent";
+
 
 
 export default class SubjectScreen extends React.Component {
@@ -84,7 +86,8 @@ getSubjectList() {
        
 
       </ScrollView>
-   
+      <StudentFooterComponent props={this.props} active={"home"} /> 
+
       </View>
 
       );

@@ -4,7 +4,6 @@ import {Text,Image, View,TouchableOpacity,Button,ScrollView} from 'react-native'
 import CodeScreenStyle from './CodeScreenStyle';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
-import {FooterComponentWithTeacher} from "../../component/AllComponent";
 import { GlobalService } from '../../services/AllServices';
 
 
@@ -25,11 +24,14 @@ export default class CodeScreen extends React.Component {
 
   nextBtn() {
     if (GlobalService.regData.userType == 1){
-        this.props.navigation.navigate("GradeList");
+        this.props.navigation.navigate("Subjects");
     }
     
-    else {GlobalService.regData.userType == 2}
-    this.props.navigation.navigate("CreateGroups");
+    else {
+    
+        this.props.navigation.navigate("CreateGroups");
+    }
+   
 
     
 }
