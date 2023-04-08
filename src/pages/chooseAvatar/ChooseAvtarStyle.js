@@ -106,20 +106,7 @@ const ChooseAvtarStyle = StyleSheet.create({
             fontFamily:'CircularStd-Bold',
 
         },
-        chooseAvatarBox: {
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            marginBottom: 10,
-        },
-        chooseAvatarImage: {
-          width:43,
-          height: 43,
-          margin:4
-          // resizeMode: 'contain',
-          
-          /// backgroundColor:'red'
-      },
+     
   
       btncontainer: {
         flex: 1,
@@ -231,6 +218,19 @@ buttonStyle:{
    justifyContent:"center",
    flex:1,
    flexDirection:'row',
+},
+chooseAvatarBox: {
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
+  marginBottom: 20,
+},
+chooseAvatarImage: {
+  width: 70,
+  height: 70,
+  // resizeMode: 'contain',
+  marginBottom: 5,
+  /// backgroundColor:'red'
 },
 });
 

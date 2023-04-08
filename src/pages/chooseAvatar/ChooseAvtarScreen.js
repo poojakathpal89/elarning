@@ -2,6 +2,7 @@ import React from 'react';
 import {Text,Image, View,TouchableOpacity,Button,ScrollView} from 'react-native';
 import ChooseAvtarStyle from './ChooseAvtarStyle';
 import GlobalStyle from "../../css/style";
+import registerStyle from "./registerStyle"
 import CommonStyle from '../../css/common';
 import { AuthService } from "../../services/AllServices";
 import { GlobalService ,RequestHandler} from '../../services/AllServices';
@@ -137,7 +138,7 @@ getAvtar() {
         return results;
     }
 
-     let chunkedArraysOfColSize  = toChunkArray( RequestHandler.state.avtarArray,3);
+    // let chunkedArraysOfColSize  = toChunkArray( RequestHandler.state.avtarArray,3);
       return (
               <View style={[GlobalStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
                 <ScrollView>
@@ -167,31 +168,32 @@ getAvtar() {
                                         style={ChooseAvtarStyle.dashedSeparator}/>
                                        
                                     </View>
-                                    <View style={ChooseAvtarStyle.chooseAvatarArea}>
-                                    <View style={ChooseAvtarStyle.chooseAvatarBox}>
-                                             
-                                              {  chunkedArraysOfColSize.map( (colSizeArray, index) =>
-                                                     <View style={{width:"100%",flexDirection:'row',alignItems:'center',justifyContent:'center'}}  key={index.toString()}>
-                                                        {colSizeArray.map((o, i) =>
-                                                           <View  style={[{width:"33%"}]} key={i.toString()}>
-                                                            <TouchableOpacity
-                                                        style={[(this.state.avatarId == o.id)  ? GlobalStyle.avatarSelected :"",{marginHorizontal:0}]}
-                                                        // style={{ marginHorizontal: 0 }}
-                                                        onPress={() => {
-                                                            this.setAvtar(o.id);
-                                                        }} >
+                                        
+                                          <View style={ChooseAvtarStyle.chooseAvatarArea}>
+                                              {  
+                                              this.state.avtarArray && (
+                                                  <View style={ChooseAvtarStyle.chooseAvatarBox}>
+                                                      {this.state.avtarArray.map((item, key) => (
                                                         
-                                                        <Image  source={{uri:o.name}} style={ChooseAvtarStyle.chooseAvatarImage} />
-                                                      
+                                                        <TouchableOpacity
+                                                        key={key}
+                                                        style={[(this.state.avatarId == item.id)  ? GlobalStyle.avatarSelected :"",{marginHorizontal:0}]}
+                                                        onPress={() => {
+                                                            this.setAvtar(item.id);
+                                                        }}
+                                                    >
+                                                        <Image source={{ uri: item.name }} style={registerStyle.chooseAvatarImage} />
                                                     </TouchableOpacity>
-                                                    </View>
-                                                        )}
-                                                    </View>  
-  )}
-                                               
-                                              
-                                              </View>
-                                                </View>
+                                                      ))}
+                                                  </View>
+                                              )}
+
+                                          
+
+                                           
+                                          </View>
+                                          
+                                    
             
         <View style={ChooseAvtarStyle.buttonContainer}>
         <View  style={ChooseAvtarStyle.buttonStyle}>
