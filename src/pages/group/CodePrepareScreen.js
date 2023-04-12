@@ -2,12 +2,12 @@ import React from 'react';
 import {Text,Image,TouchableOpacity, View,Button,ScrollView} from 'react-native';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
-import StudentCodeStyle from './StudentCodeStyle';
+import CodePrepareStyle from './CodePrepareStyle';
 import {FooterComponentWithTeacher,} from "../../component/AllComponent";
 
 
 
-export default class StudentScreenCode extends React.Component {
+export default class CodePrepareScreen extends React.Component {
   constructor(props) {
       super(props);
   }
@@ -19,6 +19,7 @@ export default class StudentScreenCode extends React.Component {
 
   componentDidMount() {
       // console.log(StringsOfLanguages.languageObj);
+     
   }
   groups(){
     this.props.navigation.navigate("multipleStudent");
@@ -31,21 +32,21 @@ export default class StudentScreenCode extends React.Component {
   render() {
       return (
       
-    <View style={[StudentCodeStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
+    <View style={[CodePrepareStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
        {/* <FooterComponent/> */}
       <ScrollView>
-      <View style={StudentCodeStyle.container}>
-      <View style={[StudentCodeStyle.menuArea2]}>
+      <View style={CodePrepareStyle.container}>
+      <View style={[CodePrepareStyle.menuArea2]}>
    
 
-    <View style={StudentCodeStyle.newStudentText}>
-              <Text  style={StudentCodeStyle.makeGroupText}>prepare student code</Text>
+    <View style={CodePrepareStyle.newStudentText}>
+              <Text  style={CodePrepareStyle.makeGroupText}>prepare student code</Text>
               </View>
         </View>
-      <View style={StudentCodeStyle.btnTextContainer}>
+      <View style={CodePrepareStyle.btnTextContainer}>
 
-        <View  style={StudentCodeStyle.buttonStyle}>
-                  <Text style={StudentCodeStyle.newStudentNextTxt}>Nick Name</Text>
+        <View  style={CodePrepareStyle.buttonStyle}>
+                  <Text style={CodePrepareStyle.newStudentNextTxt}>Nick Name</Text>
                   </View>
                  
                  {/* <View style={StudentCodeStyle.studentCodeContainer}>
@@ -53,8 +54,8 @@ export default class StudentScreenCode extends React.Component {
                   <Text style={StudentCodeStyle.studentCodeTxt}>ADAM</Text>
                   </View>
               </View> */}
-                <View style={StudentCodeStyle.createContainer}>
-               <View  style={StudentCodeStyle.buttonStyle}>
+                <View style={CodePrepareStyle.createContainer}>
+               <View  style={CodePrepareStyle.buttonStyle}>
                <TouchableOpacity
             disabled={this.state.loading}
                                           
@@ -62,17 +63,17 @@ export default class StudentScreenCode extends React.Component {
               onPress={() => {
                 this.createADAM();
               }} >
-                  <Text style={StudentCodeStyle.studentCodeTxt}>ADAM</Text>
+                  <Text style={CodePrepareStyle.studentCodeTxt}>ADAM</Text>
                {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
                 </TouchableOpacity>
                   </View>
               </View>
-              <View style={StudentCodeStyle.createStuContainer}>
-              <Text  style={StudentCodeStyle.studenttitleCreate}>create a multiple student</Text>
+              <View style={CodePrepareStyle.createStuContainer}>
+              <Text  style={CodePrepareStyle.studenttitleCreate}>create a multiple student</Text>
               </View>
 
-              <View style={StudentCodeStyle.createContainer}>
-               <View  style={StudentCodeStyle.buttonStyle}>
+              <View style={CodePrepareStyle.createContainer}>
+               <View  style={CodePrepareStyle.buttonStyle}>
                <TouchableOpacity
             disabled={this.state.loading}
                                           
@@ -80,7 +81,7 @@ export default class StudentScreenCode extends React.Component {
               onPress={() => {
                 this.groups();
               }} >
-                  <Text style={StudentCodeStyle.studentCodeTxt}>Create</Text>
+                  <Text style={CodePrepareStyle.studentCodeTxt}>Create</Text>
                {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
                 </TouchableOpacity>
                   </View>

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const NewGroupThreeStyle = StyleSheet.create({
+const StudentProgressStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -285,4 +285,4 @@ buttonTextStyle:{
 }
 });
 
-export default NewGroupThreeStyle;
+export default StudentProgressStyle;

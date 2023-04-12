@@ -39,18 +39,23 @@ export default class ExerciseOne extends React.Component {
                           source={require("../../Image/exerciseonetxt.png")}
                           style={{
                               width: 150,
-                              height: 70,
+                              height: 50,
                               resizeMode: "contain",
                               }}
                           />
                   </View>
         </View>
       <View style={ExerciseOneStyle.btnTextContainer}>
-    <View style={ExerciseOneStyle.studentCodeContainer}>
-               <View  style={ExerciseOneStyle.buttonStyle}>
-                  <Text style={ExerciseOneStyle.studentCodeTxt}></Text>
-                    </View>
+            <View style={ExerciseOneStyle.studentCodeContainer}>
+                      <View  style={ExerciseOneStyle.buttonStyle}>
+                          <Text style={ExerciseOneStyle.studentCodeTxt}>hgfhdsjg</Text>
+                            </View>
               </View>
+
+        <View style={{width:"100%"}}>
+        <Image source={require("../../Image/pic12.png")} style={{width: 50, height:40, resizeMode: 'contain',borderRadius:10}} />
+
+             
               <View style={ExerciseOneStyle.starImage}>
                <View  style={ExerciseOneStyle.buttonStyle}>
                   <Image source={require("../../Image/star1.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
@@ -59,8 +64,8 @@ export default class ExerciseOne extends React.Component {
 
                     </View>
               </View>
-<View  style={ExerciseOneStyle.image2Container}>
-<Image source={require("../../Image/pic12.png")} style={{width: 0, height:40, resizeMode: 'contain',borderRadius:10}} />
+
+        <View  style={ExerciseOneStyle.image2Container}>
 
 
               <View style={ExerciseOneStyle.starImage2}>
@@ -98,6 +103,7 @@ export default class ExerciseOne extends React.Component {
                   <Image source={require("../../Image/star1.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
                   <Image source={require("../../Image/star1.png")} style={{width: 40, height:30, resizeMode: 'contain',borderRadius:10}} />
               </View>
+        </View>
               </View>
       </View>
         </View>

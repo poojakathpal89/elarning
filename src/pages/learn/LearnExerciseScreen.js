@@ -15,50 +15,72 @@ import { scale, verticalScale, moderateScale } from "react-native-size-matters";
 export default class LearnExreciseScreen extends React.Component {
   constructor(props) {
       super(props);
+      console.log(props)
   }
   state = {
       loading: false,
       secureTextEntry: true,
-      errorPass:false
+      errorPass:false,
+      offerItem:{id:"dd","name":"d"}
   };
 
   componentDidMount() {
+    this.props.navigation.addListener("focus", () => {
+      this._isMounted = true;
+     
+      if (this._isMounted) {
+         this.getdata();
+      }
+  });
       // console.log(StringsOfLanguages.languageObj);
   }
-  groups(){
-    this.props.navigation.navigate("multipleStudent");
-  }
-  StarOneClick(){
-    this.props.navigation.navigate("exerciseMultipleOne");
-  }
-  StarTwoClick(){
-    this.props.navigation.navigate("exerciseMultipleTwo");
-  }
-  StarThreeClick(){
-    this.props.navigation.navigate("exerciseMultipleThree");
-  }
-  starFourRowClick(){
-    this.props.navigation.navigate("exerciseMultipleFour");
+  // groups(){
+  //   this.props.navigation.navigate("multipleStudent");
+  // }
+  // StarOneClick(){
+  //   this.props.navigation.navigate("exerciseMultipleOne");
+  // }
+  // StarTwoClick(){
+  //   this.props.navigation.navigate("exerciseMultipleTwo");
+  // }
+  // StarThreeClick(){
+  //   this.props.navigation.navigate("exerciseMultipleThree");
+  // }
+  // starFourRowClick(){
+  //   this.props.navigation.navigate("exerciseMultipleFour");
 
-  }
-  starFiveRowClick(){
-    this.props.navigation.navigate("exerciseMultipleFive");
+  // }
+  // starFiveRowClick(){
+  //   this.props.navigation.navigate("exerciseMultipleFive");
 
-  }
-  starSixRowClick(){
-    this.props.navigation.navigate("exerciseMultipleSix");
+  // }
+  // starSixRowClick(){
+  //   this.props.navigation.navigate("exerciseMultipleSix");
 
-  }
-  starSevenRowClick(){
-    this.props.navigation.navigate("exerciseMultipleSeven");
+  // }
+  // starSevenRowClick(){
+  //   this.props.navigation.navigate("exerciseMultipleSeven");
 
-  }
+  // }
 
-  StarSecondFirstClick(){
-    this.props.navigation.navigate("exerciseMultipleThree");
+  // StarSecondFirstClick(){
+  //   this.props.navigation.navigate("exerciseMultipleThree");
 
-  }
-  
+  // }
+//   getdata(){
+//     console.log("ghgsdhjdshjg",this.props.route)
+//     // let data = this.props.route.params.item;
+//     // if (this.props.route.params.item) {
+//     //     this.setState({ offerItem: this.props.route.params.item });
+//     // }
+// }
+getdata(){
+  let data = this.props.route.params;
+  console.log(data)
+  // if (this.props.route.params.item) {
+  //    /// this.setState({ offerItem: this.props.route.params.item });
+  // }
+}
 
   render() {
       return (
@@ -85,14 +107,15 @@ export default class LearnExreciseScreen extends React.Component {
       <View style={LearnExerciseStyle.btnTextContainer}>
     <View style={LearnExerciseStyle.studentCodeContainer}>
                <View  style={LearnExerciseStyle.buttonStyle}>
-                  <Image
+              <Text>  {this.state.offerItem.name}</Text>
+                  {/* <Image
                           source={require("../../Image/learntxt-icon.png")}
                           style={{
                               width: 100,
                               height: 50,
                               resizeMode: "contain",
                               }}
-                          />
+                          /> */}
                     </View>
               </View>
               <View style={LearnExerciseStyle.starImage}>
@@ -379,7 +402,7 @@ export default class LearnExreciseScreen extends React.Component {
                         </ScrollView>
                     </RBSheet>
                 </View>
- <FooterComponent props={this.props} active={"home"} /> 
+ 
 
       </View>
 

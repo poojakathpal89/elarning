@@ -20,34 +20,34 @@ export default class StudentDetailScreen extends React.Component {
   componentDidMount() {
       // console.log(StringsOfLanguages.languageObj);
   }
-  delete(){
-    this.props.navigation.navigate("newGroupThree");
+  progress(){
+    this.props.navigation.navigate("StudentProgressScreen");
   }
 
 
   render() {
       return (
       
-    <View style={[NewGroupTwoStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
+    <View style={[StudentDetailStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
      
       <ScrollView>
-      <View style={NewGroupTwoStyle.container}>
-      <View style={[NewGroupTwoStyle.menuArea2]}>
+      <View style={StudentDetailStyle.container}>
+      <View style={[StudentDetailStyle.menuArea2]}>
       <View style={{justifyContent: 'space-between'}}>
    <Text style={{alignSelf: 'flex-end',fontSize:20,marginTop:10}}>X</Text>
 </View>
 
 
-              <Text  style={NewGroupTwoStyle.makeGroupText}>Group1</Text>
+              <Text  style={StudentDetailStyle.makeGroupText}>GROUP 1</Text>
              
         </View>
-      <View style={NewGroupTwoStyle.btnTextContainer}>
+      <View style={StudentDetailStyle.btnTextContainer}>
 
-        <View  style={NewGroupTwoStyle.newStudentContainer}>
-                  <Text style={NewGroupTwoStyle.newStudentTitle}>Students</Text>
+        <View  style={StudentDetailStyle.newStudentContainer}>
+                  <Text style={StudentDetailStyle.newStudentTitle}>Students</Text>
                   </View>
-                 <View style={NewGroupTwoStyle .ListHead}>
-              <View style={NewGroupTwoStyle.newGroupList}>
+                 <View style={StudentDetailStyle .ListHead}>
+              <View style={StudentDetailStyle.newGroupList}>
                   <View style={{  width:100,height:36, marginTop:10,alignItems:'center',flexDirection:'row',alignItems:'center'}}>                                            
                        <Image source={require("../../Image/gp2.png")} style={{width: 100, height:100, resizeMode: 'contain',}} />
                   </View>
@@ -58,22 +58,34 @@ export default class StudentDetailScreen extends React.Component {
 
       <View style={{ width: "100%", marginTop: 50 }}>
         <View style={{  flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%',}}>
-<Text  style={NewGroupTwoStyle.gpName}>NickName</Text>
-<Text style={NewGroupTwoStyle.gpName}>name</Text>
+<Text  style={StudentDetailStyle.gpName}>Nickname</Text>
+<Text style={StudentDetailStyle.gpName}>name</Text>
   </View>
   </View>
 
   <View style={{ width: "100%", marginTop: 50 }}>
         <View style={{  flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%',}}>
-<Text  style={NewGroupTwoStyle.gpName}>Login Code</Text>
-<Text style={NewGroupTwoStyle.gpName}>ABC -125</Text>
+<Text  style={StudentDetailStyle.gpName}>Login code</Text>
+<Text style={StudentDetailStyle.gpName}>ABC -125</Text>
   </View>
   </View>
 
   <View style={{ width: "100%", marginTop: 50 }}>
         <View style={{  flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%',}}>
-<Text  style={NewGroupTwoStyle.gpName}>progress</Text>
+
+
+<Text  style={StudentDetailStyle.gpName}>progress</Text>
+
+<TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.progress();
+              }} >
 <Image source={require("../../Image/arrow.png")} style={{width: 20, height:20,alignItems:'center',justifyContent:'center', resizeMode: 'contain',borderRadius:10,marginEnd:60}} />
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
   </View>
   </View>
   <TouchableOpacity
@@ -83,7 +95,7 @@ export default class StudentDetailScreen extends React.Component {
               onPress={() => {
                 this.delete();
               }} >
-  <Text  style={NewGroupTwoStyle.deleteTxt}>Delete</Text>
+  <Text  style={StudentDetailStyle.deleteTxt}>Delete</Text>
                {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
                 </TouchableOpacity>
 

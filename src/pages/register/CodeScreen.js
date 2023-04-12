@@ -5,7 +5,7 @@ import CodeScreenStyle from './CodeScreenStyle';
 import GlobalStyle from "../../css/style";
 import CommonStyle from '../../css/common';
 import { GlobalService } from '../../services/AllServices';
-
+import { CommonActions } from "@react-navigation/native";
 
 export default class CodeScreen extends React.Component {
   constructor(props) {
@@ -24,13 +24,28 @@ export default class CodeScreen extends React.Component {
 
   nextBtn() {
     if (GlobalService.regData.userType == 1){
-        this.props.navigation.navigate("Subjects");
+        // this.props.navigation.navigate("Subjects");
+        this.props.navigation.dispatch(
+            CommonActions.reset({
+                index: 1,
+                routes: [{ name: "DrawerNavigationRoutes" }],
+            })
+        );
     }
     
     else {
+        this.props.navigation.dispatch(
+            CommonActions.reset({
+                index: 1,
+                routes: [{ name: "DrawerNavigationRoutesTeacher" }],
+            })
+        );
     
-        this.props.navigation.navigate("CreateGroups");
+        // this.props.navigation.navigate("CreateGroups");
     }
+
+  
+  
    
 
     

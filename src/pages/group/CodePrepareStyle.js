@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const StudentCodeStyle = StyleSheet.create({
+const CodePrepareStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -206,4 +206,4 @@ studentButtonStyle:{
    }
 });
 
-export default StudentCodeStyle;
+export default CodePrepareStyle;

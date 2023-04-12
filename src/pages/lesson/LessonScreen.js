@@ -25,8 +25,11 @@ export default class LessonScreen extends React.Component {
     this.getLessonList();
 
   }
-  oneBtn() {
-    this.props.navigation.navigate("ExerciseLearn");
+  oneBtn(id) {
+    console.log("id",id);
+     this.props.navigation.setParams({item:"DDDD"})
+    this.props.navigation.navigate("LearnExerciseScreenStack",{screen:"LearnExcerciseScreen"});
+   
    
 }
 
@@ -77,7 +80,11 @@ getLessonList() {
                                                   
                       activeOpacity={0.5}
                       onPress={() => {
-                        this.oneBtn(item.id);
+                        // this.oneBtn(item.id);
+                        this.props.navigation.navigate("ListEcerciseScreenStack", {
+                          screen: "ListExcerciseScreen",
+                          params: { item: item },
+                      });
                       }} >
                       <Text style={LessonStyle.newStudentNextTxt}>{item.name}</Text>
                       {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}

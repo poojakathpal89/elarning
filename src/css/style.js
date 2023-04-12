@@ -71,7 +71,7 @@ errorTextStyle: {
 errorclass: { color: "red", marginLeft: 0, marginTop: 5, marginBottom: 5 },
 bottomNav:{
   width: '100%',
-  paddingHorizontal:30,
+  paddingHorizontal:10,
   backgroundColor: '#fff',
   shadowColor: "#000",
   shadowOffset: {
@@ -106,7 +106,7 @@ bottomNavRightItem:{
 },
 bottomNavLeftItem:{
   alignItems:'center',
-  paddingVertical:22,
+  paddingVertical:10,
   position:'relative',
   alignItems:'center',
   borderColor:'#ccc',
@@ -145,5 +145,10 @@ alignItems:'center',
 },
 avatarSelected:{
   borderWidth:1,
+},
+footerImage:{
+  width: 40, height:30,marginTop:10 ,
+  borderWidth:1,
+  
 }
 });

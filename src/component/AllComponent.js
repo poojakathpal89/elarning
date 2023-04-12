@@ -4,19 +4,19 @@ import StatusBarComponent from '../component/StatusBarComponent';
 import StudentFooterComponent from '../component/StudentFooterComponent';
 import HeaderWithBackComponent from '../component/HeaderWithBackComponent';
 import HeaderWithTextComponent from '../component/HeaderWithTextComponent';
-import FooterComponentWithTeacher from './FooterComponentWithTeacher';
 import ProfilePageHeaderComponent from './ProfilePageHeaderComponent';
 import SettingPageHeaderComponent from './SettingPageHeaderComponent';
+import FooterComponentWithTeacher from './FooterComponentWithTeacher';
 
 
 export { 
     HeaderComponent, 
    Loader,
    StudentFooterComponent,
+   FooterComponentWithTeacher,
     HeaderWithBackComponent,
     StatusBarComponent,
     HeaderWithTextComponent,
-    FooterComponentWithTeacher,
     ProfilePageHeaderComponent,
     SettingPageHeaderComponent,
  

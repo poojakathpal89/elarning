@@ -22,8 +22,8 @@ export default class CreateGroupsScreen extends React.Component {
   componentDidMount() {
       // console.log(StringsOfLanguages.languageObj);
   }
-  newBtn() {
-    this.props.navigation.navigate("groupOne");
+  createNewGroupBtn() {
+    this.props.navigation.navigate("MultipleGroup");
    }
 
   render() {
@@ -54,7 +54,7 @@ export default class CreateGroupsScreen extends React.Component {
                                           
               activeOpacity={0.5}
               onPress={() => {
-                this.newBtn();
+                this.createNewGroupBtn();
               }} >
           <Text style={CreateGroupScreenStyle.newStudentNextTxt}>+ New Group</Text>
                {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}

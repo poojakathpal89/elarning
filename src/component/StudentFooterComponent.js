@@ -19,6 +19,42 @@ export default class StudentFooterComponent extends Component {
         };
     }
 
+    
+    async shareEarnData(){
+        const uri = ''
+        // const title = GlobalService.Profile ? GlobalService.Profile.RAPP_SHARE_EARN_TEXT :  GlobalService.discountTitle ;
+
+        const subject = this.state.shareEarnURL
+        let message = subject;
+        const options = Platform.select({
+            ios: {
+              subject:title,
+              title:title,
+              url:this.state.shareEarnURL
+            },
+            default: {
+              title,
+              subject: title,
+              message: `${message}`,
+            },
+          });
+           
+              try {
+                const ShareResponse = await Share.open(options);
+               
+               
+              } catch(error) {
+
+              }
+        }
+    InvitePopup = () => {
+        
+        this.shareEarnData().then((res) => {  
+            this.RBSheetEarn.close();              
+        });
+        //
+    };
+
     render() {
         const { active, props } = this.props;
    //// console.log('active-----',GlobalService.Home.RAPP_MONEY_MATTERS);
@@ -27,7 +63,7 @@ export default class StudentFooterComponent extends Component {
              {active != undefined && (
                 // <View style={[GlobalStyle.bottemComponent]}>
                 <View style={[GlobalStyle.bottomNav]}>
-                <View style={{ width: "50%" }}>
+                <View style={{ width: "33%" }}>
                             <TouchableOpacity
                                 onPress={() => {
                                     props.navigation.navigate("Subjects", {
@@ -36,21 +72,16 @@ export default class StudentFooterComponent extends Component {
                                     // this.props.navigation.navigate("Subjects");
                                     //  this.RBSheetEarn.open()
                                 }} style={GlobalStyle.bottomNavLeftItem}>
-                              <Image source={require("../Image/text-books.png")} style={{width: 40, height:30, resizeMode: 'contain',marginEnd:30,marginTop:10}} />
+                              <Image source={require("../Image/bookshelf.png")} style={GlobalStyle.footerImage} />
 
                                  {/* <Image source={require("../Image/text-books.png")} style={{width: 0, height:30, resizeMode: 'contain'}} /> */}
-                                 <View style={{width: 0, height:10, }} />
-                                    { active == 'home' ?
-                                        <>
-                                        <Text style={GlobalStyle.bottomNavTextActive}>subjects</Text>
-                                        <View style={GlobalStyle.bottomNavActiveVector}></View>
-                                        </>
-                                        :
-                                        <Text style={GlobalStyle.bottomNavText}>subjects</Text>
-                                    }
+                                 <View style={{width: 0 }} />
+                                
+                                        <Text style={GlobalStyle.bottomNavText}>Subjects</Text>
+                                 
                             </TouchableOpacity>
                 </View>
-                <View style ={{width:"50%"}}>
+                <View style ={{width:"33%"}}>
                     <TouchableOpacity
                         onPress={() => {
                             // props.navigation.navigate("MyVoucherScreenStack", {
@@ -58,25 +89,17 @@ export default class StudentFooterComponent extends Component {
                             // });
                           
 
-                        }} style={GlobalStyle.bottomNavRightItem}>
-                        <Image source={require("../Image/meeting.png")} style={{width: 40, height:30, resizeMode: 'contain',marginEnd:30,marginTop:10}} />
+                        }} style={GlobalStyle.bottomNavLeftItem}>
+                        <Image source={require("../Image/people.png")} style={GlobalStyle.footerImage} />
 
-                            <View style={{width: 0, height:10,}} />
+                            <View style={{width: 0}} />
 
-                        
-                        { active == 'myVouchers' ?
-                               <>
-
-                                <Text style={GlobalStyle.bottomNavTextActive}>group</Text>
-                                {/* <View style={GlobalStyle.bottomNavActiveVector}></View> */}
-                               </>
-                                :
-                                <Text style={GlobalStyle.bottomNavText}>group</Text>
-                            }
+                                <Text style={GlobalStyle.bottomNavText}>Group</Text>
+                               
                     </TouchableOpacity>
                     </View>
 
-                    <View style ={{width:"50%"}}>
+                    <View style ={{width:"33%"}}>
                     <TouchableOpacity
                         onPress={() => {
                             // props.navigation.navigate("MyVoucherScreenStack", {
@@ -84,21 +107,14 @@ export default class StudentFooterComponent extends Component {
                             // });
                             this.RBSheetEarn.open()
 
-                        }} style={GlobalStyle.bottomNavRightItem}>
-                            <Image source={require("../Image/pic12.png")} style={{width: 40, height:30,marginTop:10 }} />
+                        }} style={GlobalStyle.bottomNavLeftItem}>
+                            <Image source={require("../Image/pic12.png")} style={GlobalStyle.footerImage} />
 
-                            <View style={{width: 0, height:10,}} />
+                            <View style={{width: 0, }} />
 
-                        
-                        { active == 'myVouchers' ?
-                               <>
-
-                                <Text style={GlobalStyle.bottomNavTextActive}>student Name</Text>
-                                {/* <View style={GlobalStyle.bottomNavActiveVector}></View> */}
-                               </>
-                                :
-                                <Text style={GlobalStyle.bottomNavText}>student Name</Text>
-                            }
+                       
+                                <Text style={GlobalStyle.bottomNavText}>Student Name</Text>
+                          
                     </TouchableOpacity>
                     </View>
 
@@ -135,11 +151,17 @@ export default class StudentFooterComponent extends Component {
                         height={200}
                         openDuration={150}
                         customStyles={{
+                            wrapper:{
+                                backgroundColor:'transparent',
+                                width:'70%',
+                                alignSelf:'flex-end'
+                            },
                             container: {
                                 borderTopRightRadius: moderateScale(24),
                                 borderTopLeftRadius: moderateScale(24),
                                 paddingVertical: moderateScale(20),
                                 paddingHorizontal: moderateScale(20),
+                                marginBottom:100,
                             },
                         }}  >
 
@@ -166,7 +188,15 @@ export default class StudentFooterComponent extends Component {
 
 
                                   <View style={{flexDirection:'row',flex:1,alignSelf:'flex-end',marginTop:10}}>
+                                  <TouchableOpacity
+                                    style={[styles.earnComnButtonStyle,styles.earnBtn]}
+                                    activeOpacity={0.5}
+                                     onPress={() => {
+                                        this.InvitePopup();
+                                    }}>
                             <Text style={styles.shareTicketTextStyle}>{'share app'}</Text>
+
+                     </TouchableOpacity>
                                   </View>
 
                           
@@ -234,8 +264,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily:'CircularStd-Book',
         fontWeight:'500',
-       
-        alignSelf:"flex-end"
+      alignSelf:"flex-end"
       },
 
    

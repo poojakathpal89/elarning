@@ -256,9 +256,158 @@ getStates(_country_id) {
                             </View>
                              </View>
                           
+                             <View style={TeacherRegisterStyle.SectionStyle}>
+                  <View style={[TeacherRegisterStyle.SectionStyle, { width: "100%", position: "relative" }]}>
+                                      
+                    <View style={[TeacherRegisterStyle.profileTitleBox]}>
+                        <View style={[TeacherRegisterStyle.profileTitle,{height:40}]}>
+                          
+                      <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',alignSelf: 'flex-end', fontWeight: "700",marginTop:3 }}>
+                          Country
+                      </Text>         
+</View>
+</View>
+                       <View style={{width:"100%",'position':'relative',alignSelf:'flex-end'}} >
+                           
+             <SelectDropdown
+              dropdownIconPosition ="right"
+             data={this.state.countriesArray}
+                                        
+                    onSelect={(data) => {
+
+                      
+                        this.getStates(data.id);
+                        this.setState({ selectedCountry: data.id });
+                    }}
+                    defaultValueByIndex={this.state.countryIndex}
+             defaultValue={this.state.countriesArray[this.state.countryIndex]}
+            // onSelect={(selectedItem, index) => {
+            //   console.log(selectedItem, index);
+            // }}
+            buttonStyle={styles.dropdown3BtnStyle}
+            renderCustomizedButtonChild={(selectedItem, index) => {
+              return (
+                 <View style={styles.dropdownRowRightChildStyle}>
+                   {selectedItem ? (
+                    <View style={styles.dropdownRowRightChildStyle}>
+                       <Image source={require("../../Image/arrow_down.png")} style={TeacherRegisterStyle.userIcon} /> 
+
+                                    
+                                <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select country'}</Text>
+                                <Image source={{ uri: selectedItem.image }} style={styles.dropdown3BtnImage} />
+
+                   
+                   
+                        
+                  </View>
+                  ) : 
+                  (
+                    <View style={styles.dropdownRowRightChildStyle}>
+                    
+                    
+                        <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select country'}</Text>
+                        <Image source={require("../../Image/arrow_down.png")} style={TeacherRegisterStyle.userIcon} /> 
+
+                    </View>
+                  )}
+                  </View>
+                
+              );
+            }}
+            dropdownStyle={styles.dropdown3DropdownStyle}
+            rowStyle={styles.dropdown3RowStyle}
+            selectedRowStyle={styles.dropdown1SelectedRowStyle}
+            renderCustomizedRowChild={(item, index) => {
+              return (
+                <View style={styles.dropdownRowRightChildStyle}>
+                  
+                 <Text style={styles.dropdown3BtnTxt}>{item.name}</Text>
+                     <Image source={{ uri: item.image }} style={styles.dropdown3BtnImage} />
+                                                                         
+                </View>
+              );}} />
+           </View>
+           <View style={[TeacherRegisterStyle.newStudentError,{width:"100%",justifyContent:"flex-start",top:5,right:0,left:0,alignSelf:'flex-start'}]}>
+                {this.state.countryError ? 
+            <Text style={[TeacherRegisterStyle.errorclass]}>{this.state.countryError}</Text>
+            : null} 
+            </View>
+        </View>
+     </View>
 
 
-<View style={TeacherRegisterStyle.SectionStyle}>
+            <View style={TeacherRegisterStyle.SectionStyle}>
+                         <View style={[TeacherRegisterStyle.SectionStyle, { width: "100%"}]}>
+                          <View style={[TeacherRegisterStyle.profileTitleBox]}>
+                                <View style={[TeacherRegisterStyle.profileTitle,{height:40}]}>
+            
+                                    <Text style={{ fontSize: 16, color: "#0C222C",fontFamily:'CircularStd-Bold',alignSelf: 'flex-end', fontWeight: "700",marginTop:3 }}>
+                                         State
+                                    </Text> 
+                                
+                                </View>
+                                </View>
+                       <View style={{width:"100%",alignItems:'flex-end'}} >
+                       <SelectDropdown
+            data={this.state.statesArray}
+            onSelect={(data) => {
+                this.setState({ selectedStates: data.id});
+            }}
+           
+            buttonStyle={styles.dropdown3BtnStyle}
+            renderCustomizedButtonChild={(selectedItem, index) => {
+              return (
+
+                <View style={styles.dropdownRowRightChildStyle}>
+                   {selectedItem ? (
+                    <View style={styles.dropdownRowRightChildStyle}>
+                       <Image source={require("../../Image/arrow_down.png")} style={TeacherRegisterStyle.userIcon} /> 
+
+                                    
+                                <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select State'}</Text>
+                                <Image source={{ uri: selectedItem.image }} style={styles.dropdown3BtnImage} />
+
+                   
+                   
+                        
+                  </View>
+                  ) : 
+                  (
+                    <View style={styles.dropdownRowRightChildStyle}>
+                    
+                    
+                        <Text style={styles.dropdown3BtnTxt}>{selectedItem ? selectedItem.name : 'Select State'}</Text>
+                        <Image source={require("../../Image/arrow_down.png")} style={TeacherRegisterStyle.userIcon} /> 
+
+                    </View>
+                  )}
+                  </View>
+                
+              );
+            }}
+            dropdownStyle={styles.dropdown3DropdownStyle}
+            rowStyle={styles.dropdown3RowStyle}
+            selectedRowStyle={styles.dropdown1SelectedRowStyle}
+            renderCustomizedRowChild={(item, index) => {
+              return (
+                <View style={styles.dropdown3RowChildStyle}>
+                      <Image source={require("../../Image/arrow_down.png")} style={TeacherRegisterStyle.userIcon} />
+                   
+                  <Text style={styles.dropdown3RowTxt}>{item.name}s</Text>
+                </View>
+              );}} /> 
+                            
+                          </View>
+                          <View style={[TeacherRegisterStyle.newStudentError,{width:"100%",justifyContent:"flex-start",top:5}]}>
+                             {this.state.stateError ? 
+                          <Text style={[TeacherRegisterStyle.errorclass]}>{this.state.stateError}</Text>
+                            : null} 
+                          </View>
+                         </View>
+
+                         </View>   
+
+{/* <View style={TeacherRegisterStyle.SectionStyle}>
  <View style={[TeacherRegisterStyle.SectionStyle, { width: "100%", position: "relative" }]}>
                         
      <View style={[TeacherRegisterStyle.profileTitleBox]}>
@@ -404,7 +553,7 @@ getStates(_country_id) {
                           </View>
                          </View>
 
-                         </View>      
+                         </View>       */}
                                       
 
                              <View style={TeacherRegisterStyle.SectionStyle}>
@@ -497,67 +646,147 @@ getStates(_country_id) {
 }
 
 const styles = StyleSheet.create({
-    dashedSeparator:{
-        width:'96%',
-        height:2,
-        marginTop:7,
-        marginBottom:5,
-        resizeMode: "cover",
-    },
-    dropdown3DropdownStyle: {backgroundColor: '#fff',border:12},
-    dropdown3RowStyle: {
-      backgroundColor: '#fff',
-      borderColor:"#F9FAFB",
-      borderWidth:1,
-      height: 50,
-    },
-    dropdown1SelectedRowStyle: 
-    {backgroundColor: '#fff'},
-    dropdown3BtnTxt: {
-        color:'#0C222C',
-        paddingHorizontal:15,
-        paddingLeft:40,
-        fontFamily:"CircularStd-Book",
-        fontSize: 14,
-       marginHorizontal: 12,
-      },
-      dropdown3BtnStyle: {
-        width: '100%',
-        height: 50,
-        backgroundColor: '#fff',
-        paddingHorizontal: 0,
-        borderWidth: 1,
+    // dashedSeparator:{
+    //     width:'96%',
+    //     height:2,
+    //     marginTop:7,
+    //     marginBottom:5,
+    //     resizeMode: "cover",
+    // },
+    // dropdown3DropdownStyle: {backgroundColor: '#fff',border:12},
+    // dropdown3RowStyle: {
+    //   backgroundColor: '#fff',
+    //   borderColor:"#F9FAFB",
+    //   borderWidth:1,
+    //   height: 50,
+    // },
+    // dropdown1SelectedRowStyle: 
+    // {backgroundColor: '#fff'},
+    // dropdown3BtnTxt: {
+    //     color:'#0C222C',
+    //     paddingHorizontal:15,
+    //     paddingLeft:40,
+    //     fontFamily:"CircularStd-Book",
+    //     fontSize: 14,
+    //    marginHorizontal: 12,
+    //   },
+    //   dropdown3BtnStyle: {
+    //     width: '100%',
+    //     height: 50,
+    //     backgroundColor: '#fff',
+    //     paddingHorizontal: 0,
+    //     borderWidth: 1,
       
-        borderRadius: 8,
-        borderColor:"#F9FAFB",
-      },
-      dropdown3BtnImage: {width: 24, height:24, resizeMode: 'contain',borderColor:"#F9FAFB",borderWidth:1,borderRadius:10},
-      dropdown3BtnChildStyle: {
-        flex: 1,
-        flexDirection: 'row',
-        alignSelf:'flex-end',
-        fontFamily:"CircularStd-Book",
-        alignItems: 'center',
-        borderColor:"#F9FAFB",
-        padding:0,
-        colorL:"#0C222C"
+    //     borderRadius: 8,
+    //     borderColor:"#F9FAFB",
+    //   },
+    //   dropdown3BtnImage: {width: 24, height:24, resizeMode: 'contain',borderColor:"#F9FAFB",borderWidth:1,borderRadius:10},
+    //   dropdown3BtnChildStyle: {
+    //     flex: 1,
+    //     flexDirection: 'row',
+    //     alignSelf:'flex-end',
+    //     fontFamily:"CircularStd-Book",
+    //     alignItems: 'center',
+    //     borderColor:"#F9FAFB",
+    //     padding:0,
+    //     colorL:"#0C222C"
        
-      },
-      dropdown3RowTxt: {
-        fontFamily:"CircularStd-Book",
-        fontSize: 14,
-        color:'#0C222C',
-        left:40
+    //   },
+    //   dropdown3RowTxt: {
+    //     fontFamily:"CircularStd-Book",
+    //     fontSize: 14,
+    //     color:'#0C222C',
+    //     left:40
         
        
-      },
-      dropdown3RowChildStyle: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        color:'#2A3B69',
+    //   },
+    //   dropdown3RowChildStyle: {
+    //     flex: 1,
+    //     flexDirection: 'row',
+    //     justifyContent: 'flex-start',
+    //     alignItems: 'center',
+    //     color:'#2A3B69',
          
-        paddingHorizontal: 18,
-      },
+    //     paddingHorizontal: 18,
+    //   },
+
+
+    dashedSeparator:{
+      width:'96%',
+      height:2,
+      marginTop:7,
+      marginBottom:5,
+      resizeMode: "cover",
+  },
+  dropdown3DropdownStyle: {backgroundColor: '#fff',border:12},
+  dropdown3RowStyle: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    color:'#2A3B69',
+     
+    paddingHorizontal: 18,
+  },
+  dropdown1SelectedRowStyle: {
+    backgroundColor: '#fff'
+  },
+  dropdown3BtnTxt: {
+      color:'#0C222C',
+      paddingHorizontal:15,
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      fontFamily:"CircularStd-Book",
+      fontSize: 14,
+      right:0,
+     
+      marginHorizontal: 12,
+    },
+    dropdown3BtnStyle: {
+      width: '100%',
+      height: 50,
+      backgroundColor: '#fff',
+      paddingHorizontal: 0,
+      borderWidth: 1,
+      alignSelf:'flex-end',
+      borderRadius: 8,
+      borderColor:"#F9FAFB",
+    },
+    dropdown3BtnImage: {width: 24, height:24, resizeMode: 'contain',borderColor:"#F9FAFB",borderWidth:1,borderRadius:10},
+    dropdown3BtnChildStyle: {
+      flex: 1,
+      flexDirection: 'row',
+      fontFamily:"CircularStd-Book",
+      alignItems: 'center',
+      borderColor:"#F9FAFB",
+      justifyContent:'flex-start',
+      padding:0,
+      colorL:"#0C222C"
+     
+    },
+    dropdown3RowTxt: {
+      fontFamily:"CircularStd-Book",
+      fontSize: 14,
+      color:'#0C222C',
+      left:40
+    
+    },
+    dropdown3RowChildStyle: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      color:'#2A3B69',
+       
+      paddingHorizontal: 18,
+    },
+    dropdownRowRightChildStyle: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      color:'#2A3B69',
+      
+    },
   });

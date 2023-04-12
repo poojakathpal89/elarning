@@ -27,6 +27,10 @@ import ExerciseMultipleFour from "../pages/exerciseList/ExerciseMultipleFour";
 import ExerciseMultipleFive from "../pages/exerciseList/ExerciseMultipleFive";
 import ExerciseMultipleSix from "../pages/exerciseList/ExerciseMultipleSix";
 import ExerciseMultipleSeven from "../pages/exerciseList/ExerciseMultipleSeven";
+import MultipleGroupsScreen from "../pages/group/MultipleGroupsScreen";
+import GroupStudentScreen from "../pages/group/GroupStudentScreen";
+import StudentDetailScreen from "../pages/group/StudentDetailScreen";
+import StudentProgressScreen from "../pages/group/StudentProgressScreen";
 
 
 // Import Screens
@@ -53,16 +57,19 @@ const getHeaderTitle = (route) => {
     }
 };
 
-const SubjectScreenStack = ({ navigation }) => {
+const MultipleGroupsScreenStack = ({ navigation }) => {
     return (
         <Stack.Navigator
-            initialRouteName="Subjects"
+            initialRouteName="MultipleGroupsScreen"
             screenOptions={{
                 headerShown: false,
             }}
         >
-            <Stack.Screen name="Subjects" component={Subjects} options={{ title: "Learn Exercise" }} />
-            <Stack.Screen name="Lessons" component={LessonScreen} options={{ title: "Learn Exercise" }} />
+            <Stack.Screen name="MultipleGroupsScreen" component={MultipleGroupsScreen} options={{ title: "Multiple Groups " }} />
+            <Stack.Screen name="GroupStudentScreen" component={GroupStudentScreen} options={{ title: "Groups Student " }} />
+            <Stack.Screen name="StudentDetailScreen" component={StudentDetailScreen} options={{ title: "Student Detail " }} />
+            <Stack.Screen name="StudentProgressScreen" component={StudentProgressScreen} options={{ title: "Student Progress " }} />
+           
         </Stack.Navigator>
     );
 };
@@ -81,34 +88,22 @@ const LearnExerciseScreenStack = ({ navigation }) => {
     );
 };
 
-
-const ListEcerciseScreenStack = ({ navigation }) => {
+const SubjectScreenStack = ({ navigation }) => {
     return (
         <Stack.Navigator
-            initialRouteName="ListExcerciseScreen"
+            initialRouteName="Subjects"
             screenOptions={{
                 headerShown: false,
             }}
         >
-            <Stack.Screen name="ListExcerciseScreen" component={ListExcerciseScreen} options={{ title: "Offer detail" }} />
-            <Stack.Screen name="ExcerciseOneScreen" component={ExerciseOne} options={{ title: "Exercise One" }} />
-            <Stack.Screen name="ExcerciseTwoScreen" component={ExerciseTwo} options={{ title: "Exercise Two" }} />
-            <Stack.Screen name="ExerciseMultipleOne" component={ExerciseMultipleOne} options={{ title: "Exercise Multiple One" }} />
-            <Stack.Screen name="ExerciseMultipleTwo" component={ExerciseMultipleTwo} options={{ title: "Exercise Multiple Two" }} />
-            <Stack.Screen name="ExerciseMultipleThree" component={ExerciseMultipleThree} options={{ title: "Exercise Multiple Three" }} />
-            <Stack.Screen name="ExerciseMultipleFour" component={ExerciseMultipleFour} options={{ title: "Exercise Multiple Four" }} />
-            <Stack.Screen name="ExerciseMultipleFive" component={ExerciseMultipleFive} options={{ title: "Exercise Multiple Five" }} />
-            <Stack.Screen name="ExerciseMultipleSix" component={ExerciseMultipleSix} options={{ title: "Exercise Multiple Six" }} />
-            <Stack.Screen name="ExerciseMultipleSeven" component={ExerciseMultipleSeven} options={{ title: "Exercise Multiple Seven" }} />
-
-
-
+            <Stack.Screen name="Subjects" component={Subjects} options={{ title: "Subjects" }} />
+          
         </Stack.Navigator>
     );
 };
 
 
-const DrawerNavigatorRoutes = (props) => {
+const DrawerNavigatorRoutesTeacher = (props) => {
     return (
         <Drawer.Navigator
            
@@ -120,15 +115,14 @@ const DrawerNavigatorRoutes = (props) => {
             },}}
             // drawerContent={CustomSidebarMenu}
         >
-       
+        <Drawer.Screen name="MultipleGroupsScreen" options={{ drawerLabel: "Learn Exercise" }} component={MultipleGroupsScreenStack} />
+        <Drawer.Screen name="SubjectScreenStack" options={{ drawerLabel: "Learn Exercise" }} component={SubjectScreenStack} />
+        <Drawer.Screen name="LearnExerciseScreenStack" options={{ drawerLabel: "Learn Exercise Screen" }} component={LearnExerciseScreenStack} />
 
-            <Drawer.Screen name="SubjectScreenStack" options={{ drawerLabel: "Learn Exercise" }} component={SubjectScreenStack} />
-            <Drawer.Screen name="LearnExerciseScreenStack" options={{ drawerLabel: "Learn Exercise Screen" }} component={LearnExerciseScreenStack} />
-            <Drawer.Screen name="ListEcerciseScreenStack" options={{ drawerLabel: "Offer detail" }} component={ListEcerciseScreenStack} />
-            {/* <Drawer.Screen name="ExerciseOneScreenStack" options={{ drawerLabel: "Exercise One" }} component={ExerciseOneScreenStack} /> */}
+     {/* <Drawer.Screen name="ExerciseOneScreenStack" options={{ drawerLabel: "Exercise One" }} component={ExerciseOneScreenStack} /> */}
 
            </Drawer.Navigator>
     );
 };
 
-export default DrawerNavigatorRoutes;
+export default DrawerNavigatorRoutesTeacher;

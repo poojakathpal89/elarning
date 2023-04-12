@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const NewGroupTwoStyle = StyleSheet.create({
+const MultilpeGroupStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -14,7 +14,7 @@ const NewGroupTwoStyle = StyleSheet.create({
         },
 
         btnTextContainer:{
-            marginTop:20,
+            marginTop:30,
         },
     commonStudentBtnTxt:{
         fontSize:16,
@@ -23,13 +23,7 @@ const NewGroupTwoStyle = StyleSheet.create({
       },
     studentTxt:{
         color: 'black',
-      fontSize:14,
-      alignItems:"flex-start",
-      justifyContent:"flex-start",
-
-    },
-    ListHead:{
-marginTop:40,
+      fontSize:14
     },
       menuArea:{
 
@@ -108,11 +102,11 @@ marginTop:40,
 
         makeGroupText:{
            alignItems:"center",
-            marginTop:20,
+            marginTop:100,
             textAlign:"center",
             fontSize:30,
             color:"#000000",
-            fontWeight:'700',
+            fontWeight:'400',
            fontFamily:'CircularStd-Bold',
 },
       btncontainer: {
@@ -154,44 +148,7 @@ marginTop:40,
         fontWeight:'700',
         color:"#000000",
  fontFamily:'CircularStd-Bold',
-        },
-        newStudentTitle:{
-          fontSize:30,
-          fontWeight:"400",
-          color:"#000000"
-        },
-        newStudentContainer:{
-          alignItems:"flex-start",
-          justifyContent:"flex-start",
-          marginTop:40,
-        },
-        newGroupList:{
-        
-          alignItems: 'center',
-          justifyContent:'space-between',
-        },
-        gpStuName:{
-          color:'#0C222C',
-          fontSize:16,
-          fontWeight:'500',
-          justifyContent:'flex-start',
-          fontFamily:'CircularStd-Bold',
-          width:210,
-          opacity:0.6,
-        },
-        gpName:{
-            fontSize:30,
-            color:"#000000"
-        },
-        deleteTxt:{
-            fontSize:30,
-            fontWeight:'400',
-            alignItems:"center",
-            marginTop:16,
-            textAlign:"center",
-            color:"#000000",
-           fontFamily:'CircularStd-Bold',
-},
+        }
 });
 
-export default NewGroupTwoStyle;
+export default MultilpeGroupStyle;

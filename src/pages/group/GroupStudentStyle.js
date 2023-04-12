@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const GroupOneStyle = StyleSheet.create({
+const GroupStudentStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -23,7 +23,13 @@ const GroupOneStyle = StyleSheet.create({
       },
     studentTxt:{
         color: 'black',
-      fontSize:14
+      fontSize:14,
+      alignItems:"flex-start",
+      justifyContent:"flex-start",
+
+    },
+    ListHead:{
+marginTop:40,
     },
       menuArea:{
 
@@ -102,11 +108,11 @@ const GroupOneStyle = StyleSheet.create({
 
         makeGroupText:{
            alignItems:"center",
-            marginTop:100,
+            marginTop:20,
             textAlign:"center",
             fontSize:30,
             color:"#000000",
-            fontWeight:'400',
+            fontWeight:'700',
            fontFamily:'CircularStd-Bold',
 },
       btncontainer: {
@@ -148,7 +154,35 @@ const GroupOneStyle = StyleSheet.create({
         fontWeight:'700',
         color:"#000000",
  fontFamily:'CircularStd-Bold',
-        }
+        },
+        newStudentTitle:{
+          fontSize:30,
+          fontWeight:"400",
+          color:"#000000"
+        },
+        newStudentContainer:{
+          alignItems:"flex-start",
+          justifyContent:"flex-start",
+          marginTop:30,
+          
+        },
+        newGroupList:{
+          flexDirection:'row',
+          alignItems: 'center',
+          justifyContent:'space-between',
+        marginTop:30,
+        
+         
+        },
+        gpStuName:{
+          color:'#0C222C',
+          fontSize:16,
+          fontWeight:'500',
+          justifyContent:'flex-start',
+          fontFamily:'CircularStd-Bold',
+          width:210,
+          opacity:0.6,
+        },
 });
 
-export default GroupOneStyle;
+export default GroupStudentStyle;

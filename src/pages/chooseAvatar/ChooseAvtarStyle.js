@@ -178,6 +178,7 @@ const ChooseAvtarStyle = StyleSheet.create({
        marginTop:10,  
        justifyContent:"center",   
    },
+   
     chooseAvatarBox: {
       flexDirection: "row",
       flexWrap: "wrap",

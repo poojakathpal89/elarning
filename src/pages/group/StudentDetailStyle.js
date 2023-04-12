@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const NewGroupOneStyle = StyleSheet.create({
+const StudentDetailStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
@@ -14,7 +14,7 @@ const NewGroupOneStyle = StyleSheet.create({
         },
 
         btnTextContainer:{
-            marginTop:30,
+            marginTop:20,
         },
     commonStudentBtnTxt:{
         fontSize:16,
@@ -163,16 +163,12 @@ marginTop:40,
         newStudentContainer:{
           alignItems:"flex-start",
           justifyContent:"flex-start",
-          marginTop:30,
-          
+          marginTop:40,
         },
         newGroupList:{
-          flexDirection:'row',
+        
           alignItems: 'center',
           justifyContent:'space-between',
-        marginTop:30,
-        
-         
         },
         gpStuName:{
           color:'#0C222C',
@@ -183,6 +179,19 @@ marginTop:40,
           width:210,
           opacity:0.6,
         },
+        gpName:{
+            fontSize:30,
+            color:"#000000"
+        },
+        deleteTxt:{
+            fontSize:30,
+            fontWeight:'400',
+            alignItems:"center",
+            marginTop:16,
+            textAlign:"center",
+            color:"#000000",
+           fontFamily:'CircularStd-Bold',
+},
 });
 
-export default NewGroupOneStyle;
+export default StudentDetailStyle;

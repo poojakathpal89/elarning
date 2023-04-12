@@ -53,7 +53,7 @@ getSubjectList() {
       return (
       
     <View style={[GlobalStyle.MainBody, { flex: 1,backgroundColor:'#E7E2E2'}]}>
-       {/* <FooterComponent/> */}
+     
       <ScrollView>
       <View style={SubjectStyle.container}>
                 

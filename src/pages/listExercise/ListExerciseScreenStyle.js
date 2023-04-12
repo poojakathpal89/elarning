@@ -1,12 +1,22 @@
-import {StyleSheet} from 'react-native';
-import { moderateScale } from 'react-native-size-matters';
-const ExerciseOneStyle = StyleSheet.create({
+import { StyleSheet } from "react-native";
+import { moderateScale } from "react-native-size-matters";
+const ListExerciseScreenStyle = StyleSheet.create({
     container: {
         flex: 1, 
-      
+        position: "relative",
         paddingHorizontal: 24,
         paddingVertical: 24,
       },
+      multipleCodeImage2Container: {
+        justifyContent: 'center',
+           marginLeft:90,
+           marginRight:90,
+           backgroundColor:"#FBFEFD",
+           alignItems:"center",   
+           marginTop:10,
+           height:60,
+           borderRadius:10,
+               },
       logoOnlyHeader:{
 		height:"10%",
 		alignItems: "center",
@@ -17,6 +27,7 @@ const ExerciseOneStyle = StyleSheet.create({
             alignItems: "center",
             marginTop:0,
             textAlign:'center',
+            justifyContent:"center"
          },
 
 starImage:{
@@ -34,7 +45,8 @@ starImage:{
  
 },
         btnTextContainer:{
-            marginTop:10,
+            // marginTop:30,
+            marginBottom:40
         },
     commonStudentBtnTxt:{
         fontSize:16,
@@ -181,13 +193,13 @@ starImage:{
   
             studentCodeContainer: {
              justifyContent: 'center',
-                marginLeft:70,
-                marginRight:70,
+                marginLeft:90,
+                marginRight:90,
                 backgroundColor:"#FBFEFD",
                 alignItems:"center",
-                paddingLeft:40,
-                paddingRight:40,    
-                marginTop:30,
+                paddingLeft:50,
+                paddingRight:50,    
+                marginTop:20,
                 height:80,
                 borderRadius:10,
                     },
@@ -244,7 +256,41 @@ studentButtonStyle:{
    image2Container:{
     flex:2,
     flexDirection:'row',
-   }
+   },
+   bottomswiperHeadingBox: {
+
+    alignItems: "center",
+   
+},
+bottomswiperHeading: {
+  fontSize: 18,
+  color: "#0C222C",
+  fontWeight: "700",
+  marginBottom:10
+},
+bottomswiperSubheading: {
+  fontSize: 16,
+  fontWeight: "500",
+  color: "#0C222C",
+},
+shareWithFrndBg:{
+  flex:1,
+  flexDirection:'row',
+  fontSize: moderateScale(14), 
+  color: "#3EB881",
+  marginBottom:10,
+  justifyContent: "center",
+  alignContent:"center",
+  fontWeight: "500",
+  marginTop:10
+},
+shareTicketTextStyle:{
+  color: '#000',
+  fontSize: 20,
+  fontFamily:'CircularStd-Book',
+  fontWeight:'500'
+},
 });
 
-export default ExerciseOneStyle;
+export default ListExerciseScreenStyle;
+

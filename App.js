@@ -15,12 +15,12 @@ import NewStudentScreen from './src/pages/newStudent2/NewStudentScreen';
 
 import MeenuScreen from './src/pages/menu/MenuScreen';
 //  import MakeGroups from './src/pages/makegroups/MakeGroups';
-import GroupOneScreen from './src/pages/makeGroups1/MakeGroupOneScreen';
-import StudentCodeScreen from './src/pages/studentCode/StudentScreenCode';
+// import GroupOneScreen from './src/pages/makeGroups1/MakeGroupOneScreen';
+// import StudentCodeScreen from './src/pages/studentCode/StudentScreenCode';
 import MultipleStudentScreen from './src/pages/multipleStudent/MultipleStudentScreen';
-import NewGroupOneScreen from './src/pages/group/NewGroupOneScreen';
+// import NewGroupOneScreen from './src/pages/group/NewGroupOneScreen';
  import NewGroupTwoScreen from './src/pages/group/NewGroupTwoScreen';
-import NewGroupThreeScreen from  './src/pages/group/NewGroupThreeScreen';
+// import NewGroupThreeScreen from  './src/pages/group/NewGroupThreeScreen';
 import MainDashBoardScreen from './src/pages/dashboard/MainDashBoardScreen';
 import ChooseAvtar from './src/pages/chooseAvatar/ChooseAvtarScreen';
 // import ChooseAvatarTeacherScreen from './src/pages/chooseAvatar/ChooseAvatarTeacherScreen';
@@ -40,7 +40,7 @@ import ExerciseMultipleFour from './src/pages/exerciseList/ExerciseMultipleFour'
 import ExerciseMultipleFive from './src/pages/exerciseList/ExerciseMultipleFive';
 import ExerciseMultipleSix  from './src/pages/exerciseList/ExerciseMultipleSix';
 import ExerciseMultipleSeven from './src/pages/exerciseList/ExerciseMultipleSeven';
-import LearnExreciseScreen from './src/pages/learn/LearnExerciseScreen';
+// import LearnExreciseScreen from './src/pages/learn/LearnExerciseScreen';
 import FirstGradeScreen from './src/pages/grades/FirstGradeScreen';
 //  import SubjectsScreen from './src/pages/subjects/SubjectScreen';
  import ArabicScreen from './src/pages/subjects/ArabicScreen';
@@ -60,10 +60,16 @@ import TeacherRegisterScreen from './src/pages/register/TeacherRegisterScreen';
 import CodeScreen from './src/pages/register/CodeScreen';
 import CreateGroups from './src/pages/group/CreateGroupsScreen';
 import UserEdit from './src/pages/profile/UserEditScreen';
+import MultipleGroup from './src/pages/group/MultipleGroupsScreen';
+import CodePrepare from './src/pages/group/CodePrepareScreen';
+  import LearnExercise from './src/pages/learn/LearnExerciseScreen';
 
 
-// import DrawerNavigationRoutes from './src/route/DrawerNavigationRoutes';
 
+
+ import DrawerNavigationRoutes from './src/route/DrawerNavigationRoutes';
+
+ import DrawerNavigationRoutesTeacher from './src/route/DrawerNavigationRoutesTeacher';
 
 
 
@@ -90,6 +96,7 @@ const Stack = createStackNavigator();
           component={TeacherScreen}
           options={{headerShown: false}}
         />
+        
           {/* <Stack.Screen
           name="listOfGrade"
           component={listOfGrade}
@@ -134,24 +141,6 @@ const Stack = createStackNavigator();
           options={{headerShown: false}}
         />
 
-
-      
-        <Stack.Screen
-          name="Subjects"
-          component={Subjects}
-          options={{headerShown: false}}
-        /> 
-    <Stack.Screen
-          name="Lessons"
-          component={Lessons}
-          options={{headerShown: false}}
-        /> 
-
-<Stack.Screen
-          name="UserEdit"
-          component={UserEdit}
-          options={{headerShown: false}}
-        /> 
   
       </Stack.Navigator>
     );
@@ -172,18 +161,17 @@ const Stack = createStackNavigator();
          component={ChooseAvtar}
           options={{headerShown: false}}
         />
+
+        <Stack.Screen
+          name="GradeList"
+          component={GradeList}
+          options={{headerShown: false}}
+        /> 
           <Stack.Screen
           name="CodeScreen"
           component={CodeScreen}
           options={{headerShown: false}}
         />
-        <Stack.Screen
-          name="CreateGroups"
-          component={CreateGroups}
-          options={{headerShown: false}}
-        /> 
-
-      
         
   
   
@@ -226,12 +214,16 @@ export default class AppContainer extends React.Component {
                 
               
 
-
-            {/* <Stack.Screen
+             <Stack.Screen
                 name="DrawerNavigationRoutes"
                 component={DrawerNavigationRoutes}
                 options={{headerShown: false}}
-              /> */}
+              /> 
+              <Stack.Screen
+                name="DrawerNavigationRoutesTeacher"
+                component={DrawerNavigationRoutesTeacher}
+                options={{headerShown: false}}
+              /> 
             </Stack.Navigator>
           </NavigationContainer>
          
