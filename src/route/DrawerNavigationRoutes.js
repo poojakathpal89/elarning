@@ -27,6 +27,8 @@ import ExerciseMultipleFour from "../pages/exerciseList/ExerciseMultipleFour";
 import ExerciseMultipleFive from "../pages/exerciseList/ExerciseMultipleFive";
 import ExerciseMultipleSix from "../pages/exerciseList/ExerciseMultipleSix";
 import ExerciseMultipleSeven from "../pages/exerciseList/ExerciseMultipleSeven";
+import SubjectScreen from "../pages/grades/SubjectScreen";
+
 
 
 // Import Screens
@@ -56,12 +58,12 @@ const getHeaderTitle = (route) => {
 const SubjectScreenStack = ({ navigation }) => {
     return (
         <Stack.Navigator
-            initialRouteName="Subjects"
+            initialRouteName="SubjectScreen"
             screenOptions={{
                 headerShown: false,
             }}
         >
-            <Stack.Screen name="Subjects" component={Subjects} options={{ title: "Learn Exercise" }} />
+            <Stack.Screen name="Subjects" component={SubjectScreen} options={{ title: "Subject Screen " }} />
             <Stack.Screen name="Lessons" component={LessonScreen} options={{ title: "Learn Exercise" }} />
         </Stack.Navigator>
     );

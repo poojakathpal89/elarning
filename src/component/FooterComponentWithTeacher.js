@@ -66,8 +66,8 @@ export default class FooterComponentWithTeacher extends Component {
                 <View style={{ width: "33%" }}>
                             <TouchableOpacity
                                 onPress={() => {
-                                    props.navigation.navigate("LearnExreciseScreen", {
-                                        screen: "LearnExreciseScreen",
+                                    props.navigation.navigate("SubjectScreenStack", {
+                                        screen: "SubjectScreen",
                                     });
                                     // this.props.navigation.navigate("Subjects");
                                     //  this.RBSheetEarn.open()

@@ -32,7 +32,7 @@ getSubjectList() {
 
   this.setState({ isLoading: true, subjectListArray: [] });
   let postData = {
-    gradeId: GlobalService.regData.gradeId,
+    gradeId: GlobalService.userData.gradeId,
    
 };
 

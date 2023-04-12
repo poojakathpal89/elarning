@@ -66,8 +66,8 @@ export default class StudentFooterComponent extends Component {
                 <View style={{ width: "33%" }}>
                             <TouchableOpacity
                                 onPress={() => {
-                                    props.navigation.navigate("Subjects", {
-                                        screen: "Subjects",
+                                    props.navigation.navigate("SubjectScreenStack", {
+                                        screen: "SubjectScreen",
                                     });
                                     // this.props.navigation.navigate("Subjects");
                                     //  this.RBSheetEarn.open()
@@ -84,9 +84,9 @@ export default class StudentFooterComponent extends Component {
                 <View style ={{width:"33%"}}>
                     <TouchableOpacity
                         onPress={() => {
-                            // props.navigation.navigate("MyVoucherScreenStack", {
-                            //     screen: "MyVoucherScreen",
-                            // });
+                            props.navigation.navigate("MultipleGroupsScreen", {
+                                screen: "MultipleGroupsScreen",
+                            });
                           
 
                         }} style={GlobalStyle.bottomNavLeftItem}>

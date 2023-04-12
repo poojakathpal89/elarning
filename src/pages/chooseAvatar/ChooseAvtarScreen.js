@@ -85,7 +85,7 @@ export default class ChooseAvatarScreen extends React.Component {
    
   }
   OnButtonClick(){
-    if (GlobalService.regData.userType == 1){
+    if (GlobalService.regData.user_type == 1){
         this.props.navigation.navigate("GradeList");
     }
     

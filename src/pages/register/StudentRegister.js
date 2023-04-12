@@ -102,7 +102,7 @@ if (error == false) {
       user_state_id: parseInt(this.state.selectedStates),
       user_school: this.state.school,
       user_mobile: this.state.mobile,
-      userType: 1,
+      user_type: 1,
    
 
   }; 

@@ -9,7 +9,6 @@ import { HeaderBackButton } from "@react-navigation/stack";
 import * as constantcolor from "../css/constantcolor";
 import { TouchableOpacity } from "react-native";
 import { Image } from "react-native";
-import Subjects from "../pages/grades/SubjectScreen";
 //import LearnExcercise from "../pages/grades/SubjectScreen";
 import LessonScreen from "../pages/lesson/LessonScreen";
 //import LearnExreciseScreen from "../pages/learn/LearnExerciseScreen";
@@ -31,6 +30,8 @@ import MultipleGroupsScreen from "../pages/group/MultipleGroupsScreen";
 import GroupStudentScreen from "../pages/group/GroupStudentScreen";
 import StudentDetailScreen from "../pages/group/StudentDetailScreen";
 import StudentProgressScreen from "../pages/group/StudentProgressScreen";
+import SubjectScreen from "../pages/grades/SubjectScreen";
+
 
 
 // Import Screens
@@ -91,12 +92,12 @@ const LearnExerciseScreenStack = ({ navigation }) => {
 const SubjectScreenStack = ({ navigation }) => {
     return (
         <Stack.Navigator
-            initialRouteName="Subjects"
+            initialRouteName="SubjectScreen"
             screenOptions={{
                 headerShown: false,
             }}
         >
-            <Stack.Screen name="Subjects" component={Subjects} options={{ title: "Subjects" }} />
+            <Stack.Screen name="SubjectScreen" component={SubjectScreen} options={{ title: "Subjects" }} />
           
         </Stack.Navigator>
     );

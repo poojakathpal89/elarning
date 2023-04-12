@@ -21,7 +21,7 @@ export const UPDATE_PROFILE_DATA_URL = "my-account/update-profile-info";
 export const UPDATE_PACKAGE_DATA_URL = "my-account/get-profile-data";
 export const APP_BUY_PACKAGE_URL = "app-user/app-buy-plan";
 export const USER_CHARGE_PACKAGE_URL = "app-user/charge-user";
-export const REGISTER_URL = "app-user/register-user";
+// export const REGISTER_URL = "app-user/register-user";
 export const REBATES_URL = "account/creditsWithdrawl";
 export const REBATES_WITHDRAWAL_URL = "account/withdrawl-search";
 export const REBATES_TRANJACTION_URL =  "account/credit-search";
@@ -68,6 +68,8 @@ export const GRADE_URL = "guest-user/list-grades";
 export const SUBJECT_URL = "guest-user/list-subjects";
 export const LESSON_URL = "guest-user/list-lessons";
 export const GET_AVTAR_URL = "custom/get-avatars";
+export const REGISTER_URL = "guest-user/register";
+
 
 
 

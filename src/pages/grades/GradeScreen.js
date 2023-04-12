@@ -6,8 +6,6 @@ import CommonStyle from '../../css/common';
 import { AuthService,GlobalService,ToastService} from "../../services/AllServices";
 
 
-
-
 export default class GradeScreen extends React.Component {
   constructor(props) {
       super(props);
@@ -17,17 +15,41 @@ export default class GradeScreen extends React.Component {
       secureTextEntry: true,
       errorPass:false,
       gradeListArray:[],
+      
   };
 
   componentDidMount() {
-      // console.log(StringsOfLanguages.languageObj);
       this.getGradeList();
+      
   }
   gradeOneBtn(gradeId){
+
     GlobalService.regData.gradeId=gradeId
-    this.props.navigation.navigate("CodeScreen");
-    //subeject
+    this.userRegisterData();
   
+  }
+  userRegisterData (){
+   
+    AuthService.registerUser(GlobalService.regData)
+    .then((res) => {
+   
+        this.setState({ isLoading: false });
+    
+        if (res.status == 1) {
+          GlobalService.userData = GlobalService.regData ;
+          GlobalService.regData = "";
+          GlobalService.regData.loginCode=res.userCode
+        
+          this.props.navigation.navigate("CodeScreen");
+            
+        } else {
+        
+            ToastService.tostLong(res.msg);
+        }
+    })
+    .catch((error) => {
+        ToastService.tostShort(error);
+    });
   }
   
   getGradeList() {
@@ -40,9 +62,6 @@ export default class GradeScreen extends React.Component {
           console.log(response)
         
             this.setState({ gradeListArray: response.grades});
-          //  console.log(gradeListArray,"gradeListArray")
-      
-            //this.getAvtar(this.state.selectedCountry);
         })
         .catch((error) => {
             // ToastService.tostShort(error);

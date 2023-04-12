@@ -71,6 +71,8 @@ class AuthService extends Component {
         this.countriesArrayEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.COUNTRIES_ARRAY_URL;
         this.statesArrayEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.STATES_ARRAY_URL;
         this.getavtarEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.GET_AVTAR_URL;
+        this.registerEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.REGISTER_URL;
+
 
 
 

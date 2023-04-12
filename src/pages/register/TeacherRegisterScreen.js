@@ -97,7 +97,7 @@ if (this.state.selectedStates <1) {
     this.setState({ stateError:GlobalService.Register ? GlobalService.Register.RAPP_PROFILE_STATE +' '+GlobalService.Register.RAPP_FORM_REQUIRED :  "State is required" });
     error = true;
 }
-error = false;
+
 if (error == false) {
            
   let postData = {
@@ -107,7 +107,7 @@ if (error == false) {
       user_state_id: parseInt(this.state.selectedStates),
       user_school: this.state.school,
       user_mobile: this.state.mobile,
-      userType: 2,
+      user_type: 2,
       
 
   }; 
