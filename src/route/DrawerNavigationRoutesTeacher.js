@@ -10,7 +10,7 @@ import * as constantcolor from "../css/constantcolor";
 import { TouchableOpacity } from "react-native";
 import { Image } from "react-native";
 //import LearnExcercise from "../pages/grades/SubjectScreen";
-import LessonScreen from "../pages/lesson/LessonScreen";
+import LessonScreens from "../pages/lesson/LessonScreen";
 //import LearnExreciseScreen from "../pages/learn/LearnExerciseScreen";
 
 // import OfferDetailScreen from "../pages/offerdetail/OfferDetailScreen";
@@ -31,6 +31,12 @@ import GroupStudentScreen from "../pages/group/GroupStudentScreen";
 import StudentDetailScreen from "../pages/group/StudentDetailScreen";
 import StudentProgressScreen from "../pages/group/StudentProgressScreen";
 import SubjectScreen from "../pages/grades/SubjectScreen";
+// import UserEdit from './src/pages/profile/UserEditScreen';
+import UserEdit from '../pages/profile/UserEditScreen';
+import CodePrepareScreen from "../pages/group/CodePrepareScreen";
+
+
+
 
 
 
@@ -70,24 +76,41 @@ const MultipleGroupsScreenStack = ({ navigation }) => {
             <Stack.Screen name="GroupStudentScreen" component={GroupStudentScreen} options={{ title: "Groups Student " }} />
             <Stack.Screen name="StudentDetailScreen" component={StudentDetailScreen} options={{ title: "Student Detail " }} />
             <Stack.Screen name="StudentProgressScreen" component={StudentProgressScreen} options={{ title: "Student Progress " }} />
-           
+            <Stack.Screen name="CreateGroupsScreen" component={CreateGroupsScreen} options={{ title: "Create Group Screen" }} />
+            
+            <Stack.Screen name="CodePrepareScreen" component={CodePrepareScreen} options={{ title: "User Edit Screen" }} />
+
         </Stack.Navigator>
     );
 };
 
 
-const LearnExerciseScreenStack = ({ navigation }) => {
+const LessonScreenStack = ({ navigation }) => {
     return (
         <Stack.Navigator
-            initialRouteName="LearnExreciseScreen"
+            initialRouteName="LessonScreens"
             screenOptions={{
                 headerShown: false,
             }}
         >
-             <Stack.Screen name="LearnExreciseScreen" component={LearnExreciseScreen} options={{ title: "Learn Exercise Screen" }} />
+            <Stack.Screen name="LessonScreens" component={LessonScreens} options={{ title: "Lesson Screen" }} />
         </Stack.Navigator>
     );
 };
+
+const CreateGroupScreenStack = ({ navigation }) => {
+    return (
+        <Stack.Navigator
+            initialRouteName="CreateGroupsScreen"
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+        </Stack.Navigator>
+    );
+};
+
+
 
 const SubjectScreenStack = ({ navigation }) => {
     return (
@@ -118,7 +141,9 @@ const DrawerNavigatorRoutesTeacher = (props) => {
         >
         <Drawer.Screen name="MultipleGroupsScreen" options={{ drawerLabel: "Learn Exercise" }} component={MultipleGroupsScreenStack} />
         <Drawer.Screen name="SubjectScreenStack" options={{ drawerLabel: "Learn Exercise" }} component={SubjectScreenStack} />
-        <Drawer.Screen name="LearnExerciseScreenStack" options={{ drawerLabel: "Learn Exercise Screen" }} component={LearnExerciseScreenStack} />
+        <Drawer.Screen name="LessonScreenStack" options={{ drawerLabel: "Lesson Screen" }} component={LessonScreenStack} />
+        
+        <Drawer.Screen name="CreateGroupScreenStack" options={{ drawerLabel: "Create Group Screen" }} component={CreateGroupScreenStack} />
 
      {/* <Drawer.Screen name="ExerciseOneScreenStack" options={{ drawerLabel: "Exercise One" }} component={ExerciseOneScreenStack} /> */}
 

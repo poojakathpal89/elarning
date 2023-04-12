@@ -24,6 +24,10 @@ export default class MultipleGroupsScreen extends React.Component {
   this.props.navigation.navigate("GroupStudentScreen");
 }
 
+createGroup(){
+  this.props.navigation.navigate("CreateGroupsScreen");
+
+}
 
   render() {
       return (
@@ -178,6 +182,20 @@ export default class MultipleGroupsScreen extends React.Component {
                   
                   </View>
                 
+
+                  <View  style={MultilpeGroupStyle.buttonStyle}>
+                  <TouchableOpacity
+            disabled={this.state.loading}
+                                          
+              activeOpacity={0.5}
+              onPress={() => {
+                this.createGroup();
+              }} >
+        <Text style={MultilpeGroupStyle.newStudentNextTxt}>+ New Group</Text>
+               {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
+                </TouchableOpacity>
+                  
+                  </View>
                  
              </View>
         </View>

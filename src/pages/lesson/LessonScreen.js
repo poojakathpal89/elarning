@@ -28,7 +28,8 @@ export default class LessonScreen extends React.Component {
   oneBtn(id) {
     console.log("id",id);
      this.props.navigation.setParams({item:"DDDD"})
-    this.props.navigation.navigate("LearnExerciseScreenStack",{screen:"LearnExcerciseScreen"});
+    this.props.navigation.navigate("LearnExerciseScreenStack",
+    {screen:"LearnExcerciseScreen"});
    
    
 }
@@ -38,7 +39,7 @@ getLessonList() {
 
   this.setState({ isLoading: true, lessonListArray: [] });
   let postData = {
-    gradeId: GlobalService.regData.gradeId,
+    subjectId: GlobalService.userData.subjectId,
    
 };
 

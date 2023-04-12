@@ -24,7 +24,7 @@ export default class GradeScreen extends React.Component {
   }
   gradeOneBtn(gradeId){
 
-    GlobalService.regData.gradeId=gradeId
+    GlobalService.regData.user_grade_id=gradeId
     this.userRegisterData();
   
   }

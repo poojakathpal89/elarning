@@ -207,8 +207,9 @@ export default class StudentFooterComponent extends Component {
         style={[styles.earnComnButtonStyle,styles.earnBtn]}
         activeOpacity={0.5}
         onPress={() => {
-                props.navigation.navigate("UserEdit", {
-                screen: "UserEdit",
+            GlobalService.userData.userInfo="";
+                props.navigation.navigate("Main", {
+                screen: "Main",
                     });
             
         }} >

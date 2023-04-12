@@ -5,7 +5,7 @@ import CommonStyle from '../../css/common';
 // import ListOfGradeStyle from './ListOfGradeStyle';
 import SubjectStyle from './SubjectStyle';
 import { AuthService,GlobalService,ToastService} from "../../services/AllServices";
-import {StudentFooterComponent} from "../../component/AllComponent";
+import {FooterComponentWithTeacher, StudentFooterComponent} from "../../component/AllComponent";
 
 
 
@@ -21,10 +21,15 @@ export default class SubjectScreen extends React.Component {
   };
 
   componentDidMount() {
+
+    console.log("Subjects",GlobalService.userData)
     this.getSubjectList();
   }
-  selectGrade() {
-    this.props.navigation.navigate("Lessons");
+  selectGrade(subjectId) {
+    GlobalService.userData.subjectId=subjectId
+    this.props.navigation.navigate("LessonScreenStack", {
+      screen: "LessonScreens",
+  });
    
 }
 
@@ -32,7 +37,7 @@ getSubjectList() {
 
   this.setState({ isLoading: true, subjectListArray: [] });
   let postData = {
-    gradeId: GlobalService.userData.gradeId,
+    gradeId: GlobalService.userData.user_grade_id,
    
 };
 
@@ -86,7 +91,7 @@ getSubjectList() {
        
 
       </ScrollView>
-      <StudentFooterComponent props={this.props} active={"home"} /> 
+      {GlobalService.userData.user_type==1 ?  <StudentFooterComponent props={this.props} active={"home"} /> :  <FooterComponentWithTeacher props={this.props} active={"home"} /> }
 
       </View>
 

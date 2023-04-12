@@ -23,7 +23,7 @@ export default class CreateGroupsScreen extends React.Component {
       // console.log(StringsOfLanguages.languageObj);
   }
   createNewGroupBtn() {
-    this.props.navigation.navigate("MultipleGroup");
+    this.props.navigation.navigate("CodePrepareScreen");
    }
 
   render() {

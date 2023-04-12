@@ -11,7 +11,7 @@ import { TouchableOpacity } from "react-native";
 import { Image } from "react-native";
 import Subjects from "../pages/grades/SubjectScreen";
 //import LearnExcercise from "../pages/grades/SubjectScreen";
-import LessonScreen from "../pages/lesson/LessonScreen";
+import LessonScreens from "../pages/lesson/LessonScreen";
 //import LearnExreciseScreen from "../pages/learn/LearnExerciseScreen";
 
 // import OfferDetailScreen from "../pages/offerdetail/OfferDetailScreen";
@@ -64,7 +64,19 @@ const SubjectScreenStack = ({ navigation }) => {
             }}
         >
             <Stack.Screen name="Subjects" component={SubjectScreen} options={{ title: "Subject Screen " }} />
-            <Stack.Screen name="Lessons" component={LessonScreen} options={{ title: "Learn Exercise" }} />
+            {/* <Stack.Screen name="LessonScreen" component={LessonScreen} options={{ title: "Lesson Screen" }} /> */}
+        </Stack.Navigator>
+    );
+};
+const LessonScreenStack = ({ navigation }) => {
+    return (
+        <Stack.Navigator
+            initialRouteName="LessonScreens"
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+            <Stack.Screen name="LessonScreens" component={LessonScreens} options={{ title: "Lesson Screen" }} />
         </Stack.Navigator>
     );
 };
@@ -128,6 +140,7 @@ const DrawerNavigatorRoutes = (props) => {
             <Drawer.Screen name="LearnExerciseScreenStack" options={{ drawerLabel: "Learn Exercise Screen" }} component={LearnExerciseScreenStack} />
             <Drawer.Screen name="ListEcerciseScreenStack" options={{ drawerLabel: "Offer detail" }} component={ListEcerciseScreenStack} />
             {/* <Drawer.Screen name="ExerciseOneScreenStack" options={{ drawerLabel: "Exercise One" }} component={ExerciseOneScreenStack} /> */}
+            <Drawer.Screen name="LessonScreenStack" options={{ drawerLabel: "Lesson Screen" }} component={LessonScreenStack} />
 
            </Drawer.Navigator>
     );

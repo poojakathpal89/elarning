@@ -6,6 +6,7 @@ import CommonStyle from '../../css/common';
 import GlobalStyle from "../../css/style";
 import { AuthService, GlobalService, RequestHandler, ToastService } from "../../services/AllServices";
 
+import { CommonActions } from "@react-navigation/native";
 
 
 export default class MainScreen extends React.Component {
@@ -36,7 +37,12 @@ export default class MainScreen extends React.Component {
       error = true;
     }
   if (error== false){
-    this.props.navigation.navigate("NewStudentCodeName");
+    let postData ={
+      password:this.state.studentCode,
+      user_type:1
+    }
+   //
+   this.loginApi(postData);
 
   }
   
@@ -55,12 +61,59 @@ goToNewTeacher(){
       error = true;
     }
     if (error== false){
-      this.props.navigation.navigate("Subscription");
+
+      let postData ={
+        password:this.state.teacherCode,
+        user_type:2
+      }
+     //
+     this.loginApi(postData);
       // this.props.navigation.navigate("Subscription");
   
     }
    
 }
+
+loginApi(postData){
+
+  AuthService.authenticate(postData)
+  .then((res) => {
+ 
+  
+      this.setState({ isLoading: false });
+  
+      if (res.status == 1) {
+       let i = parseInt(res.userInfo.user_type);
+        GlobalService.userData=res.userInfo;
+        
+        if(i==1){
+
+          this.props.navigation.dispatch(
+            CommonActions.reset({
+                index: 1,
+                routes: [{ name: "DrawerNavigationRoutes" }],
+            })
+        );
+        }else{
+          this.props.navigation.dispatch(
+            CommonActions.reset({
+                index: 1,
+                routes: [{ name: "DrawerNavigationRoutesTeacher" }],
+            })
+        );
+       
+        }
+       
+          
+      } else {
+      
+          ToastService.tostLong(res.msg);
+      }
+  })
+  .catch((error) => {
+      ToastService.tostShort(error);
+  });
+} 
 
   render() {
     // const goToStudentCode = () => {

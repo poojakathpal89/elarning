@@ -44,7 +44,6 @@ class AuthService extends Component {
       
 
         this.statesArrayEndpoint= myConstClass.API_BASE_URL+myConstClass.STATES_ARRAY_URL;
-        this.loginEndpoint= myConstClass.API_BASE_URL+myConstClass.LOGIN_URL;
         this.registerEndpoint= myConstClass.API_BASE_URL+myConstClass.REGISTER_URL;
         this.getPackageEndpoint= myConstClass.API_BASE_URL+myConstClass.GET_PACKAGE_URL;
         this.appBuyEndpoint= myConstClass.API_BASE_URL+myConstClass.APP_BUY_PACKAGE_URL;
@@ -72,6 +71,8 @@ class AuthService extends Component {
         this.statesArrayEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.STATES_ARRAY_URL;
         this.getavtarEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.GET_AVTAR_URL;
         this.registerEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.REGISTER_URL;
+        this.loginEndpoint= myConstClass.EAPI_BASE_URL+myConstClass.LOGIN_URL;
+
 
 
 
