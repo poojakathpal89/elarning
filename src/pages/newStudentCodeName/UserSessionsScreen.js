@@ -27,7 +27,7 @@ export default class UserSessionScreen extends React.Component {
     RequestHandler.getToken();
       // console.log(StringsOfLanguages.languageObj);
   }
-  userImageClick(_itemId){
+  userImageClick(_item){
     let postData ={
       password:this.state.teacherCode,
       user_type:2
@@ -146,7 +146,7 @@ export default class UserSessionScreen extends React.Component {
                                                                                     
                                                         activeOpacity={0.5}
                                                         onPress={() => {
-                                                           this.userImageClick(item.id);
+                                                           this.userImageClick(item);
                                                         }} >
                                                           <Image source={{ uri: item.userImage}}  style={{width: 80, height:70, resizeMode: 'contain',borderRadius:10}} />
                         
@@ -160,10 +160,7 @@ export default class UserSessionScreen extends React.Component {
                                                 ))}
                                               
                                           </View>
-                                   
-                                  
-
-                                   
+                                     
                                   </View>
 
 
