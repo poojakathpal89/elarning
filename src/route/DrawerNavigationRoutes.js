@@ -28,6 +28,8 @@ import ExerciseMultipleFive from "../pages/exerciseList/ExerciseMultipleFive";
 import ExerciseMultipleSix from "../pages/exerciseList/ExerciseMultipleSix";
 import ExerciseMultipleSeven from "../pages/exerciseList/ExerciseMultipleSeven";
 import SubjectScreen from "../pages/grades/SubjectScreen";
+import ProfilePageScreen from "../pages/profile/ProfilePageScreen";
+
 
 
 
@@ -96,6 +98,20 @@ const LearnExerciseScreenStack = ({ navigation }) => {
 };
 
 
+const ProfileScreenStack = ({ navigation }) => {
+    return (
+        <Stack.Navigator
+            initialRouteName="ProfilePageScreen"
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+             <Stack.Screen name="ProfilePageScreen" component={ProfilePageScreen} options={{ title: "Profile Screen" }} />
+        </Stack.Navigator>
+    );
+};
+
+
 const ListEcerciseScreenStack = ({ navigation }) => {
     return (
         <Stack.Navigator
@@ -114,6 +130,7 @@ const ListEcerciseScreenStack = ({ navigation }) => {
             <Stack.Screen name="ExerciseMultipleFive" component={ExerciseMultipleFive} options={{ title: "Exercise Multiple Five" }} />
             <Stack.Screen name="ExerciseMultipleSix" component={ExerciseMultipleSix} options={{ title: "Exercise Multiple Six" }} />
             <Stack.Screen name="ExerciseMultipleSeven" component={ExerciseMultipleSeven} options={{ title: "Exercise Multiple Seven" }} />
+            <Stack.Screen name="ProfilePageScreen" component={ProfilePageScreen} options={{ title: "Profile Page Screen" }} />
 
 
 
@@ -141,6 +158,7 @@ const DrawerNavigatorRoutes = (props) => {
             <Drawer.Screen name="ListEcerciseScreenStack" options={{ drawerLabel: "Offer detail" }} component={ListEcerciseScreenStack} />
             {/* <Drawer.Screen name="ExerciseOneScreenStack" options={{ drawerLabel: "Exercise One" }} component={ExerciseOneScreenStack} /> */}
             <Drawer.Screen name="LessonScreenStack" options={{ drawerLabel: "Lesson Screen" }} component={LessonScreenStack} />
+            <Drawer.Screen name="ProfileScreenStack" options={{ drawerLabel: "Profile Page" }} component={ProfileScreenStack} />
 
            </Drawer.Navigator>
     );

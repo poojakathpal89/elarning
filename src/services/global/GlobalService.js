@@ -12,6 +12,7 @@ export default {
     shareData:'',
     planData:null,
     isNavigateToLogin:false,
+    userSessions:[],
   
 
 }

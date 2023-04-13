@@ -58,7 +58,7 @@ console.log("select country",parseInt(this.state.selectedCountry))
             //this.getAvtar(this.state.selectedCountry);
         })
         .catch((error) => {
-            ToastService.tostShort(error);
+            // ToastService.tostShort(error);
         });
 }
 

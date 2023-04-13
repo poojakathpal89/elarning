@@ -1,7 +1,7 @@
 //live api  url 
 ///export const API_BASE_URL = "https://beta.rebatus.com/app-api/v1.3/";
 export const API_BASE_URL = "https://www.rebatus.com/app-api/v1.3/";
-export const EAPI_BASE_URL= "http://13.51.105.220/app-api/v1.3/";
+export const EAPI_BASE_URL= "http://13.51.105.220:80/app-api/v1.3/";
 
 export const GET_GUEST_USER_PRODUCT_TOUR = "guest-user/get-product-tour";
 export const UPDATE_FINGER_DATA = "my-account/update-user-data";

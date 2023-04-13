@@ -69,18 +69,18 @@ getSubjectList() {
       this.state.subjectListArray.map((item, key) => ( 
 
       <View key={key}  style={SubjectStyle.buttonContainerOne}>
-        <View  style={SubjectStyle.buttonStyle}>
+      
         <TouchableOpacity
           disabled={this.state.loading}
                                         
             activeOpacity={0.5}
             onPress={() => {
               this.selectGrade(item.id);
-            }} >
-                 <Text style={SubjectStyle.newStudentNextTxt}>{item.name}</Text>
+            }} > 
+                   <View  style={SubjectStyle.buttonStyle}><Text style={SubjectStyle.newStudentNextTxt}>{item.name}</Text>
              {this.state.loading ? <ActivityIndicator color="white" style={{ marginLeft: 15 }} /> : null}
-              </TouchableOpacity>
-                  </View>
+             </View></TouchableOpacity>
+                
               </View>
 
  ))} 

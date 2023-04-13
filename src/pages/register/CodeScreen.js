@@ -76,7 +76,7 @@ nextPrint(){
           
                   </View>
                   <View style={CodeScreenStyle.newStudentText}>
-              <Text  style={CodeScreenStyle.newStudentTxt}>{ GlobalService.regData.loginCode}</Text>
+              <Text  style={CodeScreenStyle.newStudentTxt}>{ GlobalService.userData.loginCode}</Text>
              
                   </View>
                   <View style={CodeScreenStyle.btncontainer}>

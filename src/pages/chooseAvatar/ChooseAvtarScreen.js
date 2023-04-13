@@ -5,7 +5,7 @@ import GlobalStyle from "../../css/style";
 import registerStyle from "./registerStyle"
 import CommonStyle from '../../css/common';
 import { AuthService } from "../../services/AllServices";
-import { GlobalService ,RequestHandler} from '../../services/AllServices';
+import { GlobalService ,RequestHandler,ToastService} from '../../services/AllServices';
 
 
 const coloursArray = [
@@ -71,28 +71,31 @@ export default class ChooseAvatarScreen extends React.Component {
   
   componentDidMount() {
     
-     
+    GlobalService.regData.avatarId=0;
       // console.log(StringsOfLanguages.languageObj);
       this.getAvtar();
   }
 
   setAvtar(_itemId){
-    console.log("itemSeleted",_itemId)
-    GlobalService.regData.avatarId = _itemId
-    console.log(this.state)
+   
+    GlobalService.regData.user_avatar_id = _itemId
+    
     this.setState({avatarId:_itemId})
    
    
   }
   OnButtonClick(){
-    if (GlobalService.regData.user_type == 1){
+    console.log(GlobalService.regData.avatarId)
+   if(GlobalService.regData.user_avatar_id== undefined ||   GlobalService.regData.user_avatar_id<1){
+    ToastService.tostShort("Please Select Avatar")
+    return false;
+
+   }
+    
         this.props.navigation.navigate("GradeList");
-    }
-    
-    else {
-    
-        this.props.navigation.navigate("GradeList");    }
-  }
+      
+      }
+  
  
 //   setAvtar(_item) {
 //      (GlobalService.regData.avatarId == 1)
@@ -195,20 +198,22 @@ getAvtar() {
                                           
                                     
             
-        <View style={ChooseAvtarStyle.buttonContainer}>
-        <View  style={ChooseAvtarStyle.buttonStyle}>
+       
         <TouchableOpacity
         
           activeOpacity={0.5}
             onPress={() => {
               this.OnButtonClick();
             }} >
+               <View style={ChooseAvtarStyle.buttonContainer}>
+        <View  style={ChooseAvtarStyle.buttonStyle}>
             <Text style={ChooseAvtarStyle.newStudentNextTxt}>التالى</Text>
-              </TouchableOpacity>
-                  </View>
-              </View>
+            </View>
              
               </View>
+              </TouchableOpacity>
+                  </View>
+              
                     
 
                 </ScrollView>

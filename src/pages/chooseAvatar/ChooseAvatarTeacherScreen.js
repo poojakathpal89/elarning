@@ -156,11 +156,11 @@ getAvtar() {
                 this.setState({ avtarArray: response.avatars, isLoading: false });
                 this.state.avtarArray;
             } else {
-                ToastService.tostShort(response.msg);
+                // ToastService.tostShort(response.msg);
             }
         })
         .catch((error) => {
-            ToastService.tostShort(error);
+            // ToastService.tostShort(error);
         });
 }
   render() {

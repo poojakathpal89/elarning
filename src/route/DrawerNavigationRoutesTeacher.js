@@ -34,6 +34,7 @@ import SubjectScreen from "../pages/grades/SubjectScreen";
 // import UserEdit from './src/pages/profile/UserEditScreen';
 import UserEdit from '../pages/profile/UserEditScreen';
 import CodePrepareScreen from "../pages/group/CodePrepareScreen";
+import ProfilePageScreen from "../pages/profile/ProfilePageScreen";
 
 
 
@@ -77,9 +78,9 @@ const MultipleGroupsScreenStack = ({ navigation }) => {
             <Stack.Screen name="StudentDetailScreen" component={StudentDetailScreen} options={{ title: "Student Detail " }} />
             <Stack.Screen name="StudentProgressScreen" component={StudentProgressScreen} options={{ title: "Student Progress " }} />
             <Stack.Screen name="CreateGroupsScreen" component={CreateGroupsScreen} options={{ title: "Create Group Screen" }} />
-            
             <Stack.Screen name="CodePrepareScreen" component={CodePrepareScreen} options={{ title: "User Edit Screen" }} />
 
+            
         </Stack.Navigator>
     );
 };
@@ -97,6 +98,20 @@ const LessonScreenStack = ({ navigation }) => {
         </Stack.Navigator>
     );
 };
+
+const ProfileScreenStack = ({ navigation }) => {
+    return (
+        <Stack.Navigator
+            initialRouteName="ProfilePageScreen"
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+            <Stack.Screen name="ProfilePageScreen" component={ProfilePageScreen} options={{ title: "Profile Screen" }} />
+        </Stack.Navigator>
+    );
+};
+
 
 const CreateGroupScreenStack = ({ navigation }) => {
     return (
@@ -144,6 +159,7 @@ const DrawerNavigatorRoutesTeacher = (props) => {
         <Drawer.Screen name="LessonScreenStack" options={{ drawerLabel: "Lesson Screen" }} component={LessonScreenStack} />
         
         <Drawer.Screen name="CreateGroupScreenStack" options={{ drawerLabel: "Create Group Screen" }} component={CreateGroupScreenStack} />
+        <Drawer.Screen name="ProfileScreenStack" options={{ drawerLabel: "Profile Page" }} component={ProfileScreenStack} />
 
      {/* <Drawer.Screen name="ExerciseOneScreenStack" options={{ drawerLabel: "Exercise One" }} component={ExerciseOneScreenStack} /> */}
 

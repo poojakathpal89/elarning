@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import SplashScreen from './src/pages/splash/SplashScreen';
  import RegisterScreen from './src/pages/register/RegisterScreen';
 import MainScreen from './src/pages/main/MainScreen';
-
+import UserSessionScreen from './src/pages/newStudentCodeName/UserSessionsScreen';
 import StudentScreen from './src/pages/student/StudentScreen';
 import TeacherScreen from './src/pages/teacher/TeacherScreent';
 import WelcomeScreen from './src/pages/welcome/WelcomeScreen';
@@ -25,7 +25,7 @@ import MainDashBoardScreen from './src/pages/dashboard/MainDashBoardScreen';
 import ChooseAvtar from './src/pages/chooseAvatar/ChooseAvtarScreen';
 // import ChooseAvatarTeacherScreen from './src/pages/chooseAvatar/ChooseAvatarTeacherScreen';
 import NewTeacherPrintScreen from './src/pages/newTeacher/NewTeacherPrintScreen';
-import NewStudentNameCodeScreen from './src/pages/newStudentCodeName/NewStudentNameCodeScreen';
+// import NewStudentNameCodeScreen from './src/pages/newStudentCodeName/NewStudentNameCodeScreen';
 import TeacherNameScreen from './src/pages/teacherName/TeacherNameScreen';
 // import NewStudentName from './src/pages/newStudentName/NewStudentName';
 import StudentRegisterScreen from './src/pages/register/StudentRegister';
@@ -70,6 +70,8 @@ import CodePrepare from './src/pages/group/CodePrepareScreen';
  import DrawerNavigationRoutes from './src/route/DrawerNavigationRoutes';
 
  import DrawerNavigationRoutesTeacher from './src/route/DrawerNavigationRoutesTeacher';
+ import {RequestHandler,} from './src/services/AllServices';
+
 
 
 
@@ -85,7 +87,11 @@ const Stack = createStackNavigator();
           component={MainScreen}
           options={{headerShown: false}}
         />
-  
+   <Stack.Screen
+          name="UserSessionScreen"
+          component={UserSessionScreen}
+          options={{headerShown: false}}
+        />
       <Stack.Screen
           name="StudentScreen"
           component={StudentScreen}
@@ -182,7 +188,11 @@ const Stack = createStackNavigator();
   
 export default class AppContainer extends React.Component {
 
- 
+  componentDidMount() {
+    console.log("App js called")
+	       RequestHandler.getToken();
+       }
+   
   
   render() {
      return(

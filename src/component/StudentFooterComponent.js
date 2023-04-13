@@ -84,9 +84,9 @@ export default class StudentFooterComponent extends Component {
                 <View style ={{width:"33%"}}>
                     <TouchableOpacity
                         onPress={() => {
-                            props.navigation.navigate("MultipleGroupsScreen", {
-                                screen: "MultipleGroupsScreen",
-                            });
+                            // props.navigation.navigate("MultipleGroupsScreen", {
+                            //     screen: "MultipleGroupsScreen",
+                            // });
                           
 
                         }} style={GlobalStyle.bottomNavLeftItem}>
@@ -183,7 +183,19 @@ export default class StudentFooterComponent extends Component {
 
 
                                 <View style={{flexDirection:'row',flex:1,alignSelf:'flex-end',marginTop:5}}>
-                            <Text style={styles.shareTicketTextStyle}>{'Settings'}</Text>
+                                <TouchableOpacity
+                                        style={[styles.earnComnButtonStyle,styles.earnBtn]}
+                                        activeOpacity={0.5}
+                                        onPress={() => {
+                                            GlobalService.userData.userInfo="";
+                                                props.navigation.navigate("ProfileScreenStack", {
+                                                screen: "ProfilePageScreen",
+                                                    });
+                                            
+                                                              }} >
+                                     <Text style={styles.shareTicketTextStyle}>{'Settings'}</Text>
+
+                                    </TouchableOpacity>
                                   </View>
 
 

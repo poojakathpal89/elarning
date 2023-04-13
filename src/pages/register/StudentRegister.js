@@ -65,19 +65,19 @@ export default class StudentRegister extends React.Component {
            this.setState({ nameError:GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_FULL_NAME +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "Nickname is required" });
           error = true;
       }
-    if (this.state.email == "") {
-      this.setState({ emailError: GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_EMAIL +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "Email is required" });
-      error = true;
-  }
-  if (this.state.school == "") {
-    this.setState({ schoolError:GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_FULL_NAME +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "School name is required" });
-    error = true;
-}
-if (this.state.mobile == "") {
-  this.setState({ mobileError: GlobalService.Register ? GlobalService.Register.RAPP_PHONE +' '+GlobalService.Register.RAPP_FORM_REQUIRED :"Mobile is required" });
-  error = true;
-}
-  if (reg.test(this.state.email) === false) {
+  //   if (this.state.email == "") {
+  //     this.setState({ emailError: GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_EMAIL +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "Email is required" });
+  //     error = true;
+  // }
+//   if (this.state.school == "") {
+//     this.setState({ schoolError:GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_FULL_NAME +' '+GlobalService.Register.RAPP_FORM_REQUIRED : "School name is required" });
+//     error = true;
+// }
+// if (this.state.mobile == "") {
+//   this.setState({ mobileError: GlobalService.Register ? GlobalService.Register.RAPP_PHONE +' '+GlobalService.Register.RAPP_FORM_REQUIRED :"Mobile is required" });
+//   error = true;
+// }
+  if (this.state.email!='' && reg.test(this.state.email) === false) {
       error = true;
       this.setState({ emailError: GlobalService.Register ? GlobalService.Register.RAPP_REGISTER_EMAIL_ERROR : "Enter valid email" });
   }
@@ -92,7 +92,7 @@ if (this.state.selectedStates <1) {
     error = true;
 }
 
-error = false;
+
 if (error == false) {
            
   let postData = {
@@ -140,7 +140,7 @@ if (error == false) {
             //this.getAvtar(this.state.selectedCountry);
         })
         .catch((error) => {
-            ToastService.tostShort(error);
+            // ToastService.tostShort(error);
         });
 }
 getStates(_country_id) {
@@ -161,7 +161,7 @@ getStates(_country_id) {
             
         })
         .catch((error) => {
-            ToastService.tostShort(error);
+            // ToastService.tostShort(error);
         });
 }
   render() {
@@ -421,7 +421,7 @@ getStates(_country_id) {
                                 <View style={{width:"100%",'position':'relative',marginTop:6}} >
 
                                 <TextInput
-                                    style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
+                                    style={[{fontFamily:'CircularStd-Book',textAlign:'right'},GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
                                     onChangeText={(school) => {
                                         this.setState({ school: school });
                                     }}
@@ -453,7 +453,7 @@ getStates(_country_id) {
                                 <View style={{width:"100%",'position':'relative',marginTop:6}} >
 
                                 <TextInput
-                                    style={[{fontFamily:'CircularStd-Book',textAlign:'right'},this.state.nameError  ? GlobalStyle.inputStyleError :GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
+                                    style={[{fontFamily:'CircularStd-Book',textAlign:'right'},GlobalStyle.inputStyle,{backgroundColor:'#F9FAFB'}]}
                                     onChangeText={(mobile) => {
                                       this.setState({ mobile: mobile });
                                   }}

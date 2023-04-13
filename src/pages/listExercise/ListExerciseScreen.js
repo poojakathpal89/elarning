@@ -54,7 +54,7 @@ export default class ListExerciseScreen extends Component {
             if (res != "") {
                 let array = JSON.parse(res);
                 setTimeout(() => {
-                    ToastService.tostShort(array.msg)
+                    // ToastService.tostShort(array.msg)
                   }, 500);
                 
                 if (array.status == 5) {

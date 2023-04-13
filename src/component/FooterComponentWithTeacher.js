@@ -159,7 +159,19 @@ export default class FooterComponentWithTeacher extends Component {
 
 
                                 <View style={{flexDirection:'row',flex:1,alignSelf:'flex-end',marginTop:5}}>
-                            <Text style={styles.shareTicketTextStyle}>{'Settings'}</Text>
+                                <TouchableOpacity
+                                        style={[styles.earnComnButtonStyle,styles.earnBtn]}
+                                        activeOpacity={0.5}
+                                        onPress={() => {
+                                            GlobalService.userData.userInfo="";
+                                                props.navigation.navigate("ProfileScreenStack", {
+                                                screen: "ProfilePageScreen",
+                                                    });
+                                            
+                                                              }} >
+                                     <Text style={styles.shareTicketTextStyle}>{'Settings'}</Text>
+
+                                    </TouchableOpacity>
                                   </View>
 
 
@@ -183,8 +195,8 @@ export default class FooterComponentWithTeacher extends Component {
         style={[styles.earnComnButtonStyle,styles.earnBtn]}
         activeOpacity={0.5}
         onPress={() => {
-                props.navigation.navigate("UserEdit", {
-                screen: "UserEdit",
+                props.navigation.navigate("Main", {
+                screen: "Main",
                     });
             
         }} >

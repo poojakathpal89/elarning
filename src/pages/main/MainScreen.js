@@ -7,7 +7,7 @@ import GlobalStyle from "../../css/style";
 import { AuthService, GlobalService, RequestHandler, ToastService } from "../../services/AllServices";
 
 import { CommonActions } from "@react-navigation/native";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default class MainScreen extends React.Component {
   constructor(props) {
@@ -22,6 +22,13 @@ export default class MainScreen extends React.Component {
   };
 
   componentDidMount() {
+    RequestHandler.getToken();
+   console.log("Sessionsss",RequestHandler.state.userSessions);
+
+    
+    if(RequestHandler.state.userSessions && RequestHandler.state.userSessions.length>0){
+     this.props.navigation.navigate("UserSessionScreen");
+   }
       // console.log(StringsOfLanguages.languageObj);
   }
   goToNewStudentName() {
@@ -85,33 +92,48 @@ loginApi(postData){
       if (res.status == 1) {
        let i = parseInt(res.userInfo.user_type);
         GlobalService.userData=res.userInfo;
-        
-        if(i==1){
-
-          this.props.navigation.dispatch(
-            CommonActions.reset({
-                index: 1,
-                routes: [{ name: "DrawerNavigationRoutes" }],
-            })
-        );
-        }else{
-          this.props.navigation.dispatch(
-            CommonActions.reset({
-                index: 1,
-                routes: [{ name: "DrawerNavigationRoutesTeacher" }],
-            })
-        );
+        let data =  RequestHandler.state.userSessions;
        
-        }
+        data.push(res.userInfo)
+  
+        AsyncStorage.multiSet(
+          [
+              ["token",res.userInfo.token],
+              ["userSession",  JSON.stringify(data)],
+             
+          ],
+          async (error) => {
+            
+              if(i==1){
+
+                this.props.navigation.dispatch(
+                  CommonActions.reset({
+                      index: 1,
+                      routes: [{ name: "DrawerNavigationRoutes" }],
+                  })
+              );
+              }else{
+                this.props.navigation.dispatch(
+                  CommonActions.reset({
+                      index: 1,
+                      routes: [{ name: "DrawerNavigationRoutesTeacher" }],
+                  })
+              );
+             
+              }
+          }
+      );
+      
+        
        
           
       } else {
       
-          ToastService.tostLong(res.msg);
+           ToastService.tostLong(res.msg);
       }
   })
   .catch((error) => {
-      ToastService.tostShort(error);
+      // ToastService.tostShort(error);
   });
 } 
 

@@ -39,6 +39,7 @@ class RequestHandler extends Component {
             Month:null,
             shareUrl : '',
             avtarArray:[],
+           userSessions:[],
         };
         this.getToken();
     }
@@ -141,30 +142,20 @@ class RequestHandler extends Component {
       };
 
     getToken() {
-        this.state.isbiometric =false;
-        AsyncStorage.multiGet(["token", "isbiometric",'userData','currency','language','appnotification']).then(response => {
-            this.requestLocationPermission()
-
-            this.state.langId = 1;
-           
+        
+        AsyncStorage.multiGet(["token", "userSession"]).then(response => {
+          
+      
             if( (response[0]!=null && response[0]!= '') && (response[0][1]!=null && response[0][1]!= '') ){
             	this.state.token = response[0][1];
             }
             if( (response[1]!=null && response[1]!= '') && (response[1][1]!=null && response[1][1]!= '') ){
-            	this.state.isbiometric = response[1][1];
+
+              console.log("Here",JSON.parse(response[1][1]))
+            	this.state.userSessions = JSON.parse(response[1][1]);
             }
             
-            if( (response[2]!=null && response[2]!= '') && (response[2][1]!=null && response[2][1]!= '') ){
-              let data = JSON.parse(response[2][1]);
-              GlobalService.userData = data;
-            }
-            if( (response[3]!=null && response[3]!= '') && (response[3][1]!=null && response[3][1]!= '') ){
-              this.state.curencyId = parseInt(response[3][1]);
-            }
-             if( (response[5]!=null && response[5]!= '') && (response[5][1]!=null && response[5][1]!= '')){
-              this.state.appNotification = response[5][1]
-            }
-            
+          
         })
     }
 

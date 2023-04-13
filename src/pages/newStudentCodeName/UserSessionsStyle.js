@@ -1,24 +1,19 @@
 import {StyleSheet} from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-const ListOfGradeStyle = StyleSheet.create({
+const UserSessionsStyle = StyleSheet.create({
     container: {
         flex: 1, 
         position: "relative",
         paddingHorizontal: 24,
         paddingVertical: 24,
-        marginTop:150
       },
       logoOnlyHeader:{
 		height:"10%",
 		alignItems: "center",
-		marginTop:30,
-        },
-
-        btnTextContainer:{
-            marginTop:50,
-          width:370,
-            height:109
-        },
+		marginTop:50,
+        
+		
+	},
     commonStudentBtnTxt:{
         fontSize:16,
         fontFamily:'CircularStd-Bold',
@@ -113,47 +108,40 @@ const ListOfGradeStyle = StyleSheet.create({
             fontFamily:'CircularStd-Bold',
 
         },
+      languagesName:{
+        color:'#0C222C',
+        fontSize:16,
+        fontWeight:'500',
+        fontFamily:'CircularStd-Bold',
+        opacity:0.6
+      },
+      languagesCode:{
+        color:'#0C222C',
+        fontSize:18,
+        fontWeight:'500',
+        opacity:0.6
+      },
       btncontainer: {
-       flexDirection: 'row',
-        alignItems: 'center',
+       alignItems: 'center',
         marginTop:10,  
-        justifyContent:"center",   
+         
     },
-    buttonContainerOne: {
-       justifyContent: 'center',
-        marginLeft:50,
-        marginRight:50,
+    buttonContainer: {
+      alignItems:"center",
+        justifyContent: 'center',
+        marginLeft:10,
+        marginRight:10,
         backgroundColor:"#FBFEFD",
-        alignItems:"center",
-    
-        marginTop:20,
+        marginTop:10,
         height:100,
-      
         borderRadius:10,
-            },
-            buttonContainerTwo: {
-                justifyContent: 'center',
-                 marginLeft:50,
-                 marginRight:50,
-                 backgroundColor:"#FBFEFD",
-                 alignItems:"center",
-               paddingLeft:40,
-               paddingRight:40,
-                 marginTop:50,
-                 height:50,
-                 padding:50,
-                 borderRadius:10,
-                     },
-    buttonStyle:{
-        paddingHorizontal:60,
-        height:100,
-        color:"black",
-        alignItems:"center",
-        justifyContent:"center",
+       
+        // borderWidth:1,
         
     },
-    topTitle:{
-        height:50,
+    buttonStyle:{
+       
+        height:100,
         color:"black",
         alignItems:"center",
         justifyContent:"center"
@@ -167,23 +155,31 @@ const ListOfGradeStyle = StyleSheet.create({
     },
     newStudentNextTxt:{
         color:"#000000",
-        fontSize:30,
-        fontWeight:'400',
+        fontSize:22,
+        fontWeight:'700',
         fontFamily:'CircularStd-Bold',
         },
-        toptxtHeading:{
-            alignItems:"center",
-            justifyContent:"center",
-            textAlign:"center",
-            marginTop:60,
-        },
-        toptxtHeadingStyle:{
-        alignItems:"center",
-        color:"#000000",
-        fontSize:30,
-        fontWeight:'400',
-        fontFamily:'CircularStd-Bold',
-        }
+        newstudentImageContainer: {
+            justifyContent: 'center',
+               marginLeft:50,
+               marginRight:50,
+               backgroundColor:"#FBFEFD",
+               alignItems:"center",
+               paddingLeft:40,
+               paddingRight:40,    
+               marginTop:60,
+               marginBottom:10,
+               height:50,
+               borderRadius:10,
+                   },
+                   signTxt:{
+                      color:"#000000",
+                        fontSize:16,
+                        fontWeight:'500',
+                        color:"#000000",
+                 fontFamily:'CircularStd-Bold',
+                        },
+                  
 });
 
-export default ListOfGradeStyle;
+export default UserSessionsStyle;

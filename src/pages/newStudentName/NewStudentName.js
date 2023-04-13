@@ -137,7 +137,7 @@ if (error == true) {
             //this.getAvtar(this.state.selectedCountry);
         })
         .catch((error) => {
-            ToastService.tostShort(error);
+            // ToastService.tostShort(error);
         });
 }
 getStates(_country_id) {
@@ -157,7 +157,7 @@ getStates(_country_id) {
             
         })
         .catch((error) => {
-            ToastService.tostShort(error);
+            // ToastService.tostShort(error);
         });
 }
   render() {
