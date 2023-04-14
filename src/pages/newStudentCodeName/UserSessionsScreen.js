@@ -163,11 +163,8 @@ export default class UserSessionScreen extends React.Component {
                                      
                                   </View>
 
-
           </View>
       
-
-       
         </View>
         <View style={UserSessionStyle.newstudentImageContainer}>
                <View  style={UserSessionStyle.buttonStyle}>

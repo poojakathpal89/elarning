@@ -29,6 +29,9 @@ import ExerciseMultipleSix from "../pages/exerciseList/ExerciseMultipleSix";
 import ExerciseMultipleSeven from "../pages/exerciseList/ExerciseMultipleSeven";
 import SubjectScreen from "../pages/grades/SubjectScreen";
 import ProfilePageScreen from "../pages/profile/ProfilePageScreen";
+import CodePrepareScreen from "../pages/group/CodePrepareScreen";
+import MultipleStudentScreen from "../pages/multipleStudent/MultipleStudentScreen";
+
 
 
 
@@ -79,6 +82,32 @@ const LessonScreenStack = ({ navigation }) => {
             }}
         >
             <Stack.Screen name="LessonScreens" component={LessonScreens} options={{ title: "Lesson Screen" }} />
+        </Stack.Navigator>
+    );
+};
+
+const CodePrepareScreenStack = ({ navigation }) => {
+    return (
+        <Stack.Navigator
+            initialRouteName="CodePrepareScreen"
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+            <Stack.Screen name="CodePrepareScreen" component={CodePrepareScreen} options={{ title: "Code Prepare Screen" }} />
+        </Stack.Navigator>
+    );
+};
+
+const MultipleStudentScreenStack = ({ navigation }) => {
+    return (
+        <Stack.Navigator
+            initialRouteName="MultipleStudentScreen"
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+            <Stack.Screen name="MultipleStudentScreen" component={MultipleStudentScreen} options={{ title: "Code Prepare Screen" }} />
         </Stack.Navigator>
     );
 };
@@ -159,7 +188,11 @@ const DrawerNavigatorRoutes = (props) => {
             {/* <Drawer.Screen name="ExerciseOneScreenStack" options={{ drawerLabel: "Exercise One" }} component={ExerciseOneScreenStack} /> */}
             <Drawer.Screen name="LessonScreenStack" options={{ drawerLabel: "Lesson Screen" }} component={LessonScreenStack} />
             <Drawer.Screen name="ProfileScreenStack" options={{ drawerLabel: "Profile Page" }} component={ProfileScreenStack} />
+            <Drawer.Screen name="CodePrepareScreenStack" options={{ drawerLabel: "Code Prepare " }} component={CodePrepareScreenStack} />
+            <Drawer.Screen name="MultipleStudentScreenStack" options={{ drawerLabel: "Multiple Screen " }} component={MultipleStudentScreenStack} />
 
+            
+            
            </Drawer.Navigator>
     );
 };

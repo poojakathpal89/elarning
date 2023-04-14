@@ -22,10 +22,10 @@ export default class CodePrepareScreen extends React.Component {
      
   }
   groups(){
-    this.props.navigation.navigate("multipleStudent");
+    this.props.navigation.navigate("MultipleStudentScreenStack");
   }
   createADAM(){
-    this.props.navigation.navigate("multipleStudent");
+    this.props.navigation.navigate("MultipleStudentScreenStack");
 
   }
 

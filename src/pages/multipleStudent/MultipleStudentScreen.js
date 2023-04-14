@@ -23,10 +23,10 @@ export default class MultipleStudentScreen extends React.Component {
   }
 
   createGroups(){
-    this.props.navigation.navigate("newGroupOne");
+    // this.props.navigation.navigate("newGroupOne");
   }
   createADAM(){
-    this.props.navigation.navigate("newGroupOne");
+    // this.props.navigation.navigate("newGroupOne");
  }
   render() {
       return (

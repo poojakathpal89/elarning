@@ -35,6 +35,7 @@ import SubjectScreen from "../pages/grades/SubjectScreen";
 import UserEdit from '../pages/profile/UserEditScreen';
 import CodePrepareScreen from "../pages/group/CodePrepareScreen";
 import ProfilePageScreen from "../pages/profile/ProfilePageScreen";
+import MultipleStudentScreen from "../pages/multipleStudent/MultipleStudentScreen";
 
 
 
@@ -142,6 +143,20 @@ const SubjectScreenStack = ({ navigation }) => {
 };
 
 
+const MultipleStudentScreenStack = ({ navigation }) => {
+    return (
+        <Stack.Navigator
+            initialRouteName="MultipleStudentScreen"
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+            <Stack.Screen name="MultipleStudentScreen" component={MultipleStudentScreen} options={{ title: "Code Prepare Screen" }} />
+        </Stack.Navigator>
+    );
+};
+
+
 const DrawerNavigatorRoutesTeacher = (props) => {
     return (
         <Drawer.Navigator
@@ -160,6 +175,7 @@ const DrawerNavigatorRoutesTeacher = (props) => {
         
         <Drawer.Screen name="CreateGroupScreenStack" options={{ drawerLabel: "Create Group Screen" }} component={CreateGroupScreenStack} />
         <Drawer.Screen name="ProfileScreenStack" options={{ drawerLabel: "Profile Page" }} component={ProfileScreenStack} />
+        <Drawer.Screen name="MultipleStudentScreenStack" options={{ drawerLabel: "Multiple Screen " }} component={MultipleStudentScreenStack} />
 
      {/* <Drawer.Screen name="ExerciseOneScreenStack" options={{ drawerLabel: "Exercise One" }} component={ExerciseOneScreenStack} /> */}
 

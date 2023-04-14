@@ -112,27 +112,27 @@ const PraticLatterScreenStyle = StyleSheet.create({
 
         },
       btncontainer: {
-       flexDirection: 'row',
+       flexDirection: 'column',
         alignItems: 'center',
-        marginTop:10,  
+        marginTop:30,  
         justifyContent:"center",   
     },
     buttonContainer: {
-       
+      flexDirection:"column",
         justifyContent: 'center',
-        marginLeft:50,
-        marginRight:50,
+        marginLeft:10,
+        marginRight:10,
         backgroundColor:"#FBFEFD",
         alignItems:"center",
-      paddingLeft:40,
-      paddingRight:40,
+      paddingLeft:30,
+      paddingRight:30,
         marginTop:20,
         height:50,
         borderRadius:10,
         
     },
     buttonStyle:{
-       
+      
         height:50,
         color:"black",
         alignItems:"center",
